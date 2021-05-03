@@ -11,8 +11,6 @@ surname VARCHAR(20) NOT NULL,
 phoneno INT(11) NOT NULL,
 postcode VARCHAR(7) NOT NULL,
 address VARCHAR(30) NOT NULL,
-cardno INT(16)
-
-)");
+cardno INT(16))");
 $stmt->execute();
 ?>
