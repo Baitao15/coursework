@@ -15,3 +15,4 @@ cardno INT(16)
 
 )");
 $stmt->execute();
+?>
