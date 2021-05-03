@@ -16,6 +16,6 @@ $stmt->execute();
 
 $conn=null;
 
-header("Location: login.php");
+// header("Location: login.php");
 
 ?>
