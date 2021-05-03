@@ -13,4 +13,9 @@ postcode VARCHAR(7) NOT NULL,
 address VARCHAR(30) NOT NULL,
 cardno INT(16))");
 $stmt->execute();
+
+$conn=null;
+
+header("Location: login.php");
+
 ?>
