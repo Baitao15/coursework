@@ -14,6 +14,6 @@ $stmt->bindParam(':password', $hashed_password);
 $stmt->execute();
 
 //redirecting the user to the login page
-header('Location: .php')
+header('Location: .php');
 
 ?>
