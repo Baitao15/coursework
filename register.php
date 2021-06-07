@@ -1,21 +1,3 @@
-<html>
-
-<head>
-    <title>Register</Title>
-</head>
-
-<body>
-<!-- basic text for the page, including a form for users to create an account -->
-Register
-    <form action="signup.php" method="POST">
-    Email <input type="text" name="email" required><br>
-    Password <input type="text" name="password" required><br>
-    <br>
-    <input type="submit" value="Register"><br>
-    </form>
-    <br>
-</body>
-
 <?php
 // linking to connection.php to gain access to the database
 include_once("connection.php");
@@ -35,5 +17,3 @@ $stmt->execute();
 header('Location: .php')
 
 ?>
-
-</html>
