@@ -1,16 +1,16 @@
 <html>
 
 <head>
-    <title>Sign Up</Title>
+    <title>Register</Title>
 </head>
 
 <body>
-Sign Up
+Register
     <form action="signup.php" method="POST">
     Email <input type="text" name="email" required><br>
     Choose a Password <input type="text" name="password" required><br>
     <br>
-    <input type="submit" value="Create Account"><br>
+    <input type="submit" value="Register"><br>
     </form>
     <br>
 </body>
