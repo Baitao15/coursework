@@ -9,7 +9,7 @@ $hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 $stmt = $conn->prepare("INSERT INTO customers(email,password)
 VALUES(:email,:password)");
 
-$stmt->bindParam(':username', $_POST["dusername"]);
+$stmt->bindParam(':email', $_POST["email"]);
 $stmt->bindParam(':password', $hashed_password);
 $stmt->execute();
 
