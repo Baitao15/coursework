@@ -2,13 +2,13 @@
     scroll-behavior: smooth;
     position: fixed;
     top:0;
-    background: color #c90000;;
+    background-color: #c90000;;
     width: 100%;
     overflow: hidden;
     height:44px;
 }
 
-#navigationBar a{
+#navbar a{
     scroll-behavior: smooth;
     float: right;
     color: white;
@@ -18,7 +18,7 @@
     font: 400 18px Lato, sans-serif;
 }
 
-#navigationBar a:hover{background-color: #ffb347;
-    color: #cb410b;
+#navbar a:hover{background-color: #ff2222;
+    color: #ffd900;
     text-decoration-line: underline;
 }
