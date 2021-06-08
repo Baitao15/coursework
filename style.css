@@ -7,3 +7,18 @@
     overflow: hidden;
     height:44px;
 }
+
+#navigationBar a{
+    scroll-behavior: smooth;
+    float: right;
+    color: white;
+    text-align: center;
+    padding:14px 16px;
+    text-decoration: none;
+    font: 400 18px Lato, sans-serif;
+}
+
+#navigationBar a:hover{background-color: #ffb347;
+    color: #cb410b;
+    text-decoration-line: underline;
+}
