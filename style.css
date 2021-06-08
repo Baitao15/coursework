@@ -1,0 +1,9 @@
+#navbar{
+    scroll-behavior: smooth;
+    position: fixed;
+    top:0;
+    background: color #c90000;;
+    width: 100%;
+    overflow: hidden;
+    height:44px;
+}
