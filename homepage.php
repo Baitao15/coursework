@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 
+<?php
+    session_start(); 
+    if (isset($_SESSION['name']))
+    {   
+        $loggedin=true;
+    }
+?>
 
 <html>
     <head>
