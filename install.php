@@ -24,6 +24,25 @@ surname VARCHAR(20) NOT NULL,
 password VARCHAR(50) NOT NULL)");
 $stmt->execute();
 
+$stmt = $conn->prepare("DROP TABLE IF EXISTS item;
+CREATE TABLE item
+(itemid INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+itemname VARCHAR(30) NOT NULL,
+category VARCHAR(20) NOT NULL,
+description VARCHAR(100),
+itemprice DECIMAL(4) NOT NULL,
+offerid(2) )");
+$stmt->execute();
+
+$stmt = $conn->prepare("DROP TABLE IF EXISTS offer;
+CREATE TABLE offer
+(offerid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+offername VARCHAR(30) NOT NULL
+offertype VARCHAR(20) NOT NULL,
+num1 INT(3) NOT NULL,
+num2 INT(3))");
+$stmt->execute();
+
 
 
 $conn=null;
