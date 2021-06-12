@@ -31,7 +31,7 @@ itemname VARCHAR(30) NOT NULL,
 category VARCHAR(20) NOT NULL,
 description VARCHAR(100),
 itemprice DECIMAL(4) NOT NULL,
-offerid INTa(2))");
+offerid INT(2))");
 $stmt->execute();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS offer;
