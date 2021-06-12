@@ -38,7 +38,7 @@ $stmt = $conn->prepare("DROP TABLE IF EXISTS offer;
 CREATE TABLE offer
 (offerid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 offername VARCHAR(30) NOT NULL,
-offertype VARCHAR(20) NOT NULL,
+offertype VARCHAR(10) NOT NULL,
 num1 INT(3) NOT NULL,
 num2 INT(3))");
 $stmt->execute();
