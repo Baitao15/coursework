@@ -1,12 +1,12 @@
 <html>
 
-    <?php
+<?php
     session_start(); 
     if (isset($_SESSION['name']))
     {   
         $loggedin=true;
     }
-    ?>
+?>
 
 <head>
     <title>Register</Title>
