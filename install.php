@@ -3,8 +3,8 @@
 include_once("connection.php");
 
 // creating tables
-$stmt = $conn->prepare("DROP TABLE IF EXISTS customers;
-CREATE TABLE customers
+$stmt = $conn->prepare("DROP TABLE IF EXISTS customer;
+CREATE TABLE customer
 (customerid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 email VARCHAR(50) NOT NULL,
 password VARCHAR(50) NOT NULL,
