@@ -15,7 +15,8 @@
 </p>
 
 <!-- basic text for the page, including a form for users to create an account -->
-Register
+<p>
+    Register
     <form action="register.php" method="POST">
     Email <input type="text" name="email" required><br>
     Password <input type="password" name="password" required><br>
@@ -24,7 +25,7 @@ Register
     Already have an account?
     <a href=loginpage.php>Login</a>
     </form>
-    <br>
+</p>
 </body>
 
 </html>
