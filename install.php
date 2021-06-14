@@ -19,7 +19,7 @@ $stmt->execute();
 $stmt = $conn->prepare("DROP TABLE IF EXISTS admin;
 CREATE TABLE admin
 (userid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-forename INT(20) NOT NULL,
+forename VARCHAR(20) NOT NULL,
 surname VARCHAR(20) NOT NULL,
 password VARCHAR(50) NOT NULL)");
 $stmt->execute();
