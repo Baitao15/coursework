@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
 <!-- return to the homepage -->
@@ -14,13 +13,16 @@
 </p>
 
 <!-- basic text for the page, including a form for users to create an account -->
-<p>
+<p class=form>
     Register
     <form action="register.php" method="POST">
     Email <input type="text" name="email" required><br>
     Password <input type="password" name="password" required><br>
     <br>
-    <input type="submit" value="Register" class=button><br>
+    <div class=button>
+    <input type="submit" value="Register">
+    </div>
+    <br>
     Already have an account?
     <a href=loginpage.php>Login</a>
     </form>

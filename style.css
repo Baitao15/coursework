@@ -23,6 +23,11 @@
     text-decoration-line: underline;
 }
 
+.form{
+    align-self: center;
+    color:chartreuse;
+}
+
 .button{
     color: white;
     font-weight:bold;

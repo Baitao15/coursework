@@ -24,6 +24,20 @@ surname VARCHAR(20) NOT NULL,
 password VARCHAR(50) NOT NULL)");
 $stmt->execute();
 
+//inserting defualt data into the admin table
+$forename = "default";
+$surname = "admin";
+$hashed_password = password_hash("12345", PASSWORD_DEFAULT);
+
+$stmt = $conn->prepare("INSERT INTO admin(forename, surname, password)
+VALUES(:forename, :surname ,:password)");
+
+$stmt->bindParam(':forename', $forename);
+$stmt->bindParam(':surname', $surname);
+$stmt->bindParam(':password', $hashed_password);
+$stmt->execute();
+
+
 $stmt = $conn->prepare("DROP TABLE IF EXISTS item;
 CREATE TABLE item
 (itemid INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
