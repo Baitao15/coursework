@@ -9,7 +9,6 @@
 
 <!-- reduced navigation bar -->
 <p>
-    <a href=registerpage.php>Register</a>
     <a href=homepage.php>Home</a>
 </p>
 
