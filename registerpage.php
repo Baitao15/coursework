@@ -2,13 +2,14 @@
 
 <head>
     <title>Register</Title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
 <!-- return to the homepage -->
-<p>
+<p id=navbar>
     <a href=homepage.php>Home</a>
 </p>
 
