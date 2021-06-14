@@ -17,7 +17,7 @@
     <!-- navigation bar -->
     <p id=navbar>
         <a href=loginpage.php>Login</a>
-        <a href=registerpage.php>Sign Up</a>
+        <a href=registerpage.php>Register</a>
         <a href=groceries.php>Groceries</a>
         <a href=homepage.php>Home</a>
     </p>
