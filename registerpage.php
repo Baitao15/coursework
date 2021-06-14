@@ -7,7 +7,7 @@
 
 <body>
 
-<!-- reduced navigation bar -->
+<!-- return to the homepage -->
 <p>
     <a href=homepage.php>Home</a>
 </p>
