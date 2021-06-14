@@ -4,7 +4,15 @@
     <title>Register</Title>
 </head>
 
+
 <body>
+
+<!-- reduced navigation bar -->
+<p>
+    <a href=registerpage.php>Register</a>
+    <a href=homepage.php>Home</a>
+</p>
+
 <!-- basic text for the page, including a form for users to create an account -->
 <p>
     Register
