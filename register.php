@@ -6,7 +6,7 @@ include_once("connection.php");
 $hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 // sending the data to the database
-$stmt = $conn->prepare("INSERT INTO customers(email,password)
+$stmt = $conn->prepare("INSERT INTO customer(email,password)
 VALUES(:email,:password)");
 
 $stmt->bindParam(':email', $_POST["email"]);
