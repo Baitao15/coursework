@@ -1,13 +1,5 @@
 <html>
 
-<?php
-    session_start(); 
-    if (isset($_SESSION['name']))
-    {   
-        $loggedin=true;
-    }
-?>
-
 <head>
     <title>Register</Title>
     <link rel="stylesheet" href="style.css">
