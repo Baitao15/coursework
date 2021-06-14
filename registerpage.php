@@ -20,7 +20,7 @@
     Email <input type="text" name="email" required><br>
     Password <input type="password" name="password" required><br>
     <br>
-    <input type="submit" value="Register"><br>
+    <input type="submit" value="Register" class=button><br>
     Already have an account?
     <a href=loginpage.php>Login</a>
     </form>

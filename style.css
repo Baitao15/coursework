@@ -2,7 +2,7 @@
     scroll-behavior: smooth;
     position: fixed;
     top:0;
-    background-color: #c90000;;
+    background-color: #c90000;
     width: 100%;
     overflow: hidden;
     height:44px;
@@ -21,4 +21,10 @@
 #navbar a:hover{background-color: #ff2222;
     color: #ffd900;
     text-decoration-line: underline;
+}
+
+.button{
+    color: white;
+    font-weight:bold;
+    background-color: #c90000;
 }
