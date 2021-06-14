@@ -16,10 +16,10 @@
 <body>
     <!-- navigation bar -->
     <p id=navbar>
-        <a href=loginpage.html>Login</a>
-        <a href=registerpage.html>Sign Up</a>
-        <a href=groceries.html>Groceries</a>
-        <a href=homepage.html>Home</a>
+        <a href=loginpage.php>Login</a>
+        <a href=registerpage.php>Sign Up</a>
+        <a href=groceries.php>Groceries</a>
+        <a href=homepage.php>Home</a>
     </p>
 
 </body>
