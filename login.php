@@ -33,3 +33,4 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         header('Location: login.php');
     }
 }
+

@@ -7,7 +7,7 @@ include_once("connection.php");
 array_map("htmlspecialchars", $_POST);
 
 $stmt = $conn->prepare("SELECT * FROM admin WHERE userid = :userid;");
-$stmt->blindparam(':userid', $_POST['userid']);
+$stmt->bindparam(':userid', $_POST['userid']);
 $stmt->execute();
 
 
@@ -15,6 +15,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     $hashed= $row['password'];
     $attempt= $_POST['password'];
+    echo($hashed);
+    echo($attempt);
     
     if(password_verify($attempt,$hashed)){
         $_SESSION['userid']=$row["userid"];
@@ -25,11 +27,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         }
         unset($_SESSION['backURL']);
         header('Location: ' . $backURL);
-
         header('Location: adminhomepage.php');
     
     }else{
-
-        header('Location: adminloginpage.php');
+        echo("error");
     }
 }
