@@ -17,8 +17,11 @@ if (!isset($_SESSION['userid']))
 <body>
     <!-- navigation bar -->
     <p id=navbar>
-        <a href=adminhomepage.php>Home</a>
+        <a href=logout.php>Logout</a>
+        <a href=newofferpage.php>Add Account</a>
+        <a href=newitempage.php>Add Account</a>
         <a href=newadminpage.php>Add Account</a>
+        <a href=adminhomepage.php>Home</a>
     </p>
 </body>
 
