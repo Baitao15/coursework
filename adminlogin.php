@@ -21,6 +21,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo($attempt);
     
     if(password_verify($attempt,$hashed)){
+        echo("<br>");
         echo("working");
         // $_SESSION['userid']=$row["userid"];
         // if (!isset($_SESSION['backURL'])){
