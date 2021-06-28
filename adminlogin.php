@@ -15,11 +15,12 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     $hashed= $row['password'];
     $attempt= $_POST['password'];
+    $bh = password_hash($attempt, PASSWORD_DEFAULT);
     echo("<br>");
     echo($hashed);
     echo("<br>");
-    echo($attempt);
-    
+    echo($bh);
+
     if(password_verify($attempt,$hashed)){
         echo("<br>");
         echo("working");
