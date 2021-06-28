@@ -22,18 +22,19 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     if(password_verify($attempt,$hashed)){
         echo("working");
-        $_SESSION['userid']=$row["userid"];
-        if (!isset($_SESSION['backURL'])){
-            $backURL= "/";
-        }else{
-            $backURL=$_SESSION['backURL'];
-        }
-        unset($_SESSION['backURL']);
-        header('Location: ' . $backURL);
-        header('Location: adminhomepage.php');
+        // $_SESSION['userid']=$row["userid"];
+        // if (!isset($_SESSION['backURL'])){
+        //     $backURL= "/";
+        // }else{
+        //     $backURL=$_SESSION['backURL'];
+        // }
+        // unset($_SESSION['backURL']);
+        // header('Location: ' . $backURL);
+        // header('Location: adminhomepage.php');
     
     }else{
         echo("<br>");
         echo("error");
+        // header('Location: adminloginpage.php')
     }
 }
