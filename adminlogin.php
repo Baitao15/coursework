@@ -15,10 +15,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     $hashed= $row['password'];
     $attempt= $_POST['password'];
+    echo("<br>");
     echo($hashed);
+    echo("<br>");
     echo($attempt);
     
     if(password_verify($attempt,$hashed)){
+        echo("working");
         $_SESSION['userid']=$row["userid"];
         if (!isset($_SESSION['backURL'])){
             $backURL= "/";
@@ -30,6 +33,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         header('Location: adminhomepage.php');
     
     }else{
+        echo("<br>");
         echo("error");
     }
 }
