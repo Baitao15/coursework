@@ -12,6 +12,8 @@ if (!isset($_SESSION['userid'])){
 
 // getting admin name
 $findid = ($_SESSION['userid']);
+echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");
+echo($findid);
 $stmt = $conn->prepare("SELECT forename FROM admin WHERE userid = $findid");
 $stmt->bindparam(':forename', $_POST['forename']);
 $stmt->execute();
