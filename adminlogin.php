@@ -28,6 +28,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         header('Location: adminhomepage.php');
     
     }else{
-        header('Location: adminloginpage.php')
+        header('Location: adminloginpage.php');
     }
 }
