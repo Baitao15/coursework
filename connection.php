@@ -11,11 +11,11 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // if the database is accessed successfully, a success message is returned
-    echo "Connected successfully"; 
+    // echo "Connected successfully"; 
     }
 catch(PDOException $e)
     {
     // if the connection fails, an error message is returned
-    echo "Connection failed: " . $e->getMessage();
+    // echo "Connection failed: " . $e->getMessage();
     }
 ?>
