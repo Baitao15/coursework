@@ -1,7 +1,7 @@
 <html>
 
 <?php
-
+// checking authorised user
 session_start(); 
 if (!isset($_SESSION['userid']))
 {   
