@@ -15,28 +15,19 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     $hashed= $row['password'];
     $attempt= $_POST['password'];
-    $bh = password_hash($attempt, PASSWORD_DEFAULT);
-    echo("<br>");
-    echo($hashed);
-    echo("<br>");
-    echo($bh);
 
     if(password_verify($attempt,$hashed)){
-        echo("<br>");
-        echo("working");
-        // $_SESSION['userid']=$row["userid"];
-        // if (!isset($_SESSION['backURL'])){
-        //     $backURL= "/";
-        // }else{
-        //     $backURL=$_SESSION['backURL'];
-        // }
-        // unset($_SESSION['backURL']);
-        // header('Location: ' . $backURL);
-        // header('Location: adminhomepage.php');
+        $_SESSION['userid']=$row["userid"];
+        if (!isset($_SESSION['backURL'])){
+            $backURL= "/";
+        }else{
+            $backURL=$_SESSION['backURL'];
+        }
+        unset($_SESSION['backURL']);
+        header('Location: ' . $backURL);
+        header('Location: adminhomepage.php');
     
     }else{
-        echo("<br>");
-        echo("error");
-        // header('Location: adminloginpage.php')
+        header('Location: adminloginpage.php')
     }
 }
