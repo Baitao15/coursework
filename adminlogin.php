@@ -10,7 +10,6 @@ $stmt = $conn->prepare("SELECT * FROM admin WHERE userid = :userid;");
 $stmt->bindparam(':userid', $_POST['userid']);
 $stmt->execute();
 
-
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     $hashed= $row['password'];
