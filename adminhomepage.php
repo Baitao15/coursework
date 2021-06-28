@@ -18,7 +18,7 @@ if (!isset($_SESSION['userid']))
     <!-- navigation bar -->
     <p id=navbar>
         <a href=adminhomepage.php>Home</a>
-        <a href=newadminpage.php>Add Admin Account</a>
+        <a href=newadminpage.php>Add Account</a>
     </p>
 </body>
 
