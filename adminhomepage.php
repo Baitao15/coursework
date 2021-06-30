@@ -14,7 +14,6 @@ if (!isset($_SESSION['userid'])){
 $findid = ($_SESSION['userid']);
 $stmt = $conn->prepare("SELECT forename FROM admin WHERE userid = $findid");
 $stmt->execute();
-
 ?>
 
 <head>
@@ -29,15 +28,15 @@ $stmt->execute();
         <a href=manageofferpage.php>Offers</a>
         <a href=manageitempage.php>Items</a>
         <a href=manageaccountpage.php>Accounts</a>
+        <a href=insightpage.php>Insights</a>
         <a href=adminhomepage.php>Home</a>
     </p>
-
     <br><br><br>
     <!-- displaying welcome message -->
     <h3>
     <?php
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-    echo("Hi ".$row["forename"]);
+    echo("Hi, ".$row["forename"]);
     }
     ?>
     </h3>
