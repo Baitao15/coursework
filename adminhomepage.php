@@ -10,16 +10,11 @@ if (!isset($_SESSION['userid'])){
     header("Location:adminloginpage.php");
 }
 
-// getting admin name
+// getting admin forename
 $findid = ($_SESSION['userid']);
-echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");
-echo($findid);
 $stmt = $conn->prepare("SELECT forename FROM admin WHERE userid = $findid");
-$stmt->bindparam(':forename', $_POST['forename']);
 $stmt->execute();
 
-echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");echo("<br>");
-echo($_POST['forename']);
 ?>
 
 <head>
@@ -37,7 +32,15 @@ echo($_POST['forename']);
         <a href=adminhomepage.php>Home</a>
     </p>
 
-    <p>Hi </p>
+    <br><br><br>
+    <!-- displaying welcome message -->
+    <h3>
+    <?php
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    echo("Hi ".$row["forename"]);
+    }
+    ?>
+    </h3>
 
 </body>
 
