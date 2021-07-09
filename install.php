@@ -48,6 +48,14 @@ itemprice DECIMAL(4) NOT NULL,
 offerid INT(2))");
 $stmt->execute();
 
+$stmt = $conn->prepare("DROP TABLE IF EXISTS basket;
+CREATE TABLE basket
+(customerid INT(6) PRIMARY KEY,
+itemid INT(4) PRIMARY KEY,
+qty INT(2) NOT NULL,
+CONSTRAINT basket_key PRIMARY KEY (customerid, itemid))");
+$stmt->execute();
+
 $stmt = $conn->prepare("DROP TABLE IF EXISTS offer;
 CREATE TABLE offer
 (offerid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

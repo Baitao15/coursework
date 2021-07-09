@@ -29,7 +29,7 @@ $stmt->execute();
         <a href=manageitempage.php>Items</a>
         <a href=manageaccountpage.php>Accounts</a>
         <a href=insightpage.php>Insights</a>
-        <a href=adminhomepage.php>Home</a>
+        <a href=adminhomepage.php class=active>Home</a>
     </p>
     <br><br><br>
     <!-- displaying welcome message -->

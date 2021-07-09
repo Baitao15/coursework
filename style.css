@@ -6,6 +6,7 @@
     width: 100%;
     overflow: hidden;
     height:44px;
+    float: left;
 }
 
 #navbar a{
@@ -21,6 +22,10 @@
 #navbar a:hover{background-color: #ff2222;
     color: #ffd900;
     text-decoration-line: underline;
+}
+
+.active{
+    background-color: #bb0e0e;
 }
 
 .form{
