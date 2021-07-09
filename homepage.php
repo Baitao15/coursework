@@ -8,6 +8,7 @@
     }
     else{
         $loggedin=false;
+        echo("<br>"."<br>"."<br>"."<br>"."<br>"."false");
     }
 ?>
 
@@ -21,12 +22,11 @@
     <!-- navigation bar -->
     <p id=navbar>
     <?php 
-        if ($loggedin=true)
-        {   
+        if ($loggedin=true){   
             echo("<a href=logout.php>Logout</a>");
         }
-        else{
-            echo("<a href=logout.php>Logout</a>
+        elseif ($loggedin=false){
+            echo("<a href=login.php>Login</a>
             <a href=registerpage.php>Register</a>");
     }
     ?>
