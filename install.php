@@ -27,7 +27,7 @@ $address = "10 Downing Street";
 //encrypting card number using password hash
 $cardno = password_hash("1111222233334444", PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO admin(email, password, forename, surname, phoneno, postcode, address, cardno)
+$stmt = $conn->prepare("INSERT INTO customer(email, password, forename, surname, phoneno, postcode, address, cardno)
 VALUES(:email, :password, :forename, :surname, :phoneno, :postcode, :address, :cardno)");
 
 $stmt->bindParam(':email', $email);
@@ -75,8 +75,8 @@ $stmt->execute();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS basket;
 CREATE TABLE basket
-(customerid INT(6) PRIMARY KEY,
-itemid INT(4) PRIMARY KEY,
+(customerid INT(6),
+itemid INT(4),
 qty INT(2) NOT NULL,
 CONSTRAINT basket_key PRIMARY KEY (customerid, itemid))");
 $stmt->execute();
