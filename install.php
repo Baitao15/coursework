@@ -16,6 +16,24 @@ address VARCHAR(30),
 cardno INT(16))");
 $stmt->execute();
 
+//inserting defualt data into the customer table
+$email = "example@example.com";
+$hashed_password = password_hash("12345", PASSWORD_DEFAULT);
+$forename = "john";
+$surname = "doe";
+$phoneno = "01832277122";
+$postcode = "NN188LA";
+
+
+$stmt = $conn->prepare("INSERT INTO admin(forename, surname, password)
+VALUES(:forename, :surname ,:password)");
+
+$stmt->bindParam(':forename', $forename);
+$stmt->bindParam(':surname', $surname);
+$stmt->bindParam(':password', $hashed_password);
+$stmt->execute();
+
+
 $stmt = $conn->prepare("DROP TABLE IF EXISTS admin;
 CREATE TABLE admin
 (userid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
