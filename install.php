@@ -13,7 +13,7 @@ surname VARCHAR(20),
 phoneno INT(11),
 postcode VARCHAR(7),
 address VARCHAR(30),
-cardno INT(16))");
+cardno INT(255))");
 $stmt->execute();
 
 //inserting defualt data into the customer table
@@ -23,14 +23,21 @@ $forename = "john";
 $surname = "doe";
 $phoneno = "01832277122";
 $postcode = "NN188LA";
+$address = "10 Downing Street";
+//encrypting card number using password hash
+$cardno = password_hash("1111222233334444", PASSWORD_DEFAULT);
 
+$stmt = $conn->prepare("INSERT INTO admin(email, password, forename, surname, phoneno, postcode, address, cardno)
+VALUES(:email, :password, :forename, :surname, :phoneno, :postcode, :address, :cardno)");
 
-$stmt = $conn->prepare("INSERT INTO admin(forename, surname, password)
-VALUES(:forename, :surname ,:password)");
-
+$stmt->bindParam(':email', $email);
+$stmt->bindParam(':password', $hashed_password);
 $stmt->bindParam(':forename', $forename);
 $stmt->bindParam(':surname', $surname);
-$stmt->bindParam(':password', $hashed_password);
+$stmt->bindParam(':phoneno', $phoneno);
+$stmt->bindParam(':postcode', $postcode);
+$stmt->bindParam(':address', $address);
+$stmt->bindParam(':cardno', $cardno);
 $stmt->execute();
 
 
