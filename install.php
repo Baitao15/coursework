@@ -13,10 +13,10 @@ surname VARCHAR(20),
 phoneno INT(11),
 postcode VARCHAR(7),
 address VARCHAR(30),
-cardno INT(255))");
+cardno VARCHAR(255))");
 $stmt->execute();
 
-//inserting defualt data into the customer table
+// inserting defualt data into the customer table
 $email = "example@example.com";
 $hashed_password = password_hash("12345", PASSWORD_DEFAULT);
 $forename = "john";
@@ -24,7 +24,7 @@ $surname = "doe";
 $phoneno = "01832277122";
 $postcode = "NN188LA";
 $address = "10 Downing Street";
-//encrypting card number using password hash
+// encrypting card number using password hash
 $cardno = password_hash("1111222233334444", PASSWORD_DEFAULT);
 
 $stmt = $conn->prepare("INSERT INTO customer(email, password, forename, surname, phoneno, postcode, address, cardno)
@@ -40,7 +40,7 @@ $stmt->bindParam(':address', $address);
 $stmt->bindParam(':cardno', $cardno);
 $stmt->execute();
 
-
+// creating admin table
 $stmt = $conn->prepare("DROP TABLE IF EXISTS admin;
 CREATE TABLE admin
 (userid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -49,7 +49,7 @@ surname VARCHAR(20) NOT NULL,
 password VARCHAR(255) NOT NULL)");
 $stmt->execute();
 
-//inserting defualt data into the admin table
+// inserting defualt data into the admin table
 $forename = "default";
 $surname = "admin";
 $hashed_password = password_hash("12345", PASSWORD_DEFAULT);

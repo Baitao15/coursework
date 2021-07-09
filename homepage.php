@@ -2,7 +2,7 @@
 
 <?php
     session_start(); 
-    if (isset($_SESSION['name']))
+    if (isset($_SESSION['email']))
     {   
         $loggedin=true;
     }
@@ -15,12 +15,26 @@
     </head>
 <body>
     <!-- navigation bar -->
-    <p id=navbar>
+    <?php 
+    if ($loggedin=true)
+    {   
+        echo("<p id=navbar>
+        <a href=logout.php>Logout</a>
+        <a href=registerpage.php>Register</a>
+        <a href=groceries.php>Groceries</a>
+        <a href=homepage.php>Home</a>
+    </p>");
+    }
+    else{
+        echo("FALSE");
+    }
+?>
+    <!-- <p id=navbar>
         <a href=loginpage.php>Login</a>
         <a href=registerpage.php>Register</a>
         <a href=groceries.php>Groceries</a>
         <a href=homepage.php>Home</a>
-    </p>
+    </p> -->
 
 </body>
 </html>
