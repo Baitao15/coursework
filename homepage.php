@@ -6,6 +6,9 @@
     {   
         $loggedin=true;
     }
+    else{
+        $loggedin=false;
+    }
 ?>
 
 <html>
@@ -30,13 +33,6 @@
         <a href=groceries.php>Groceries</a>
         <a href=homepage.php>Home</a>
     </p>
-
-    <!-- <p id=navbar>
-        <a href=loginpage.php>Login</a>
-        <a href=registerpage.php>Register</a>
-        <a href=groceries.php>Groceries</a>
-        <a href=homepage.php>Home</a>
-    </p> -->
 
 </body>
 </html>
