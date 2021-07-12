@@ -5,5 +5,6 @@ if(isset($_SESSION['email']))
 {
     unset($_SESSION['email']);
 }
+
 header("Location: homepage.php");
 ?>
