@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-echo($_SESSION['backURL']);
 
 include_once("connection.php");
 
@@ -19,6 +18,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     if(password_verify($attempt,$hashed)){
         $_SESSION['email']=$row["email"];
+        // if no backURL is set, then default redirect to homepage
         if (!isset($_SESSION['backURL'])){
             $backURL= "homepage.php";
         }else{
