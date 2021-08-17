@@ -25,6 +25,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         }
         unset($_SESSION['backURL']);
         header('Location: ' . $backURL);
+
+        echo($_SESSION['backURL']);
+        echo($backURL);
     
     }else{
         header('Location: loginpage.php');
