@@ -17,27 +17,29 @@
 </head>
 
 <body>
-    Login
-    </div>
-    <br>
-    <form action="login.php" method="POST">
-        Email
-        <br>
-        <input type="text" name="email" required>
-        <br>
-        <br>
-        Password
-        <br>
-        <input type="password" name="password" required>
-        <br>
-        <br>
-        <input type="submit" value="Login">
-    </form>
     <?php
-        if ($loggedin==true){
+      if ($loggedin==false)
+      echo('
+        Login
+        </div>
+        <br>
+        <form action="login.php" method="POST">
+            Email
+            <br>
+            <input type="text" name="email" required>
+            <br><br>
+            Password
+            <br>
+            <input type="password" name="password" required>
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+      ');
+
+      else{
           echo("<p>
-                You are already logged in.
-                Return to the <a href=homepage.php>Home Page</a>
+                You are already logged in. <br>
+                Return to the <a href=homepage.php>Home Page</a> <br>
                 <a href=logout.php>Logout</a>
                 </p>");
         }
