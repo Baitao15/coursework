@@ -10,12 +10,6 @@
         $loggedin=true;
     }
 
-    if ($loggedin=false){
-        echo("<br><br><br><br><br><br><p>false</p>");
-    }
-    if ($loggedin=true){
-        echo("<br><br><br><br><br><br><p>true</p>");
-    }
 ?>
 
 <html>
@@ -28,11 +22,11 @@
     <!-- navigation bar -->
     <p id=navbar>
     <?php 
-        if ($loggedin=false){
-            echo("<a href=login.php>Login</a><a href=registerpage.php>Register</a>");
+        if ($loggedin==false){
+            echo("<a href=loginpage.php>Login</a><a href=registerpage.php>Register</a>");
         }
-        if ($loggedin=true){   
-            echo("<a href=logout.php>Logout</a>");
+        if ($loggedin==true){   
+            echo("<a href=logout.php>Logout</a><a href=accountpage.php>Account</a>");
         }
 
     ?>
