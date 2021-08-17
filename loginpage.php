@@ -1,5 +1,17 @@
 <html>
 
+<?php
+    session_start();
+
+    $loggedin=false;
+
+    if (isset($_SESSION['email']))
+    {   
+        $loggedin=true;
+    }
+
+?>
+
 <head>
   <title>Login - Longda</title>
 </head>
@@ -21,9 +33,16 @@
         <br>
         <input type="submit" value="Login">
     </form>
+    <?php
+        if ($loggedin==true){
+          echo("<p>
+                You are already logged in.
+                Return to the <a href=homepage.php>Home Page</a>
+                <a href=logout.php>Logout</a>
+                </p>");
+        }
+    ?>
     </div>
 </body>
 
 </html>
-
-
