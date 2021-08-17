@@ -18,16 +18,15 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     if(password_verify($attempt,$hashed)){
         $_SESSION['email']=$row["email"];
-        if (!isset($_SESSION['backURL'])){
-            $backURL= "/";
-        }else{
-            $backURL=$_SESSION['backURL'];
-        }
+        // if (!isset($_SESSION['backURL'])){
+        //     $backURL= "homepage.php";
+        // }else{
+        //     $backURL=$_SESSION['backURL'];
+        // }
         unset($_SESSION['backURL']);
+        $backURL=$_SESSION['backURL'];
         header('Location: ' . $backURL);
 
-        echo($_SESSION['backURL']);
-        echo($backURL);
     
     }else{
         header('Location: loginpage.php');

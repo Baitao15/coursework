@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 
 <?php
-    session_start(); 
-    
+    session_start();
+
+    $_SESSION['backURL']='homepage.php';
+
     $loggedin=false;
 
     if (isset($_SESSION['email']))
     {   
         $loggedin=true;
     }
-
 ?>
 
 <html>
@@ -33,6 +34,5 @@
         <a href=groceries.php>Groceries</a>
         <a href=homepage.php>Home</a>
     </p>
-
 </body>
 </html>
