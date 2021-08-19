@@ -4,7 +4,6 @@
     session_start();
 
     $_SESSION['backURL']='homepage.php';
-
 ?>
 
 <html>
@@ -12,7 +11,7 @@
         <title>Longda - Home</title>
         <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
-    
+
 <body>
     <!-- navigation bar -->
     <p id=navbar>
