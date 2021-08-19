@@ -16,11 +16,12 @@
 <html>
     <head>
         <title>Longda - Home</title>
-        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
 <body>
    
     <!-- navigation bar -->
+    
     <p id=navbar>
     <?php 
         if ($loggedin==false){
