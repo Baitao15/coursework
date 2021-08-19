@@ -12,8 +12,8 @@
         <title>Longda - Home</title>
         <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
+    
 <body>
-   
     <!-- navigation bar -->
     <p id=navbar>
     <?php 
@@ -23,7 +23,6 @@
         if (isset($_SESSION['email'])){  
             echo("<a href=logout.php>Logout</a> <a href=accountpage.php>Account</a>");
         }
-
     ?>
         <a href=groceries.php>Groceries</a>
         <a href=homepage.php>Home</a>
