@@ -3,8 +3,6 @@
 <?php
     session_start();
 
-    $_SESSION['backURL']='homepage.php';
-
     $loggedin=false;
 
     if (isset($_SESSION['email']))
