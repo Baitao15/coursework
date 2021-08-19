@@ -17,14 +17,6 @@
     <!-- navigation bar -->
     <p id=navbar>
     <?php 
-
-
-
-        $loggedin=true
-
-
-
-
         if (!isset($_SESSION['email'])){
             echo("<a href=loginpage.php>Login</a> <a href=registerpage.php>Register</a>");
         }
