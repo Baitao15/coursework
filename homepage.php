@@ -3,28 +3,33 @@
 <?php
     session_start();
 
-    $loggedin=false;
+    $_SESSION['backURL']='homepage.php';
 
-    if (isset($_SESSION['email']))
-    {   
-        $loggedin=true;
-    }
 ?>
 
 <html>
     <head>
         <title>Longda - Home</title>
+        <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
 <body>
    
-    <!-- navigation bar -->  
+    <!-- navigation bar -->
     <p id=navbar>
     <?php 
-        if ($loggedin==false){
-            echo("<a href=loginpage.php>Login</a><a href=registerpage.php>Register</a>");
+
+
+
+        $loggedin=true
+
+
+
+
+        if (!isset($_SESSION['email'])){
+            echo("<a href=loginpage.php>Login</a> <a href=registerpage.php>Register</a>");
         }
-        if ($loggedin==true){   
-            echo("<a href=logout.php>Logout</a><a href=accountpage.php>Account</a>");
+        if (isset($_SESSION['email'])){  
+            echo("<a href=logout.php>Logout</a> <a href=accountpage.php>Account</a>");
         }
 
     ?>
