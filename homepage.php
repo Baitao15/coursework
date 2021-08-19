@@ -20,8 +20,7 @@
     </head>
 <body>
    
-    <!-- navigation bar -->
-    
+    <!-- navigation bar -->  
     <p id=navbar>
     <?php 
         if ($loggedin==false){
