@@ -9,7 +9,6 @@
 <html>
     <head>
         <title>Longda - Home</title>
-        <link rel="stylesheet" href="style.css">
     </head>
 
 <body>
