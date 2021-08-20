@@ -9,10 +9,11 @@
 <html>
     <head>
         <title>Longda - Home</title>
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="style.css">
     </head>
 
 <body>
+
     <!-- navigation bar -->
     <p id=navbar>
     <?php 
@@ -26,5 +27,12 @@
         <a href=groceries.php>Groceries</a>
         <a href=homepage.php>Home</a>
     </p>
+
+    <!-- welcome message -->
+    <p id=welcome>
+        <h3>Welcome to the Longda Online Shop.</h3>
+        <a href=loginpage.php>Login</a> for the best experience. Not a customer yet? <a href=registerpage.php>Register</a>
+    </p>
+
 </body>
 </html>
