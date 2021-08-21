@@ -4,8 +4,9 @@
     background-color: #c90000;
     width: 100%;
     overflow: hidden;
-    height:44px;
+    height: 44px;
     float: left;
+    margin: 0;
 }
 
 #navbar a{
