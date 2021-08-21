@@ -21,6 +21,13 @@
     text-decoration-line: underline;
 }
 
+body{margin: 0;
+}
+
+p{
+    margin:0;
+}
+
 .active{
     background-color: #bb0e0e;
 }

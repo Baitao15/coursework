@@ -28,11 +28,11 @@
         <a href=homepage.php>Home</a>
     </p>
 
-    <!-- welcome message -->
+    <!-- welcome message
     <p id=welcome>
         <h3>Welcome to the Longda Online Shop.</h3>
         <a href=loginpage.php>Login</a> for the best experience. Not a customer yet? <a href=registerpage.php>Register</a>
-    </p>
+    </p> -->
 
 </body>
 </html>
