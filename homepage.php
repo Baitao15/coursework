@@ -15,7 +15,7 @@
 <body>
 
     <!-- navigation bar -->
-    <p id=navbar>
+    <div id=navbar>
     <?php 
         if (!isset($_SESSION['email'])){
             echo("<a href=loginpage.php>Login</a> <a href=registerpage.php>Register</a>");
@@ -26,7 +26,7 @@
     ?>
         <a href=groceries.php>Groceries</a>
         <a href=homepage.php>Home</a>
-    </p>
+    </div>
 
     <!-- welcome message
     <p id=welcome>
