@@ -1,5 +1,4 @@
 #navbar{
-    scroll-behavior: smooth;
     position: fixed;
     top:0;
     background-color: #c90000;
@@ -10,7 +9,6 @@
 }
 
 #navbar a{
-    scroll-behavior: smooth;
     float: right;
     color: white;
     text-align: center;
