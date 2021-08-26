@@ -1,6 +1,6 @@
 #navbar{
     position: fixed;
-    top: 0;
+    top: 100;
     background-color: #c90000;
     width: 100%;
     overflow: hidden;
@@ -19,13 +19,6 @@
 #navbar a:hover{background-color: #ff2222;
     color: #ffd900;
     text-decoration-line: underline;
-}
-
-body{margin: 0;
-}
-
-p{
-    margin: 0;
 }
 
 .active{
