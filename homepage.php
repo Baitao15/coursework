@@ -16,16 +16,16 @@
 
     <!-- navigation bar -->
     <div id=navbar>
-    <?php 
+        <a href=homepage.php>Home</a>
+        <a href=groceries.php>Groceries</a>
+        <?php 
         if (!isset($_SESSION['email'])){
-            echo("<a href=loginpage.php>Login</a> <a href=registerpage.php>Register</a>");
+            echo("<a href=registerpage.php>Register</a> <a href=loginpage.php>Login</a>");
         }
         if (isset($_SESSION['email'])){  
-            echo("<a href=logout.php>Logout</a> <a href=accountpage.php>Account</a>");
+            echo("<a href=accountpage.php>Account</a> <a href=logout.php>Logout</a>");
         }
     ?>
-        <a href=groceries.php>Groceries</a>
-        <a href=homepage.php>Home</a>
     </div>
 
     <!-- welcome message
