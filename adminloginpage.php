@@ -13,24 +13,24 @@
   <div id=navbar>
     <a href=adminhomepage.php>Longda</a>
   </div>
+  <br><br><br><br><br>
+  <div class="col-sm-4"></div>
   <!--  login form  -->
+  <div class="text-center">
+  <div class="col-sm-4">
     Staff Login
-    </div>
     <br>
+    <div class=form>
     <form action="adminlogin.php" method="POST">
         StaffID
         <br>
-        <input type="text" name="userid" required>
-        <br>
-        <br>
-        Password
-        <br>
-        <input type="password" name="password" required>
-        <br>
-        <br>
+        <input type="text" name="userid" placeholder="userid" required><br><br>
+        <input type="password" name="password" placeholder="password" required><br><br>
         <input type="submit" value="Login">
     </form>
     </div>
+  </div>
+  </div>
 </body>
 
 </html>
