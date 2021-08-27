@@ -36,9 +36,7 @@
         </form>
     </div>
     Already have an account?
-    </div class=link>
     <a href=loginpage.php>Login</a>
-    </div>
 </div>
 </div>
 </body>
