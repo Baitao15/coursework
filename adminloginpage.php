@@ -10,7 +10,7 @@
 
 <body>
   <!-- navigation bar -->
-  <div id=navbar>
+  <div id=navbar class="text-center">
     <a href=adminhomepage.php>Longda</a>
   </div>
   <br><br><br><br><br>
@@ -18,7 +18,7 @@
   <!--  login form  -->
   <div class="text-center">
   <div class="col-sm-4">
-    Staff Login
+    <h3>Staff Login</h3>
     <br>
     <div class=form>
     <form action="adminlogin.php" method="POST">
