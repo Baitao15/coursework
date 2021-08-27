@@ -21,8 +21,10 @@
 <br>
 <br>
 <br>
+<div class="col-sm-4"></div>
 <!-- basic text for the page, including a form for users to create an account -->
 <div class="text-center">
+<div class="col-sm-4">
     <h3>Register</h3>
     <div class=form>
         <form action="register.php" method="POST" class="form-inline">
@@ -36,6 +38,7 @@
     </div>
     Already have an account?
     <a href=loginpage.php>Login</a>
+</div>
 </div>
 </body>
 
