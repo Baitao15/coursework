@@ -24,12 +24,12 @@ $stmt->execute();
 <body>
     <!-- navigation bar -->
     <p id=navbar>
-        <a href=adminlogout.php>Logout</a>
-        <a href=manageofferpage.php>Offers</a>
-        <a href=manageitempage.php>Items</a>
-        <a href=manageaccountpage.php>Accounts</a>
+        <a href=adminhomepage.php>Home</a>
         <a href=insightpage.php>Insights</a>
-        <a href=adminhomepage.php class=active>Home</a>
+        <a href=manageaccountpage.php>Accounts</a>
+        <a href=manageitempage.php>Items</a>
+        <a href=manageofferpage.php>Offers</a>
+        <a href=adminlogout.php>Logout</a>
     </p>
     <br><br><br>
     <!-- displaying welcome message -->
