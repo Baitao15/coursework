@@ -4,7 +4,7 @@
     background-color: #c90000;
     width: 100%;
     overflow: hidden;
-    height: 36px;
+    height: 48px;
     float: left;
     padding-top: 16px;
     padding-bottom: 16px;
@@ -19,7 +19,7 @@
     padding-bottom: 16px;
     align-self: start;
     text-decoration: none;
-    font: 400 18px Lato, sans-serif;
+    font: 400 16px Lato, sans-serif;
 }
 
 #navbar a:hover{background-color: #ff2222;
