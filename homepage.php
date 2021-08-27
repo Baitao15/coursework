@@ -32,7 +32,7 @@
             }
         ?>
     </div>
-
+    <br>
     <!-- welcome message -->
     <div class="container text-center">
         <h3>Welcome to the Longda Online Shop.</h3>
