@@ -22,19 +22,21 @@
 <br>
 <br>
 <!-- basic text for the page, including a form for users to create an account -->
-<div class=form>
-    Register
-    <form action="register.php" method="POST" class="form-inline">
-    <input type="text" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
-    <br>
-    <div id=registerbutton>
-    <input type="submit" value="Register">
+<div class="container text-center">
+    <div class=form>
+        Register
+        <form action="register.php" method="POST" class="form-inline">
+            <input type="text" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <br>
+            <div id=registerbutton>
+                <input type="submit" value="Register">
+            </div>
+            <br>
+        </form>
     </div>
-    <br>
     Already have an account?
     <a href=loginpage.php>Login</a>
-    </form>
 </div>
 </body>
 
