@@ -36,8 +36,12 @@
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 16px;
-    border: 2px solid grey;
+    border: 1px solid grey;
     border-radius: 8px;
+}
+
+.btn{
+    color: gold;
 }
 
 body{
