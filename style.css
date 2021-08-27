@@ -44,8 +44,8 @@
     background-color: gold;
 }
 
-a:href{
-    color: gold;
+.link{
+    color: rgb(255, 0, 0);
 }
 
 body{
