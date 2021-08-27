@@ -22,10 +22,9 @@
     <br>
     <div class=form>
     <form action="adminlogin.php" method="POST">
-        StaffID
         <br>
-        <input type="text" name="userid" placeholder="userid" required><br><br>
-        <input type="password" name="password" placeholder="password" required><br><br>
+        <input type="text" name="userid" placeholder="UserID" required><br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
         <input type="submit" value="Login">
     </form>
     </div>
