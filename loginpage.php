@@ -40,6 +40,8 @@
             <input type="submit" value="Login" class="btn btn-lg">
         </form>
       </div>
+    Don't have an account?
+    <a href=registerpage.php>Sign Up</a>
     </div>
     </div>
 </body>
