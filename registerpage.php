@@ -27,6 +27,7 @@
 <div class="col-sm-4">
     <h3>Register</h3>
     <div class=form>
+        <b>Registering is quick and easy</b><br><br>
         <form action="register.php" method="POST" class="form-inline">
             <input type="text" name="email" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
