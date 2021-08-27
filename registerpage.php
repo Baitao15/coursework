@@ -31,7 +31,7 @@
         <form action="register.php" method="POST" class="form-inline">
             <input type="text" name="email" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
-            <input type="submit" value="Register" class="btn btn-default btn-lg">
+            <input type="submit" value="Register" class="btn btn-sm">
             <br>
         </form>
     </div>
