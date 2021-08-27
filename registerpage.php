@@ -22,7 +22,7 @@
 <br>
 <br>
 <!-- basic text for the page, including a form for users to create an account -->
-<p class=form>
+<div class=form>
     Register
     <form action="register.php" method="POST" class="form-inline">
     <input type="text" name="email" placeholder="Email" required><br>
@@ -35,7 +35,7 @@
     Already have an account?
     <a href=loginpage.php>Login</a>
     </form>
-</p>
+</div>
 </body>
 
 </html>
