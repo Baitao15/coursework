@@ -25,27 +25,22 @@
     <p id=navbar>
         <a href=homepage.php>Home</a>
     </p>
-
-    Login
+    <br><br><br><br><br>
+    <div class="col-sm-4"></div>
+    <!-- basic text for the page, including a form for users to create an account -->
+    <div class="text-center">
+    <div class="col-sm-4">
+      <h3>Login</h3>
+      <div class=form>
+        <form action="login.php" method="POST">
+            <br>
+            <input type="text" name="email" placeholder="Email" required><br><br>
+            <input type="password" name="password" placeholder="Password" required><br><br>
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+      </div>
     </div>
-    <br>
-    <form action="login.php" method="POST">
-        Email
-        <br>
-        <input type="text" name="email" required>
-        <br><br>
-        Password
-        <br>
-        <input type="password" name="password" required>
-        <br><br>
-        <input type="submit" value="Login">
-    </form>
-        
-        <!-- <p>
-          You are already logged in. <br>
-          Return to the <a href=homepage.php>Home Page</a> <br>
-          <a href=logout.php>Logout</a>
-        </p> -->
     </div>
 </body>
 
