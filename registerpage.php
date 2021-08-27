@@ -1,8 +1,13 @@
 <html>
 
 <head>
-    <title>Register</Title>
+    <title>Register</title>
     <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -11,11 +16,15 @@
 <p id=navbar>
     <a href=homepage.php>Home</a>
 </p>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <!-- basic text for the page, including a form for users to create an account -->
 <p class=form>
     Register
-    <form action="register.php" method="POST">
+    <form action="register.php" method="POST" class="form-inline">
     Email <input type="text" name="email" required><br>
     Password <input type="password" name="password" required><br>
     <br>
