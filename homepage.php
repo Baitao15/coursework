@@ -10,11 +10,6 @@
     <head>
         <title>Longda - Home</title>
         <link rel="stylesheet" href="style.css">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
 
 <body>
@@ -33,11 +28,11 @@
         ?>
     </div>
 
-    <!-- welcome message
-    <p id=welcome>
+    <!-- welcome message -->
+    <div id=welcome>
         <h3>Welcome to the Longda Online Shop.</h3>
         <a href=loginpage.php>Login</a> for the best experience. Not a customer yet? <a href=registerpage.php>Register</a>
-    </p> -->
+    </div>
 
 </body>
 </html>
