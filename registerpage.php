@@ -25,8 +25,8 @@
 <p class=form>
     Register
     <form action="register.php" method="POST" class="form-inline">
-    Email <input type="text" name="email" placeholder="Email" required><br>
-    Password <input type="password" name="password" placeholder="Email" required><br>
+    <input type="text" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
     <br>
     <div id=registerbutton>
     <input type="submit" value="Register">
