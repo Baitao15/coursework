@@ -4,14 +4,18 @@
     background-color: #c90000;
     width: 100%;
     overflow: hidden;
-    height: 44px;
+    height: 36px;
     float: left;
+    padding-top: 16px;
 }
 
 #navbar a{
     color: white;
     text-align: center;
-    padding:14px 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
     text-decoration: none;
     font: 400 18px Lato, sans-serif;
 }
