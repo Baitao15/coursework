@@ -31,6 +31,11 @@
     padding: 80px 120px
 }
 
+.form{
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
 body{
     margin: 0px;
 }
