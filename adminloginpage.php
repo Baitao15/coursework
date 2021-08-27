@@ -25,7 +25,7 @@
         <br>
         <input type="text" name="userid" placeholder="UserID" required><br><br>
         <input type="password" name="password" placeholder="Password" required><br><br>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" class="btn btn-lg">
     </form>
     </div>
   </div>
