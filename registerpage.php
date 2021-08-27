@@ -16,11 +16,7 @@
 <p id=navbar>
     <a href=homepage.php>Home</a>
 </p>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br>
 <div class="col-sm-4"></div>
 <!-- basic text for the page, including a form for users to create an account -->
 <div class="text-center">
