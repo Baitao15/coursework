@@ -32,12 +32,11 @@
     <div class="col-sm-4">
       <h3>Login</h3>
       <div class=form>
-        <b>Registering is quick and easy</b><br><br>
+        <b>Welcome back</b><br>
         <form action="login.php" method="POST">
             <br>
             <input type="text" name="email" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
-            <br><br>
             <input type="submit" value="Login" class="btn btn-lg">
         </form>
       </div>
