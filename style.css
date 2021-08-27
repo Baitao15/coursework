@@ -41,12 +41,8 @@
 }
 
 .btn{
-    font: bold;
     color: white;
     background-color: rgb(255, 183, 0);
-    padding: 16px 32px;
-    border: 100px solid black;
-    border-radius: 16px;
 }
 
 a:link{
