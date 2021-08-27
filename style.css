@@ -29,6 +29,10 @@ body{
     margin: 0px;
 }
 
+h3{
+    margin: 0px;
+}
+
 .active{
     background-color: #bb0e0e;
 }
