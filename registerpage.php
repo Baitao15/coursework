@@ -24,7 +24,7 @@
 <!-- basic text for the page, including a form for users to create an account -->
 <div class="container text-center">
     <div class=form>
-        Register
+        <h4>Register</h4>
         <form action="register.php" method="POST" class="form-inline">
             <input type="text" name="email" placeholder="Email" required><br>
             <input type="password" name="password" placeholder="Password" required><br>
