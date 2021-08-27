@@ -25,6 +25,7 @@
 <div class="container text-center">
     <h3>Register</h3>
     <div class=form>
+        
         <form action="register.php" method="POST" class="form-inline">
             <input type="text" name="email" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
