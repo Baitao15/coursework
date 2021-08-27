@@ -32,6 +32,7 @@
     <div class="col-sm-4">
       <h3>Login</h3>
       <div class=form>
+        <b>Registering is quick and easy</b><br><br>
         <form action="login.php" method="POST">
             <br>
             <input type="text" name="email" placeholder="Email" required><br><br>
