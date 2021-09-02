@@ -18,7 +18,6 @@ $stmt->execute();
 
 <head>
     <title>Longda Admin - Home</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
