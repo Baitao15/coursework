@@ -30,7 +30,6 @@ $stmt->execute();
         <a href=manageofferpage.php>Offers</a>
         <a href=adminlogout.php>Logout</a>
     </p>
-    <br><br><br><br><br><br>
     <!-- displaying welcome message -->
     <h3>
     <?php
