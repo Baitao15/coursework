@@ -19,6 +19,9 @@ $stmt->execute();
 <head>
     <title>Longda Admin - Home</title>
     <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -32,13 +35,15 @@ $stmt->execute();
         <a href=adminlogout.php>Logout</a>
     </p>
     <br><br><br><br><br><br>
-    <!-- displaying welcome message -->
-    <h3>
-    <?php
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-    echo("Hi, ".$row["forename"]);
-    }
-    ?>
-    </h3>
+    <!-- displaying welcome message -->#
+    <div class="jumbotron">
+        <h3>
+            <?php
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            echo("Hi, ".$row["forename"]);
+            }
+            ?>
+        </h3>
+    </div>
 </body>
 </html>
