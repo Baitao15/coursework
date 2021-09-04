@@ -39,6 +39,8 @@ if (!isset($_SESSION['userid'])){
         echo($_SESSION['userid']);
     ?>
     <br><br><b>Password</b><br>
+    *****
+    Change Password
 
 
 </body>
