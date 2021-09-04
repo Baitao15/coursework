@@ -36,18 +36,18 @@ if (!isset($_SESSION['userid'])){
     <?php
         $findid = ($_SESSION['userid']);
         $stmt = $conn->prepare("SELECT forename, surname FROM admin WHERE userid = $findid");
-        $stmt->execute();
     ?>
     <h3>Personal Details</h3>
     <b>Forename</b><br>
     <?php
+        $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             echo($row["forename"]);
-            echo($row["surname"]);
         }
     ?>
     <br><br><b>Surname</b><br>
     <?php
+        $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             echo($row["surname"]);
         }
