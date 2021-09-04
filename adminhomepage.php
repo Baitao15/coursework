@@ -29,7 +29,11 @@ $stmt->execute();
     <p id=navbar>
         <a href=adminhomepage.php>Home</a>
         <a href=insightpage.php>Insights</a>
-        <a href=manageaccountpage.php>Accounts</a>
+        <?php
+            if($findid == "1"){
+                echo("<a href=manageaccountpage.php>Accounts</a>");
+            }
+        ?>
         <a href=manageitempage.php>Items</a>
         <a href=manageofferpage.php>Offers</a>
         <a href=adminlogout.php>Logout</a>
@@ -41,7 +45,6 @@ $stmt->execute();
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     echo("Hi, ".$row["forename"]);
                 }
-                echo($findid);
             ?>
         </h3>
     </div>
