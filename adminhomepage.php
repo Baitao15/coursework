@@ -38,9 +38,10 @@ $stmt->execute();
     <div class="jumbotron">
         <h3>
             <?php
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            echo("Hi, ".$row["forename"]);
-            }
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    echo("Hi, ".$row["forename"]);
+                }
+                echo($findid);
             ?>
         </h3>
     </div>
