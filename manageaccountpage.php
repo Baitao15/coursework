@@ -42,7 +42,7 @@ if (!isset($_SESSION['userid'])){
     <b>Forename</b><br>
     <?php
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            echo("Hi, ".$row["forename"]);
+            echo($row["forename"]);
         }
     ?>
 
