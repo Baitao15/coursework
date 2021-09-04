@@ -9,10 +9,6 @@ if (!isset($_SESSION['userid'])){
     header("Location:adminloginpage.php");
 }
 
-// getting admin forename
-$findid = ($_SESSION['userid']);
-$stmt = $conn->prepare("SELECT forename FROM admin WHERE userid = $findid");
-$stmt->execute();
 ?>
 
 <head>
