@@ -29,9 +29,9 @@ $stmt->execute();
     <p id=navbar>
         <a href=adminhomepage.php>Home</a>
         <a href=insightpage.php>Insights</a>
-        <a href=manageaccountpage.php>Accounts</a>
         <a href=manageitempage.php>Items</a>
         <a href=manageofferpage.php>Offers</a>
+        <a href=manageaccountpage.php>Account</a>
         <a href=adminlogout.php>Logout</a>
     </p>
     <!-- displaying welcome message -->
