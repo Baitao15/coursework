@@ -32,8 +32,22 @@ if (!isset($_SESSION['userid'])){
 
     <br><br>
 
-    <!-- personal account settings -->
-    <h3> Login Details </h3>
+    <!-- account details -->
+    <?php
+        $findid = ($_SESSION['userid']);
+        $stmt = $conn->prepare("SELECT forename FROM admin WHERE userid = $findid");
+        $stmt->execute();
+    ?>
+    <h3>Personal Details</h3>
+    <b>Forename</b><br>
+    <?php
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            echo("Hi, ".$row["forename"]);
+        }
+    ?>
+
+
+    <h3>Login Details</h3>
     <b>UserID</b><br>
     <?php
         echo($_SESSION['userid']);
