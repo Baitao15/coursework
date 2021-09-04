@@ -66,7 +66,7 @@ if (!isset($_SESSION['userid'])){
         <br>
         <input type="password" name="cpass" placeholder="Current Password" required><br><br>
         <input type="password" name="npass" placeholder="New Password" required><br><br>
-        <input type="submit" value="Change" class="btn btn-lg">
+        <input type="submit" value="Change" class="btn btn-sm">
     </form>
 
 
