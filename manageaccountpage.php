@@ -60,7 +60,6 @@ if (!isset($_SESSION['userid'])){
         echo($_SESSION['userid']);
     ?>
     <br><br><b>Password</b><br>
-    *****<br>
     Change Password
     <form action="changeadminpassword.php" method="POST">
         <br>
