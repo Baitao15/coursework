@@ -36,9 +36,9 @@ if (!isset($_SESSION['userid'])){
     <h3> Login Details </h3>
     <b>UserID</b><br>
     <?php
-        echo($_SESSION['userid']."<br>");
+        echo($_SESSION['userid']);
     ?>
-    <b>Password</b><br>
+    <br><br><b>Password</b><br>
 
 
 </body>
