@@ -30,12 +30,17 @@ if (!isset($_SESSION['userid'])){
         <a href=adminlogout.php>Logout</a>
     </p>
 
+    <br><br>
+
     <!-- personal account settings -->
     <h3> Login Details </h3>
-    <b>UserID</b>
+    <b>UserID</b><br>
     <?php
-        echo($_SESSION['userid']);
+        echo($_SESSION['userid']."<br>");
     ?>
+    <b>Password</b><br>
+
+
 </body>
 </html>
 
