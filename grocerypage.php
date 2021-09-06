@@ -33,10 +33,15 @@
         ?>
     </div>
 
+    <br><br><br>
+
     <!-- groceries -->
     <div class="groceries">
         <?php
             $stmt = $conn->prepare("SELECT itemname, itemprice FROM item");
             $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                echo($row["itemname"]." ");
+            }
         ?>
     </div>
