@@ -38,8 +38,10 @@
     <!-- groceries -->
     <div class="groceries">
         <?php
+            // getting relevant data from the database
             $stmt = $conn->prepare("SELECT itemid, itemname, itemprice FROM item");
             $stmt->execute();
+            // displaying each item and its details
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 echo($row["itemname"]."<br>".$row["itemprice"]."<br>");
                 echo('<form action="addtobasket.php" method="POST" class="form-inline">');
