@@ -17,7 +17,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 // setting variables
     $hashed= $row['password'];
     $cpass= $_POST['cpass'];
-    $npass= $_POST['npass'];
+    password_hash($_POST['npass'], PASSWORD_DEFAULT);
 
 // checking current password match
     if(password_verify($cpass,$hashed)){
