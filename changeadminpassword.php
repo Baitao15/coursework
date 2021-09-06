@@ -24,7 +24,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         // changing password
         $stmt = $conn->prepare("UPDATE admin(password)
         SET(:password)
-        WHERE userid = ");
+        WHERE userid = :userid");
+        $stmt->bindparam(':userid', $_SESSION['userid']);
         $stmt->bindParam(':password', $npass);
         $stmt->execute();
         header('Location: manageaccountpage.php');
