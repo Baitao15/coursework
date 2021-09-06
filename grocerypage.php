@@ -38,13 +38,17 @@
     <!-- groceries -->
     <div class="groceries">
         <?php
-            $stmt = $conn->prepare("SELECT itemname, itemprice FROM item");
+            $stmt = $conn->prepare("SELECT itemid, itemname, itemprice FROM item");
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 echo($row["itemname"]."<br>".$row["itemprice"]."<br>");
-                echo('<form action="addtobasket.php" method="POST" class="form-inline">
-                <input type="submit" value="Add" class="btn btn-lg">')
+                echo('<form action="addtobasket.php" method="POST" class="form-inline">');
+                echo('<input type="hidden" name="id" value='.$row["itemid"].">");
+                echo('<input type="submit" value="Add" class="btn btn-sm"><br>');
+                echo("</form>");
             }
         ?>
 
     </div>
+
+    
