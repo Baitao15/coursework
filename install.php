@@ -69,7 +69,7 @@ CREATE TABLE item
 itemname VARCHAR(30) NOT NULL,
 category VARCHAR(20) NOT NULL,
 description VARCHAR(100),
-itemprice DECIMAL(4) NOT NULL,
+itemprice DECIMAL(4,2) NOT NULL,
 offerid INT(2))");
 $stmt->execute();
 
