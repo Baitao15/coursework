@@ -21,6 +21,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
 // checking current password match
     if(password_verify($cpass,$hashed)){
+        // changing password
         $stmt = $conn->prepare("UPDATE admin(password)
         VALUE(:password)");
         $stmt->bindParam(':password', $npass);
