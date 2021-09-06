@@ -3,12 +3,14 @@
 <?php
     session_start();
 
+    include_once("connection.php");
+
     $_SESSION['backURL']='homepage.php';
 ?>
 
 <html>
     <head>
-        <title>Longda - Home</title>
+        <title>Longda - Groceries</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,4 +34,9 @@
     </div>
 
     <!-- groceries -->
-    
+    <div class="groceries">
+        <?php
+            $stmt = $conn->prepare("SELECT itemname, itemprice FROM item");
+            $stmt->execute();
+        ?>
+    </div>
