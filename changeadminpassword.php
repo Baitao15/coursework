@@ -23,7 +23,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     if(password_verify($cpass,$hashed)){
         // changing password
         $stmt = $conn->prepare("UPDATE admin(password)
-        VALUE(:password)");
+        SET(:password)");
         $stmt->bindParam(':password', $npass);
         $stmt->execute();
         header('Location: manageaccountpage.php');
