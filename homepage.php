@@ -20,7 +20,7 @@
     <!-- navigation bar -->
     <div id=navbar>
         <a href=homepage.php>Home</a>
-        <a href=groceries.php>Groceries</a>
+        <a href=grocerypage.php>Groceries</a>
         <?php 
             if (!isset($_SESSION['email'])){
                 echo("<a href=registerpage.php>Register</a> <a href=loginpage.php>Login</a>");
