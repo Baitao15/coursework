@@ -41,7 +41,10 @@
             $stmt = $conn->prepare("SELECT itemname, itemprice FROM item");
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                echo($row["itemname"]." ");
+                echo($row["itemname"]."<br>".$row["itemprice"]."<br>");
+                echo('<form action="addtobasket.php" method="POST" class="form-inline">
+                <input type="submit" value="Add" class="btn btn-lg">')
             }
         ?>
+
     </div>
