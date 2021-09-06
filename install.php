@@ -88,6 +88,20 @@ $stmt->bindParam(':description', $description);
 $stmt->bindParam(':itemprice', $price);
 $stmt->execute();
 
+$itemname="Banana 6pk";
+$category="produce";
+$description="Ripe and Ready";
+$price=1.2;
+
+$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
+VALUES(:itemname, :category ,:description, :itemprice)");
+
+$stmt->bindParam(':itemname', $itemname);
+$stmt->bindParam(':category', $category);
+$stmt->bindParam(':description', $description);
+$stmt->bindParam(':itemprice', $price);
+$stmt->execute();
+
 
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS basket;
