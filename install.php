@@ -2,7 +2,7 @@
 // linking to connection.php to gain access to the database
 include_once("connection.php");
 
-// creating tables
+// creating customer table
 $stmt = $conn->prepare("DROP TABLE IF EXISTS customer;
 CREATE TABLE customer
 (customerid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -62,7 +62,7 @@ $stmt->bindParam(':surname', $surname);
 $stmt->bindParam(':password', $hashed_password);
 $stmt->execute();
 
-
+// creating item table
 $stmt = $conn->prepare("DROP TABLE IF EXISTS item;
 CREATE TABLE item
 (itemid INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -72,6 +72,23 @@ description VARCHAR(100),
 itemprice DECIMAL(4) NOT NULL,
 offerid INT(2))");
 $stmt->execute();
+
+// inserting default data into the item table
+$itemname="Apple 6pk";
+$category="produce";
+$description="Crisp and Juicy";
+$price=1.2;
+
+$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
+VALUES(:itemname, :category ,:description, :itemprice)");
+
+$stmt->bindParam(':itemname', $itemname);
+$stmt->bindParam(':category', $category);
+$stmt->bindParam(':description', $description);
+$stmt->bindParam(':itemprice', $price);
+$stmt->execute();
+
+
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS basket;
 CREATE TABLE basket
