@@ -9,8 +9,10 @@ if (!isset($_SESSION['basket'])){
 $temp=array();
 
 $itemid=$_POST['id'];
-$qty=$_POST['qty']
+$qty=$_POST['qty'];
 
-array_push($temp, $itemid, $qty)
+array_push($temp, $itemid, $qty);
+
+echo($temp);
 
 ?>
