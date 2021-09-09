@@ -13,6 +13,6 @@ $qty=$_POST['qty'];
 
 array_push($temp, $itemid, $qty);
 
-echo($temp);
+echo($temp[0].$temp[1]);
 
 ?>
