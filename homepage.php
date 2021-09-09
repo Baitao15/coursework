@@ -28,6 +28,9 @@
             if (isset($_SESSION['email'])){  
                 echo("<a href=accountpage.php>Account</a> <a href=logout.php>Logout</a>");
             }
+            if (isset($_SESSION['basket'])){  
+                echo("<a href=basketpage.php>Basket</a>");
+            }
         ?>
     </div>
     <br>
