@@ -22,14 +22,14 @@
         <a href=homepage.php>Home</a>
         <a href=grocerypage.php>Groceries</a>
         <?php 
+            if (isset($_SESSION['basket'])){  
+                echo("<a href=basketpage.php>Basket</a>");
+            }
             if (!isset($_SESSION['email'])){
                 echo("<a href=registerpage.php>Register</a> <a href=loginpage.php>Login</a>");
             }
             if (isset($_SESSION['email'])){  
                 echo("<a href=accountpage.php>Account</a> <a href=logout.php>Logout</a>");
-            }
-            if (isset($_SESSION['basket'])){  
-                echo("<a href=basketpage.php>Basket</a>");
             }
         ?>
     </div>

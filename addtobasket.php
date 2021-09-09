@@ -16,8 +16,4 @@ array_push($temp, $itemid, $qty);
 
 array_push($_SESSION['basket'], $temp);
 
-echo($_SESSION['basket'][0][0]);
-echo($_SESSION['basket'][0][1]);
-
-
 ?>
