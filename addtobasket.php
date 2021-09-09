@@ -12,4 +12,6 @@ $temp=array(
 
 $itemid=$_POST['itemid'];
 
+echo($itemid);
+
 ?>
