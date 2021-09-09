@@ -2,16 +2,15 @@
 session_start();
 // creating session variable basket
 // use of 2D array, storing itemid and quantity
-$_SESSION['basket']=array(
+if (!isset($_SESSION['basket'])){
+    $_SESSION['basket']=array();
+}
 
-);
+$temp=array();
 
-$temp=array(
+$itemid=$_POST['id'];
+$qty=$_POST['qty']
 
-);
-
-$itemid=$_POST['itemid'];
-
-echo($itemid);
+array_push($temp, $itemid, $qty)
 
 ?>

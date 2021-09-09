@@ -46,6 +46,7 @@
                 echo($row["itemname"]."<br>".$row["itemprice"]."<br>");
                 echo('<form action="addtobasket.php" method="POST" class="form-inline">');
                 echo('<input type="hidden" name="id" value='.$row["itemid"].">");
+                echo('<input type="number" id="qty" name="Quantity" min="1" max="5">');
                 echo('<input type="submit" value="Add" class="btn btn-sm"><br>');
                 echo("</form>");
             }
