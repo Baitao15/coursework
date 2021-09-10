@@ -12,8 +12,10 @@ $temp=array();
 $itemid=$_POST['id'];
 $qty=$_POST['qty'];
 
+// adding id and qyt to temporary array
 array_push($temp, $itemid, $qty);
 
+// adding temporary array to basket array
 array_push($_SESSION['basket'], $temp);
 
 ?>
