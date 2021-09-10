@@ -14,8 +14,8 @@ $stmt->bindParam(':password', $hashed_password);
 $stmt->execute();
 
 // getting user details from the database
-$stmt = $conn->prepare("SELECT email FROM customer WHERE email = :email;");
-$stmt->bindparam(':email', $_POST['email']);
+$email=$_POST["email"];
+$stmt = $conn->prepare("SELECT email FROM customer WHERE email = $email;");
 $stmt->execute();
 
 // logging user in and redirecting to previous page
@@ -30,3 +30,4 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     unset($_SESSION['backURL']);
     header('Location: ' . $backURL);
 }
+
