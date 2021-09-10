@@ -13,7 +13,13 @@ $stmt->bindParam(':email', $_POST["email"]);
 $stmt->bindParam(':password', $hashed_password);
 $stmt->execute();
 
-//redirecting the user to the login page
-header('Location: homepage.html');
-
+// redirecting the user to the previous page
+// if no backURL is set, then default redirect to homepage
+if (!isset($_SESSION['backURL'])){
+    $backURL= "homepage.php";
+}else{
+    $backURL=$_SESSION['backURL'];
+}
+unset($_SESSION['backURL']);
+header('Location: ' . $backURL);
 ?>
