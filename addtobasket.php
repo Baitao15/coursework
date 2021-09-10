@@ -19,3 +19,4 @@ array_push($temp, $itemid, $qty);
 array_push($_SESSION['basket'], $temp);
 
 ?>
+
