@@ -16,5 +16,5 @@ array_push($temp, $_POST['id'], $_POST['qty']);
 array_push($_SESSION['basket'], $temp);
 
 // redirecting to previous page
-header('Location: ' . $backURL);
+header('Location: ' . $_SESSION['backURL']);
 ?>
