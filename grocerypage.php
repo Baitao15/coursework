@@ -23,6 +23,7 @@
     <div id=navbar>
         <a href=homepage.php>Home</a>
         <a href=grocerypage.php>Groceries</a>
+        <a href=basketpage.php>Basket</a>
         <?php 
             if (!isset($_SESSION['email'])){
                 echo("<a href=registerpage.php>Register</a> <a href=loginpage.php>Login</a>");
