@@ -16,5 +16,12 @@ array_push($temp, $_POST['id'], $_POST['qty']);
 array_push($_SESSION['basket'], $temp);
 
 // redirecting to previous page
-header('Location: ' . $_SESSION['backURL']);
+// if no backURL is set, then default redirect to homepage
+if (!isset($_SESSION['backURL'])){
+    $backURL= "homepage.php";
+}else{
+    $backURL=$_SESSION['backURL'];
+}
+unset($_SESSION['backURL']);
+header('Location: ' . $backURL);
 ?>
