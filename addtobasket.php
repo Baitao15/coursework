@@ -9,11 +9,8 @@ if (!isset($_SESSION['basket'])){
 // creating temporary array to hold id and qty
 $temp=array();
 
-$itemid=$_POST['id'];
-$qty=$_POST['qty'];
-
 // adding id and qyt to temporary array
-array_push($temp, $itemid, $qty);
+array_push($temp, $_POST['id'], $_POST['qty']);
 
 // adding temporary array to basket array
 array_push($_SESSION['basket'], $temp);
