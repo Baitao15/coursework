@@ -23,7 +23,6 @@
     <div id=navbar>
         <a href=homepage.php>Home</a>
         <a href=grocerypage.php>Groceries</a>
-        <a href=basketpage.php>Basket</a>
         <?php 
             if (!isset($_SESSION['email'])){
                 echo("<a href=registerpage.php>Register</a> <a href=loginpage.php>Login</a>");
@@ -47,7 +46,7 @@
                 echo($row["itemname"]."<br>"."£".$row["itemprice"]."<br>");
                 echo('<form action="addtobasket.php" method="POST" class="form-inline">');
                 echo('<input type="hidden" name="id" value='.$row["itemid"].">");
-                echo('<input type="number" name="qty" min="1" max="99">');
+                echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99">');
                 echo('<input type="submit" value="Add" class="btn btn-sm"><br>');
                 echo("</form><br>");
             }
