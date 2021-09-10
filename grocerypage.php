@@ -44,7 +44,7 @@
             $stmt->execute();
             // displaying each item and its details
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                echo($row["itemname"]."<br>".$row["itemprice"]."<br>");
+                echo($row["itemname"]."<br>"."£".$row["itemprice"]."<br>");
                 echo('<form action="addtobasket.php" method="POST" class="form-inline">');
                 echo('<input type="hidden" name="id" value='.$row["itemid"].">");
                 echo('<input type="number" name="qty" min="1" max="99">');
