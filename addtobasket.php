@@ -15,4 +15,6 @@ array_push($temp, $_POST['id'], $_POST['qty']);
 // adding temporary array to basket array
 array_push($_SESSION['basket'], $temp);
 
+// redirecting to previous page
+header('Location: ' . $backURL);
 ?>
