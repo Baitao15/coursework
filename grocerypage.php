@@ -49,7 +49,7 @@
                 echo('<input type="hidden" name="id" value='.$row["itemid"].">");
                 echo('<input type="number" name="qty" min="1" max="99">');
                 echo('<input type="submit" value="Add" class="btn btn-sm"><br>');
-                echo("</form>");
+                echo("</form><br>");
             }
         ?>
     </div>
