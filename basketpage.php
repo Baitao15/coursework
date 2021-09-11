@@ -49,8 +49,8 @@
                 echo($row['itemname']);
                 echo(' ');
                 echo($_SESSION['basket'][$i][1]); 
-                $price = ($row['itemname'])*($_SESSION['basket'][$i][1]);
-                echo($price);
+                $price = ($row['itemprice'])*($_SESSION['basket'][$i][1]);
+                echo(' £'.$price);
                 echo('<br>');
             }
         }
