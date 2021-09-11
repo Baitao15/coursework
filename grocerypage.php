@@ -47,7 +47,7 @@
                 echo($row["itemname"]."<br>"."£".$row["itemprice"]."<br>");
                 echo('<form action="addtobasket.php" method="POST" class="form-inline">');
                 echo('<input type="hidden" name="id" value='.$row["itemid"].">");
-                echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99">');
+                echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" required>');
                 echo('<input type="submit" value="Add" class="btn btn-sm"><br>');
                 echo("</form><br>");
             }

@@ -38,8 +38,12 @@
         echo('<a href="grocerypage.php">Add items</a>');
     }
     if (isset($_SESSION['basket'])){
-        count($_SESSION['basket']);
-        echo($_SESSION['basket'][$a][$b]); 
+        for ($i=0; $i<(count($_SESSION['basket'])); $i++){
+            echo($_SESSION['basket'][$i][0]);
+            echo(' ');
+            echo($_SESSION['basket'][$i][1]); 
+            echo('<br>');
+        }
     }
     ?>
 
