@@ -31,5 +31,13 @@
             }
         ?>
     </div>
+    <br><br><br>
+    <?php
+    if (!isset($_SESSION['basket'])){
+        echo("Your basket is empty!");
+        echo('<a href="grocerypage.php">Add items</a>');
+    }
+    ?>
+
 </body>
 </html>
