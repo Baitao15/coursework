@@ -45,9 +45,14 @@
             $itemid=($_SESSION['basket'][$i][0]);
             $stmt = $conn->prepare("SELECT itemname, itemprice FROM item WHERE itemid = $itemid");
             $stmt->execute();
-            echo(' ');
-            echo($_SESSION['basket'][$i][1]); 
-            echo('<br>');
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                echo($row['itemname']);
+                echo(' ');
+                echo($_SESSION['basket'][$i][1]); 
+                $price = ($row['itemname'])*($_SESSION['basket'][$i][1]);
+                echo($price);
+                echo('<br>');
+            }
         }
     }
     ?>
