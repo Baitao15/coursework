@@ -34,8 +34,12 @@
     <br><br><br>
     <?php
     if (!isset($_SESSION['basket'])){
-        echo("Your basket is empty!");
+        echo("Your basket is empty!<br>");
         echo('<a href="grocerypage.php">Add items</a>');
+    }
+    if (isset($_SESSION['basket'])){
+        count($_SESSION['basket']);
+        echo($_SESSION['basket'][$a][$b]); 
     }
     ?>
 
