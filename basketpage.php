@@ -3,6 +3,8 @@
 <?php
     session_start();
 
+    include_once("connection.php");
+
     $_SESSION['backURL']='basketpage.php';
 ?>
 
@@ -38,9 +40,11 @@
         echo('<a href="grocerypage.php">Add items</a>');
     }
     if (isset($_SESSION['basket'])){
-        echo("Item | Quantity | Price");
+        echo("Item | Quantity | Price<br>");
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
-            echo($_SESSION['basket'][$i][0]);
+            $itemid=($_SESSION['basket'][$i][0]);
+            $stmt = $conn->prepare("SELECT itemname, itemprice FROM item WHERE itemid = $itemid");
+            $stmt->execute();
             echo(' ');
             echo($_SESSION['basket'][$i][1]); 
             echo('<br>');
