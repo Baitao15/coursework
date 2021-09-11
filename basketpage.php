@@ -38,6 +38,7 @@
         echo('<a href="grocerypage.php">Add items</a>');
     }
     if (isset($_SESSION['basket'])){
+        echo("Item | Quantity | Price");
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
             echo($_SESSION['basket'][$i][0]);
             echo(' ');
