@@ -16,6 +16,7 @@ $stmt->execute();
 // getting user details from the database
 $email=$_POST["email"];
 $stmt = $conn->prepare("SELECT email FROM customer WHERE email = $email;");
+$stmt->bindparam(':email', $email);
 $stmt->execute();
 
 // logging user in and redirecting to previous page
