@@ -46,7 +46,8 @@
             $i=0;
             // displaying each item and its details
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                if ($i=1){
+                if ($i==0){
+                    echo('<div class=row>');
                     echo('<div class="col-sm-2"></div>');
                 }
                 echo('<div class="col-sm-2">');
@@ -59,11 +60,13 @@
                 echo("</form><br>");
                 echo('</div>');
                 echo('</div>');
-                if ($i=5){
+                $i=$i+1;
+                if ($i==4){
                     echo('<div class="col-sm-2"></div>');
+                    echo('</div>');
                     $i=0;
                 }
-                $i=($i+1);
+                
             }
         ?>
     </div>
