@@ -46,6 +46,7 @@
             $i=0;
             // displaying each item and its details
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                // every four items, a new row will be started
                 if ($i==0){
                     echo('<div class=row>');
                     echo('<div class="col-sm-2"></div>');
