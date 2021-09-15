@@ -42,19 +42,22 @@ $stmt->execute();
             }
         ?>
     </div>
-
+<br><br><br>
+    Add New Item
     <form action="manageitem.php" method="POST">
-            <input type="text" name="itemname" placeholder="Item Name" required><br><br>
-            <select name="category" placeholder="Category" required>
-                <option value="produce">Produce</option>
-                <option value="bakery">Bakery</option>
-                <option value="frozen">Frozen</option>
-                <option value="other">Other</option>
-            </select>
-            <input type="hidden" name="new" value=""><br><br>
-            <input type="submit" value="Register" class="btn btn-lg">
-            <br>
-        </form>
+        <input type="text" name="itemname" placeholder="Item Name" required><br><br>
+        <select name="category" placeholder="Category" required>
+            <option value="fresh">Fresh Food</option>
+            <option value="produce">Produce</option>
+            <option value="bakery">Bakery</option>
+            <option value="cupboard">Food Cupboard</option>
+            <option value="frozen">Frozen</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="hidden" name="type" value="add"><br><br>
+        <input type="submit" value="Add" class="btn btn-sm">
+        <br>
+    </form>
 
 </body>
 </html>
