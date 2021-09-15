@@ -34,15 +34,14 @@ $stmt->execute();
         <a href=manageaccountpage.php>Account</a>
         <a href=adminlogout.php>Logout</a>
     </p>
-    <!-- displaying welcome message -->
-    <div class="jumbotron">
-        <h3>
-            <?php
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    echo("Hi ".$row["forename"].", what would you like to do?");
-                }
-            ?>
-        </h3>
+<br><br><br>
+    <div>
+        <?php
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                echo("Hi ".$row["forename"].", what would you like to do?");
+            }
+        ?>
     </div>
+
 </body>
 </html>
