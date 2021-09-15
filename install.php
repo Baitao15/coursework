@@ -76,7 +76,7 @@ $stmt->execute();
 
 // inserting default data into the item table
 $itemname="Apples Loose";
-$itemimage="images/apples";
+$itemimage="apples";
 $category="produce";
 $description="Crisp and Juicy";
 $price=0.4;
