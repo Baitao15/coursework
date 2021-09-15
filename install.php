@@ -67,6 +67,7 @@ $stmt = $conn->prepare("DROP TABLE IF EXISTS item;
 CREATE TABLE item
 (itemid INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 itemname VARCHAR(30) NOT NULL,
+itemimage VARCHAR(255),
 category VARCHAR(20) NOT NULL,
 description VARCHAR(100),
 itemprice DECIMAL(4,2) NOT NULL,
@@ -74,10 +75,11 @@ offerid INT(2))");
 $stmt->execute();
 
 // inserting default data into the item table
-$itemname="Apple 6pk";
+$itemname="Apples Loose";
+$itemimage="images/apples";
 $category="produce";
 $description="Crisp and Juicy";
-$price=1.2;
+$price=0.4;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
