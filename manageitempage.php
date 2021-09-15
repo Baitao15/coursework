@@ -43,5 +43,18 @@ $stmt->execute();
         ?>
     </div>
 
+    <form action="manageitem.php" method="POST">
+            <input type="text" name="itemname" placeholder="Item Name" required><br><br>
+            <select name="category" placeholder="Category" required>
+                <option value="produce">Produce</option>
+                <option value="bakery">Bakery</option>
+                <option value="frozen">Frozen</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="hidden" name="new" value=""><br><br>
+            <input type="submit" value="Register" class="btn btn-lg">
+            <br>
+        </form>
+
 </body>
 </html>
