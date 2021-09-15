@@ -130,6 +130,34 @@ $stmt->bindParam(':description', $description);
 $stmt->bindParam(':itemprice', $price);
 $stmt->execute();
 
+$itemname="Oranges 1kg";
+$category="produce";
+$description="Tangy and Juicy";
+$price=1;
+
+$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
+VALUES(:itemname, :category ,:description, :itemprice)");
+
+$stmt->bindParam(':itemname', $itemname);
+$stmt->bindParam(':category', $category);
+$stmt->bindParam(':description', $description);
+$stmt->bindParam(':itemprice', $price);
+$stmt->execute();
+
+$itemname="Strawberries 500g";
+$category="produce";
+$description="Sweet and Juicy";
+$price=2;
+
+$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
+VALUES(:itemname, :category ,:description, :itemprice)");
+
+$stmt->bindParam(':itemname', $itemname);
+$stmt->bindParam(':category', $category);
+$stmt->bindParam(':description', $description);
+$stmt->bindParam(':itemprice', $price);
+$stmt->execute();
+
 $itemname="Tiger Bread";
 $category="bakery";
 $description="Freshly Baked";

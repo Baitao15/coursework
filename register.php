@@ -13,22 +13,23 @@ $stmt->bindParam(':email', $_POST["email"]);
 $stmt->bindParam(':password', $hashed_password);
 $stmt->execute();
 
-// getting user details from the database
-$email=$_POST["email"];
-$stmt = $conn->prepare("SELECT email FROM customer WHERE email = $email;");
-$stmt->bindparam(':email', $email);
-$stmt->execute();
+// // getting user details from the database
+// $email=$_POST["email"];
+// $stmt = $conn->prepare("SELECT email FROM customer WHERE email = $email;");
+// $stmt->bindparam(':email', $email);
+// $stmt->execute();
 
-// logging user in and redirecting to previous page
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){    
-    $_SESSION['email']=$row["email"];
-    // if no backURL is set, then default redirect to homepage
-    if (!isset($_SESSION['backURL'])){
-        $backURL= "homepage.php";
-    }else{
-        $backURL=$_SESSION['backURL'];
-    }
-    unset($_SESSION['backURL']);
-    header('Location: ' . $backURL);
-}
+// // logging user in and redirecting to previous page
+// while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){    
+//     $_SESSION['email']=$row["email"];
+//     // if no backURL is set, then default redirect to homepage
+//     if (!isset($_SESSION['backURL'])){
+//         $backURL= "homepage.php";
+//     }else{
+//         $backURL=$_SESSION['backURL'];
+//     }
+//     unset($_SESSION['backURL']);
+//     header('Location: ' . $backURL);
+// }
 
+header('Location: loginpage.php');
