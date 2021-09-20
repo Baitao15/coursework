@@ -43,17 +43,18 @@ $stmt->execute();
         ?>
     </div>
 <br><br><br>
-    Add New Item
+    <h4>Add New Item</h4>
     <form action="manageitem.php" method="POST">
         <input type="text" name="itemname" placeholder="Item Name" required><br><br>
-        <select name="category" placeholder="Category" required>
+        <select name="category" required>
             <option value="fresh">Fresh Food</option>
             <option value="produce">Produce</option>
             <option value="bakery">Bakery</option>
             <option value="cupboard">Food Cupboard</option>
             <option value="frozen">Frozen</option>
             <option value="other">Other</option>
-        </select>
+        </select><br><br>
+        <input type="text" name="description" placeholder="Description"><br><br>
         <input type="hidden" name="type" value="add"><br><br>
         <input type="submit" value="Add" class="btn btn-sm">
         <br>

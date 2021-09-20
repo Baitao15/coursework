@@ -71,6 +71,7 @@ itemimage VARCHAR(255),
 category VARCHAR(20) NOT NULL,
 description VARCHAR(100),
 itemprice DECIMAL(4,2) NOT NULL,
+stock INT(3) NOT NULL,
 offerid INT(2))");
 $stmt->execute();
 
@@ -80,6 +81,7 @@ $itemimage="apples";
 $category="produce";
 $description="Crisp and Juicy";
 $price=0.4;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -94,6 +96,7 @@ $itemname="Banana 6pk";
 $category="produce";
 $description="Ripe and Ready";
 $price=1.2;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -108,6 +111,7 @@ $itemname="Pear 4pk";
 $category="produce";
 $description="Juicy";
 $price=1;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -122,6 +126,7 @@ $itemname="Watermelon";
 $category="produce";
 $description="Sweet and Juicy";
 $price=1.5;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -136,6 +141,7 @@ $itemname="Oranges 1kg";
 $category="produce";
 $description="Tangy and Juicy";
 $price=1;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -150,6 +156,7 @@ $itemname="Strawberries 500g";
 $category="produce";
 $description="Sweet and Juicy";
 $price=2;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -164,6 +171,7 @@ $itemname="Tiger Bread";
 $category="bakery";
 $description="Freshly Baked";
 $price=0.8;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -178,6 +186,7 @@ $itemname="White Bread";
 $category="bakery";
 $description="Freshly Baked";
 $price=0.6;
+$stock=99;
 
 $stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
 VALUES(:itemname, :category ,:description, :itemprice)");
@@ -187,154 +196,11 @@ $stmt->bindParam(':category', $category);
 $stmt->bindParam(':description', $description);
 $stmt->bindParam(':itemprice', $price);
 $stmt->execute();
-
-$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->execute();$itemname="White Bread";
-$category="bakery";
-$description="Freshly Baked";
-$price=0.6;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice)
-VALUES(:itemname, :category ,:description, :itemprice)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
 $stmt->execute();
-
-
+$stmt->execute();
+$stmt->execute();
+$stmt->execute();
+$stmt->execute();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS basket;
 CREATE TABLE basket
