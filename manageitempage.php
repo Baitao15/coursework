@@ -35,15 +35,13 @@ $stmt->execute();
         <a href=adminlogout.php>Logout</a>
     </p>
 <br><br><br>
-    <div>
-        <?php
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                echo("Hi ".$row["forename"].", what would you like to do?");
-            }
-        ?>
-    </div>
+    <?php
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            echo("Hi ".$row["forename"].", what would you like to do?");
+        }
+    ?>
 
-    
+
 <br><br><br>
     <h4>Add New Item</h4>
     <form action="manageitem.php" method="POST">
