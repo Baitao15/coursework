@@ -40,7 +40,7 @@
     <div class="groceries">
         <?php
             // getting relevant data from the database
-            $stmt = $conn->prepare("SELECT itemid, itemname, itemprice FROM item");
+            $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item");
             $stmt->execute();
             // counter
             $i=0;
@@ -53,7 +53,9 @@
                 }
                 echo('<div class="col-sm-2">');
                 echo('<div class="panel panel-default text-center">');
-                echo('<div class="panel-heading"><b>'.$row["itemname"]."</b></div><br>"."£".$row["itemprice"]."<br>");
+                echo('<div class="panel-heading"><b>'.$row["itemname"]."</b></div>");
+                echo('<div><img src="/coursework/images/'.$row["itemimage"].'" width="128" height="128"></div>');
+                echo("<br>"."£".$row["itemprice"]."<br>");
                 echo('<form action="addtobasket.php" method="POST" class="form-inline">');
                 echo('<input type="hidden" name="id" value='.$row["itemid"].">");
                 echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>');

@@ -46,7 +46,9 @@ $stmt->execute();
     <h4>Add New Item</h4>
     <form action="manageitem.php" method="POST">
         <input type="text" name="itemname" placeholder="Item Name" required><br><br>
+        <input type="file" name="file"><br>
         <select name="category" required>
+            <option disabled selected>--Category--</option>
             <option value="fresh">Fresh Food</option>
             <option value="produce">Produce</option>
             <option value="bakery">Bakery</option>
@@ -54,7 +56,7 @@ $stmt->execute();
             <option value="frozen">Frozen</option>
             <option value="other">Other</option>
         </select><br><br>
-        <input type="text" name="description" placeholder="Description"><br><br>
+        <input type="text" name="description" placeholder="Description (optional)"><br><br>
         <input type="hidden" name="type" value="add"><br><br>
         <input type="submit" value="Add" class="btn btn-sm">
         <br>

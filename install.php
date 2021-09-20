@@ -82,11 +82,13 @@ $category="produce";
 $description="Crisp and Juicy";
 $price=0.4;
 $stock=99;
+$image="apples.jpeg";
 
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice, stock)
-VALUES(:itemname, :category ,:description, :itemprice, :stock)");
+$stmt = $conn->prepare("INSERT INTO item(itemname, itemimage, category, description, itemprice, stock)
+VALUES(:itemname, :itemimage, :category ,:description, :itemprice, :stock)");
 
 $stmt->bindParam(':itemname', $itemname);
+$stmt->bindParam(':itemimage', $image);
 $stmt->bindParam(':category', $category);
 $stmt->bindParam(':description', $description);
 $stmt->bindParam(':itemprice', $price);
@@ -203,6 +205,9 @@ $stmt->bindParam(':category', $category);
 $stmt->bindParam(':description', $description);
 $stmt->bindParam(':itemprice', $price);
 $stmt->bindParam(':stock', $stock);
+$stmt->execute();
+$stmt->execute();
+$stmt->execute();
 $stmt->execute();
 $stmt->execute();
 $stmt->execute();
