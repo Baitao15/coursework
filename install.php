@@ -95,6 +95,7 @@ $stmt->bindParam(':itemprice', $price);
 $stmt->bindParam(':stock', $stock);
 $stmt->execute();
 
+
 $itemname="Banana 6pk";
 $category="produce";
 $description="Ripe and Ready";
@@ -109,6 +110,7 @@ $stmt->bindParam(':category', $category);
 $stmt->bindParam(':description', $description);
 $stmt->bindParam(':itemprice', $price);
 $stmt->bindParam(':stock', $stock);
+
 $stmt->execute();
 
 $itemname="Pear 4pk";
@@ -116,15 +118,6 @@ $category="produce";
 $description="Juicy";
 $price=1;
 $stock=99;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice, stock)
-VALUES(:itemname, :category ,:description, :itemprice, :stock)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->bindParam(':stock', $stock);
 $stmt->execute();
 
 $itemname="Watermelon";
@@ -132,15 +125,6 @@ $category="produce";
 $description="Sweet and Juicy";
 $price=1.5;
 $stock=99;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice, stock)
-VALUES(:itemname, :category ,:description, :itemprice, :stock)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->bindParam(':stock', $stock);
 $stmt->execute();
 
 $itemname="Oranges 1kg";
@@ -148,15 +132,6 @@ $category="produce";
 $description="Tangy and Juicy";
 $price=1;
 $stock=99;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice, stock)
-VALUES(:itemname, :category ,:description, :itemprice, :stock)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->bindParam(':stock', $stock);
 $stmt->execute();
 
 $itemname="Strawberries 500g";
@@ -164,15 +139,6 @@ $category="produce";
 $description="Sweet and Juicy";
 $price=2;
 $stock=99;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice, stock)
-VALUES(:itemname, :category ,:description, :itemprice, :stock)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->bindParam(':stock', $stock);
 $stmt->execute();
 
 $itemname="Tiger Bread";
@@ -180,15 +146,6 @@ $category="bakery";
 $description="Freshly Baked";
 $price=0.8;
 $stock=99;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice, stock)
-VALUES(:itemname, :category ,:description, :itemprice, :stock)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->bindParam(':stock', $stock);
 $stmt->execute();
 
 $itemname="White Bread";
@@ -196,15 +153,6 @@ $category="bakery";
 $description="Freshly Baked";
 $price=0.6;
 $stock=99;
-
-$stmt = $conn->prepare("INSERT INTO item(itemname, category, description, itemprice, stock)
-VALUES(:itemname, :category ,:description, :itemprice, :stock)");
-
-$stmt->bindParam(':itemname', $itemname);
-$stmt->bindParam(':category', $category);
-$stmt->bindParam(':description', $description);
-$stmt->bindParam(':itemprice', $price);
-$stmt->bindParam(':stock', $stock);
 $stmt->execute();
 $stmt->execute();
 $stmt->execute();
@@ -213,14 +161,6 @@ $stmt->execute();
 $stmt->execute();
 $stmt->execute();
 $stmt->execute();
-$stmt->execute();
-
-$stmt = $conn->prepare("DROP TABLE IF EXISTS basket;
-CREATE TABLE basket
-(customerid INT(6),
-itemid INT(4),
-qty INT(2) NOT NULL,
-CONSTRAINT basket_key PRIMARY KEY (customerid, itemid))");
 $stmt->execute();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS offer;
@@ -232,7 +172,11 @@ num1 INT(3) NOT NULL,
 num2 INT(3))");
 $stmt->execute();
 
-
+$stmt = $conn->prepare("DROP TABLE IF EXISTS order;
+CREATE TABLE order
+(orderid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+)");
+$stmt->execute();
 
 $conn=null;
 
