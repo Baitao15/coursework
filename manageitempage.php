@@ -43,6 +43,7 @@ $stmt->execute();
         ?>
     </div>
 <br><br><br>
+
     <h4>Add New Item</h4>
     <form action="manageitem.php" method="POST">
         <input type="text" name="itemname" placeholder="Item Name" required><br><br>
