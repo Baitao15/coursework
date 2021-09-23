@@ -64,6 +64,40 @@ $stmt->execute();
         <input type="submit" value="Add" class="btn btn-sm">
         <br>
     </form>
+    <br><br><br>
+
+
+    <h4>Edit Item</h4>
+    <form action="manageitem.php" method="POST">
+        <select required>
+            <option disabled selected>--Select Item to Change--</option>
+            <?php
+            $stmt = $conn->prepare("SELECT * FROM item");
+                    $stmt->execute();
+            
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                echo("<option value='".$row["itemid"]."'>".$row["itemname"]."</option>");
+            }
+            ?>
+        </select><br><br>
+        <input type="text" name="itemname" placeholder="Item Name" required><br><br>
+        <input type="file" name="itemimage"><br>
+        <select name="category" required>
+            <option disabled selected>--Category--</option>
+            <option value="fresh">Fresh Food</option>
+            <option value="produce">Produce</option>
+            <option value="bakery">Bakery</option>
+            <option value="cupboard">Food Cupboard</option>
+            <option value="frozen">Frozen</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        <input type="text" name="description" placeholder="Description (optional)"><br><br>
+        <input type="number" name="price" placeholder="Price" step=".01" required><br><br>
+        <input type="number" name="stock" placeholder="Stock" required><br>
+        <input type="hidden" name="type" value="edit"><br><br>
+        <input type="submit" value="Save" class="btn btn-sm">
+        <br>
+    </form>
 
 </body>
 </html>
