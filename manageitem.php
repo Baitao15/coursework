@@ -20,3 +20,4 @@ if ($_POST["type"]=="add"){
 header('Location: manageitempage.php');
 
 ?>
+
