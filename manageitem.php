@@ -3,7 +3,7 @@
 // linking to connection.php to gain access to the database
 include_once("connection.php");
 
-// if adding item
+// if adding item, data is sent to the database
 if ($_POST["type"]=="add"){
     $stmt = $conn->prepare("INSERT INTO item(itemname, itemimage, category, description, itemprice, stock)
     VALUES(:itemname, :itemimage, :category, :description, :itemprice, :stock)");
