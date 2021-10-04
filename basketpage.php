@@ -60,17 +60,9 @@
                 $total=$total+$price;
             }  
         }
-        echo("<tr>
-                <th></th>
-                <th></th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <th></th>
-                <th></th>
-                <th>£".$total."</th>
-            </tr>
-        </table>");
+        echo("</table>
+            <b>Total<br>
+            £".$total."<b>");
         
         echo("<a href='checkoutpage.php' class='btn btn-sm'>Checkout</a>");
     }

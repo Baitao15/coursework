@@ -43,6 +43,7 @@
 
 .btn{
     color: white;
+    text-decoration-thickness: 10;
     background-color: rgb(255, 183, 0);
 }
 
