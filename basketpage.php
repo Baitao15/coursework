@@ -53,7 +53,7 @@
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 echo('<tr><td>'.$row['itemname'].'</td>');
-                echo('<td>'.$_SESSION['basket'][$i][1].'</td>'); 
+                echo('<td>'.$_SESSION['basket'][$i][1].'</td>');
                 $price = ($row['itemprice'])*($_SESSION['basket'][$i][1]);
                 echo('<td>'.'£'.$price.'</td>');
                 echo('</tr>');
@@ -62,9 +62,10 @@
         }
         echo("</table>
             <b>Total<br>
-            £".$total."<b>");
+            £".$total."</b><br>");
         
-        echo("<a href='checkoutpage.php' class='btn btn-sm'>Checkout</a>");
+        echo("<form action='checkout.php' method='POST' class='form-inline'>
+                <input type='submit' value='Checkout' class='btn btn-sm'>");
     }
     ?>
 
