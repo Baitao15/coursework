@@ -46,6 +46,7 @@
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>");
+        $total=0;
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
             $itemid=($_SESSION['basket'][$i][0]);
             $stmt = $conn->prepare("SELECT itemname, itemprice FROM item WHERE itemid = $itemid");
@@ -56,9 +57,22 @@
                 $price = ($row['itemprice'])*($_SESSION['basket'][$i][1]);
                 echo('<td>'.'£'.$price.'</td>');
                 echo('</tr>');
+                $total=$total+$price;
             }  
-        }   
-        echo("</table>");  
+        }
+        echo("<tr>
+                <th></th>
+                <th></th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>£".$total."</th>
+            </tr>
+        </table>");
+        
+        echo("<a href='checkoutpage.php' class='btn btn-sm'>Checkout</a>");
     }
     ?>
 
