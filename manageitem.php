@@ -17,6 +17,10 @@ if ($_POST["type"]=="add"){
     $stmt->execute();
 }
 
+if ($_POST["type"]=="edit"){
+    
+}
+
 header('Location: manageitempage.php');
 
 ?>
