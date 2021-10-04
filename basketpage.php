@@ -40,20 +40,25 @@
         echo('<a href="grocerypage.php">Add items</a>');
     }
     if (isset($_SESSION['basket'])){
-        echo("Item | Quantity | Price<br>");
+        echo("<table class='table'>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>");
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
             $itemid=($_SESSION['basket'][$i][0]);
             $stmt = $conn->prepare("SELECT itemname, itemprice FROM item WHERE itemid = $itemid");
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                echo($row['itemname']);
-                echo(' ');
-                echo($_SESSION['basket'][$i][1]); 
+                echo('<tr><td>'.$row['itemname'].'</td>');
+                echo('<td>'.$_SESSION['basket'][$i][1].'</td>'); 
                 $price = ($row['itemprice'])*($_SESSION['basket'][$i][1]);
-                echo(' £'.$price);
-                echo('<br>');
-            }
-        }    
+                echo('<td>'.'£'.$price.'</td>');
+                echo('</tr>');
+            }  
+        }   
+        echo("</table>");  
     }
     ?>
 
