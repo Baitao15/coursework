@@ -63,7 +63,6 @@
         echo("</table>
             <b>Total<br>
             £".$total."</b><br>");
-        
         echo("<form action='checkout.php' method='POST' class='form-inline'>
                 <input type='hidden' name='total' value='$total'>
                 <input type='submit' value='Checkout' class='btn btn-sm'>
