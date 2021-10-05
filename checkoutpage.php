@@ -20,6 +20,11 @@ $_SESSION['backURL']='homepage.php';
 
     <!-- navigation bar -->
     <div id=navbar>
-        <a href=basketpage.php>Basket</a>
+        <a href=basketpage.php>Back to Basket</a>
     </div>
-    
+    <br><br>
+    <h3>1. Delivery Address</h3>
+    <h3>2. Delivery Details</h3>
+    <h3>3. Payment Details</h3>
+</body>
+</html>
