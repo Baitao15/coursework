@@ -49,7 +49,7 @@ $_SESSION['backURL']='homepage.php';
             <input type="text" name="cardholdername" placeholder="Cardholder Name" required><br><br>
             
         <h3>3. Confirm and Place</h3>
-            Order Total:<?php echo?>
+            Order Total:<?php echo($_SESSION['total']);?>
 
 
     </form>
