@@ -3,6 +3,12 @@
 include_once("connection.php");
 
 session_start();
+
+$customerid=($_SESSION['id']);
+
+// getting relevant data from the database
+$stmt = $conn->prepare("SELECT * FROM customer WHERE customerid = $customerid");
+$stmt->execute();
 ?>
 
 <html>
