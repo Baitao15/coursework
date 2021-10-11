@@ -17,6 +17,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     $attempt= $_POST['password'];
     
     if(password_verify($attempt,$hashed)){
+        $_SESSION['id']=$row["id"];
         $_SESSION['email']=$row["email"];
         // if no backURL is set, then default redirect to homepage
         if (!isset($_SESSION['backURL'])){

@@ -2,8 +2,10 @@
 // linking to connection.php to gain access to the database
 include_once("connection.php");
 
+$userid=($_SESSION['id']);
+
 // getting relevant data from the database
-$stmt = $conn->prepare("SELECT * FROM customer");
+$stmt = $conn->prepare("SELECT * FROM customer WHERE userid = $userid");
 $stmt->execute();
 
 session_start();
@@ -34,7 +36,7 @@ $_SESSION['backURL']='homepage.php';
             <input type="text" name="city" placeholder="City/Town/Village" required><br><br>
             <input type="text" name="county" placeholder="County" required><br><br>
             <input type="text" name="postcode" placeholder="Postcode" required><br><br>
-                 
+
         <h3>2. Payment Details</h3>
             <input type="text" name="cardnumber" placeholder="Card Number" required><br><br>
             <input type="month" name="expirydate" required><br><br>
