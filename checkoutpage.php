@@ -26,24 +26,33 @@ $_SESSION['backURL']='homepage.php';
         <a href=basketpage.php>Back to Basket</a>
     </div>
     <br><br>
-    <h3>1. Delivery Address</h3>
-        <?php
-            // if (isset($_SESSION['email'])){
-            //     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            //         echo('a')
-            //     }
-            // }
-        ?>
-        <form action='changecustomerdetails.php'>
+    <form action='placeorder.php'>
+        <h3>1. Delivery Address</h3>
+            <?php
+                // if (isset($_SESSION['email'])){
+                //     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        
+                //     }
+                // }
+            ?>
+            
             <input type="text" name="recipent" placeholder="Recipient Name" required><br><br>
             <input type="text" name="address1" placeholder="Address Line 1" required><br><br>
             <input type="text" name="address2" placeholder="Address Line 2 (optional)"><br><br>
             <input type="text" name="city" placeholder="City/Town/Village" required><br><br>
             <input type="text" name="county" placeholder="County" required><br><br>
             <input type="text" name="postcode" placeholder="Postcode" required><br><br>
-        </form>
-    <h3>2. Payment Details</h3>
-    <h3>3. Confirm and Place</h3>
+            
+        <h3>2. Payment Details</h3>
+            <input type="text" name="cardnumber" placeholder="Card Number" required><br><br>
+            <input type="month" name="expirydate" required><br><br>
+            <input type="text" name="cardholdername" placeholder="Cardholder Name" required><br><br>
+            
+        <h3>3. Confirm and Place</h3>
+            Order Total:<?php echo?>
+
+
+    </form>
 </body>
 </html>
 
