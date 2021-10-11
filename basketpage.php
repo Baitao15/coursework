@@ -67,6 +67,7 @@
                 <input type='hidden' name='total' value='$total'>
                 <input type='submit' value='Checkout' class='btn btn-sm'>
             </form>");
+        $_SESSION['total']=$total;
     }
     ?>
 
