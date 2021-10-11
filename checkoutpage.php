@@ -2,15 +2,13 @@
 // linking to connection.php to gain access to the database
 include_once("connection.php");
 
-$userid=($_SESSION['id']);
-
-// getting relevant data from the database
-$stmt = $conn->prepare("SELECT * FROM customer WHERE userid = $userid");
-$stmt->execute();
-
 session_start();
 
-$_SESSION['backURL']='homepage.php';
+$customerid=($_SESSION['id']);
+
+// getting relevant data from the database
+$stmt = $conn->prepare("SELECT * FROM customer WHERE customerid = $customerid");
+$stmt->execute();
 ?>
 
 <html>
