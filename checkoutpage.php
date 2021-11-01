@@ -5,10 +5,6 @@ include_once("connection.php");
 session_start();
 
 $customerid=($_SESSION['id']);
-
-// getting relevant data from the database
-$stmt = $conn->prepare("SELECT * FROM customer WHERE customerid = $customerid");
-$stmt->execute();
 ?>
 
 <html>
@@ -27,9 +23,33 @@ $stmt->execute();
     </div>
     <br><br>
     <form action='placeorder.php'>
-        <h3>1. Delivery Address</h3>
-            <br>Saved Adresses<br>
-                        
+        <h3>1. Delivery Address</h3>        
+            <?php
+            if (isset($_SESSION['email'])){  
+                echo("Saved Adresses<br>");
+                $stmt = $conn->prepare("SELECT addressid FROM customeraddress WHERE customerid = $customerid");
+                $stmt->execute();
+                $addresses=array();
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    $addressid=($row['addressid']);
+                    $stmt = $conn->prepare("SELECT * FROM address WHERE addressid = $addressid");
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        echo('<input type="radio" name="address" value="'.$row["addressid"].'"><label>');
+                        echo($row["address1"]."<br>");
+                        echo($row["address2"]."<br>");
+                        echo($row["city"]."<br>");
+                        echo($row["county"]."<br>");
+                        echo($row["postcode"]."<br>");
+                        echo('</label><br>');
+                    } 
+                }
+                
+                
+            }
+            ?>
+
+            <br>Use Different Address<br>
             <input type="text" name="recipent" placeholder="Recipient Name" required><br><br>
             <input type="text" name="address1" placeholder="Address Line 1" required><br><br>
             <input type="text" name="address2" placeholder="Address Line 2 (optional)"><br><br>

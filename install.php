@@ -41,8 +41,6 @@ $stmt = $conn->prepare("DROP TABLE IF EXISTS customeraddress;
 CREATE TABLE customeraddress
 (customerid INT(6) NOT NULL,
 addressid INT(8) NOT NULL)");
-$stmt->execute();$stmt->bindParam(':customerid', $customerid);
-$stmt->bindParam(':addressid', $addressid);
 $stmt->execute();
 
 // inserting data into table
@@ -52,6 +50,9 @@ $addressid = 1;
 $stmt = $conn->prepare("INSERT INTO customeraddress(customerid, addressid)
 VALUES(:customerid, :addressid)");
 
+$stmt->bindParam(':customerid', $customerid);
+$stmt->bindParam(':addressid', $addressid);
+$stmt->execute();
 
 // creating address table
 $stmt = $conn->prepare("DROP TABLE IF EXISTS address;
@@ -80,6 +81,8 @@ $stmt->bindParam(':city', $city);
 $stmt->bindParam(':county', $county);
 $stmt->bindParam(':postcode', $postcode);
 $stmt->execute();
+
+
 
 // creating admin table
 $stmt = $conn->prepare("DROP TABLE IF EXISTS admin;
@@ -151,7 +154,6 @@ $stmt->bindParam(':category', $category);
 $stmt->bindParam(':description', $description);
 $stmt->bindParam(':itemprice', $price);
 $stmt->bindParam(':stock', $stock);
-
 $stmt->execute();
 
 $itemname="Pear 4pk";
@@ -213,11 +215,11 @@ num1 INT(3) NOT NULL,
 num2 INT(3))");
 $stmt->execute();
 
-$stmt = $conn->prepare("DROP TABLE IF EXISTS order;
-CREATE TABLE order
-(orderid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-)");
-$stmt->execute();
+// $stmt = $conn->prepare("DROP TABLE IF EXISTS order;
+// CREATE TABLE order
+// (orderid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+// address(8))");
+// $stmt->execute();
 
 $conn=null;
 
