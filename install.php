@@ -11,8 +11,6 @@ password VARCHAR(255) NOT NULL,
 forename VARCHAR(20),
 surname VARCHAR(20),
 phoneno INT(11),
-postcode VARCHAR(7),
-address VARCHAR(30),
 cardno VARCHAR(255))");
 $stmt->execute();
 
@@ -22,22 +20,65 @@ $hashed_password = password_hash("12345", PASSWORD_DEFAULT);
 $forename = "john";
 $surname = "doe";
 $phoneno = "01832277122";
-$postcode = "NN188LA";
-$address = "10 Downing Street";
+
 // encrypting card number using password hash
 $cardno = password_hash("1111222233334444", PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO customer(email, password, forename, surname, phoneno, postcode, address, cardno)
-VALUES(:email, :password, :forename, :surname, :phoneno, :postcode, :address, :cardno)");
+$stmt = $conn->prepare("INSERT INTO customer(email, password, forename, surname, phoneno, cardno)
+VALUES(:email, :password, :forename, :surname, :phoneno, :cardno)");
 
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':password', $hashed_password);
 $stmt->bindParam(':forename', $forename);
 $stmt->bindParam(':surname', $surname);
 $stmt->bindParam(':phoneno', $phoneno);
-$stmt->bindParam(':postcode', $postcode);
-$stmt->bindParam(':address', $address);
 $stmt->bindParam(':cardno', $cardno);
+$stmt->execute();
+
+
+// creating customer address linking table
+$stmt = $conn->prepare("DROP TABLE IF EXISTS customeraddress;
+CREATE TABLE customeraddress
+(customerid INT(6) NOT NULL,
+addressid INT(8) NOT NULL)");
+$stmt->execute();$stmt->bindParam(':customerid', $customerid);
+$stmt->bindParam(':addressid', $addressid);
+$stmt->execute();
+
+// inserting data into table
+$customerid = 1;
+$addressid = 1;
+
+$stmt = $conn->prepare("INSERT INTO customeraddress(customerid, addressid)
+VALUES(:customerid, :addressid)");
+
+
+// creating address table
+$stmt = $conn->prepare("DROP TABLE IF EXISTS address;
+CREATE TABLE address
+(addressid INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+address1 VARCHAR(32) NOT NULL,
+address2 VARCHAR(32),
+city VARCHAR(20) NOT NULL,
+county VARCHAR(20) NOT NULL,
+postcode VARCHAR(7) NOT NULL)");
+$stmt->execute();
+
+// inserting data into address table
+$address1 = "10 Downing Street";
+$address2 = "Flat 2";
+$city = "Oundle";
+$county ="Northamptonshire";
+$postcode = "NN188LA";
+
+$stmt = $conn->prepare("INSERT INTO address(address1, address2, city, county, postcode)
+VALUES(:address1, :address2, :city, :county, :postcode)");
+
+$stmt->bindParam(':address1', $address1);
+$stmt->bindParam(':address2', $address2);
+$stmt->bindParam(':city', $city);
+$stmt->bindParam(':county', $county);
+$stmt->bindParam(':postcode', $postcode);
 $stmt->execute();
 
 // creating admin table

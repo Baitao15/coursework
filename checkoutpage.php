@@ -27,7 +27,9 @@ $stmt->execute();
     </div>
     <br><br>
     <form action='placeorder.php'>
-        <h3>1. Delivery Address</h3>            
+        <h3>1. Delivery Address</h3>
+            <br>Saved Adresses<br>
+                        
             <input type="text" name="recipent" placeholder="Recipient Name" required><br><br>
             <input type="text" name="address1" placeholder="Address Line 1" required><br><br>
             <input type="text" name="address2" placeholder="Address Line 2 (optional)"><br><br>
