@@ -26,7 +26,7 @@ $customerid=($_SESSION['id']);
         <h3>1. Delivery Address</h3>        
             <?php
             if (isset($_SESSION['email'])){  
-                echo("Saved Adresses<br>");
+                echo("<h4>Saved Adresses</h4>");
                 $stmt = $conn->prepare("SELECT addressid FROM customeraddress WHERE customerid = $customerid");
                 $stmt->execute();
                 $addresses=array();
@@ -43,13 +43,11 @@ $customerid=($_SESSION['id']);
                         echo($row["postcode"]."<br>");
                         echo('</label><br>');
                     } 
-                }
-                
-                
+                }    
             }
             ?>
 
-            <br>Use Different Address<br>
+            <h4>Use Different Address</h4>
             <input type="text" name="recipent" placeholder="Recipient Name" required><br><br>
             <input type="text" name="address1" placeholder="Address Line 1" required><br><br>
             <input type="text" name="address2" placeholder="Address Line 2 (optional)"><br><br>
