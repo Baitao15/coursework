@@ -112,12 +112,12 @@ $stmt->execute();
 // encrypting card number using hash
 $cardno = password_hash("1111222233334444", PASSWORD_DEFAULT);
 $lastfour = "4444";
-$expdate = "2021-10";
+$expdate = "2021-10-01";
 $cardholdername = "E EXAMPLE";
 // for this section, i will just use the same address and postcode from line 64
 
 $stmt = $conn->prepare("INSERT INTO card(cardno, lastfour, expdate, cardholdername, postcode, address)
-VALUES(:cardno, ;lastfour, :expdate, :cardholdername, :postcode, :address1)");
+VALUES(:cardno, :lastfour, :expdate, :cardholdername, :postcode, :address1)");
 
 $stmt->bindParam(':cardno', $cardno);
 $stmt->bindParam(':lastfour', $lastfour);

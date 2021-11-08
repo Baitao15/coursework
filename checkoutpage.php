@@ -50,7 +50,7 @@ $customerid=($_SESSION['id']);
             ?>
         <div class="panel panel-default">
             <div class="panel-heading" class="collapse">
-                <a data-toggle="collapse" href="#collapse1">Use Different Address</a>
+                <a data-toggle="collapse" href="#collapse1"><h5>Use Different Address</h5></a>
             </div>
             <div id="collapse1" class="panel-collapse collapse">
                 <div class="panel-body">
@@ -76,17 +76,28 @@ $customerid=($_SESSION['id']);
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                         echo('<input type="radio" name="card" value="'.$row["cardid"].'"><label>');
-                        echo("****".$row["cardno"]."<br>");
+                        echo("****".$row["lastfour"]."<br>");
                         echo($row["cardholdername"]);
                         echo('</label><br>');
                     } 
                 }    
             }
             ?>
-            <input type="text" name="cardnumber" placeholder="Card Number" required><br><br>
-            <input type="month" name="expirydate" required><br><br>
-            <input type="text" name="cardholdername" placeholder="Cardholder Name" required><br><br>
-            
+        <div class="panel panel-default">
+            <div class="panel-heading" class="collapse">
+                <a data-toggle="collapse" href="#collapse2"><h5>Use Different Payment Mehtod</h5></a>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <input type="text" name="cardnumber" placeholder="Card Number" required><br><br>
+                    <input type="month" name="expirydate" required><br><br>
+                    <input type="text" name="cardholdername" placeholder="Cardholder Name" required><br><br>
+                    <input type="number" name="seccode" placeholder="Security Code" required><br><br>
+                    <input type="text" name="billingaddress" placeholder="Billing Address" required><br><br>
+                    <input type="text" name="billingpostcode" placeholder="Billing Postcode" required><br><br>
+                </div>
+            </div>
+        </div>
         <h3>3. Confirm and Place</h3>
             Order Total: <?php echo('£'.$_SESSION['total']);?><br>
             <input type="submit" value="Order & Pay" class="btn btn-lg">
