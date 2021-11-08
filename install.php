@@ -100,10 +100,10 @@ $stmt->execute();
 $stmt = $conn->prepare("DROP TABLE IF EXISTS card;
 CREATE TABLE card
 (cardid INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-cardno INT(16) NOT NULL,
+cardno VARCHAR(128) NOT NULL,
 expdate DATE NOT NULL,
 cardholdername VARCHAR(32) NOT NULL,
-postcode VARCHAR(7) NOT NULL
+postcode VARCHAR(7) NOT NULL,
 address VARCHAR(32) NOT NULL)");
 $stmt->execute();
 
