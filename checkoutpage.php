@@ -48,9 +48,6 @@ $customerid=($_SESSION['id']);
                 }    
             }
             ?>
-
-  
-  
         <div class="panel panel-default">
             <div class="panel-heading" class="collapse">
                 <a data-toggle="collapse" href="#collapse1">Use Different Address</a>

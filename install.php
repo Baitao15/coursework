@@ -10,8 +10,7 @@ email VARCHAR(50) NOT NULL,
 password VARCHAR(255) NOT NULL,
 forename VARCHAR(20),
 surname VARCHAR(20),
-phoneno INT(11),
-cardno VARCHAR(255))");
+phoneno INT(11))");
 $stmt->execute();
 
 // inserting defualt data into the customer table
@@ -21,18 +20,14 @@ $forename = "john";
 $surname = "doe";
 $phoneno = "01832277122";
 
-// encrypting card number using password hash
-$cardno = password_hash("1111222233334444", PASSWORD_DEFAULT);
-
-$stmt = $conn->prepare("INSERT INTO customer(email, password, forename, surname, phoneno, cardno)
-VALUES(:email, :password, :forename, :surname, :phoneno, :cardno)");
+$stmt = $conn->prepare("INSERT INTO customer(email, password, forename, surname, phoneno)
+VALUES(:email, :password, :forename, :surname, :phoneno)");
 
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':password', $hashed_password);
 $stmt->bindParam(':forename', $forename);
 $stmt->bindParam(':surname', $surname);
 $stmt->bindParam(':phoneno', $phoneno);
-$stmt->bindParam(':cardno', $cardno);
 $stmt->execute();
 
 
@@ -82,6 +77,52 @@ $stmt->bindParam(':county', $county);
 $stmt->bindParam(':postcode', $postcode);
 $stmt->execute();
 
+
+// creating customer card linking table
+$stmt = $conn->prepare("DROP TABLE IF EXISTS customercard;
+CREATE TABLE customercard
+(customerid INT(6) NOT NULL,
+cardid INT(8) NOT NULL)");
+$stmt->execute();
+
+// inserting data into table
+$customerid = 1;
+$cardid = 1;
+
+$stmt = $conn->prepare("INSERT INTO customercard(customerid, cardid)
+VALUES(:customerid, :cardid)");
+
+$stmt->bindParam(':customerid', $customerid);
+$stmt->bindParam(':cardid', $cardid);
+$stmt->execute();
+
+// creating card table
+$stmt = $conn->prepare("DROP TABLE IF EXISTS card;
+CREATE TABLE card
+(cardid INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+cardno INT(16) NOT NULL,
+expdate DATE NOT NULL,
+cardholdername VARCHAR(32) NOT NULL,
+postcode VARCHAR(7) NOT NULL
+address VARCHAR(32) NOT NULL)");
+$stmt->execute();
+
+// inserting data into address table
+// encrypting card number using hash
+$cardno = password_hash("1111222233334444", PASSWORD_DEFAULT);
+$expdate = "2021-10";
+$cardholdername = "e example";
+// for this section, i will just use the same address and postcode from line 64
+
+$stmt = $conn->prepare("INSERT INTO card(cardno, expdate, cardholdername, postcode, address)
+VALUES(:cardno, :expdate, :cardholdername, :postcode, :address1)");
+
+$stmt->bindParam(':cardno', $cardno);
+$stmt->bindParam(':expdate', $expdate);
+$stmt->bindParam(':cardholdername', $cardholdername);
+$stmt->bindParam(':postcode', $postcode);
+$stmt->bindParam(':address1', $address1);
+$stmt->execute();
 
 
 // creating admin table
