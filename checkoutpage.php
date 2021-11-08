@@ -14,6 +14,8 @@ $customerid=($_SESSION['id']);
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
 
 <body>
@@ -47,14 +49,23 @@ $customerid=($_SESSION['id']);
             }
             ?>
 
-            <h4>Use Different Address</h4>
-            <input type="text" name="recipent" placeholder="Recipient Name" required><br><br>
-            <input type="text" name="address1" placeholder="Address Line 1" required><br><br>
-            <input type="text" name="address2" placeholder="Address Line 2 (optional)"><br><br>
-            <input type="text" name="city" placeholder="City/Town/Village" required><br><br>
-            <input type="text" name="county" placeholder="County" required><br><br>
-            <input type="text" name="postcode" placeholder="Postcode" required><br><br>
-
+  
+  
+        <div class="panel panel-default">
+            <div class="panel-heading" class="collapse">
+                <a data-toggle="collapse" href="#collapse1">Use Different Address</a>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <input type="text" name="recipent" placeholder="Recipient Name" required><br><br>
+                    <input type="text" name="address1" placeholder="Address Line 1" required><br><br>
+                    <input type="text" name="address2" placeholder="Address Line 2 (optional)"><br><br>
+                    <input type="text" name="city" placeholder="City/Town/Village" required><br><br>
+                    <input type="text" name="county" placeholder="County" required><br><br>
+                    <input type="text" name="postcode" placeholder="Postcode" required><br><br>
+                </div>
+            </div>
+        </div>
         <h3>2. Payment Details</h3>
             <input type="text" name="cardnumber" placeholder="Card Number" required><br><br>
             <input type="month" name="expirydate" required><br><br>
@@ -63,7 +74,6 @@ $customerid=($_SESSION['id']);
         <h3>3. Confirm and Place</h3>
             Order Total: <?php echo('£'.$_SESSION['total']);?><br>
             <input type="submit" value="Order & Pay" class="btn btn-lg">
-
     </form>
 </body>
 </html>
