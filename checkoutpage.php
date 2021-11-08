@@ -64,6 +64,25 @@ $customerid=($_SESSION['id']);
             </div>
         </div>
         <h3>2. Payment Details</h3>
+            <?php
+            if (isset($_SESSION['email'])){  
+                echo("<h4>Saved Cards</h4>");
+                $stmt = $conn->prepare("SELECT cardid FROM customercard WHERE customerid = $customerid");
+                $stmt->execute();
+                $cards=array();
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    $cardid=($row['cardid']);
+                    $stmt = $conn->prepare("SELECT * FROM card WHERE cardid = $cardid");
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        echo('<input type="radio" name="card" value="'.$row["cardid"].'"><label>');
+                        echo("****".$row["cardno"]."<br>");
+                        echo($row["cardholdername"]);
+                        echo('</label><br>');
+                    } 
+                }    
+            }
+            ?>
             <input type="text" name="cardnumber" placeholder="Card Number" required><br><br>
             <input type="month" name="expirydate" required><br><br>
             <input type="text" name="cardholdername" placeholder="Cardholder Name" required><br><br>
