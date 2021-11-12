@@ -6,13 +6,12 @@ if (!isset($_POST['address1'])){
         header('Location: checkoutpage.php');
     }
     else{
-        $stmt = $conn->prepare("SELECT addressid FROM customeraddress WHERE customerid = $customerid");
-                $stmt->execute();
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    $addressid=($row['addressid']);
-                    $stmt = $conn->prepare("SELECT * FROM address WHERE addressid = $addressid");
-                    $stmt->execute();
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){};
+        $addressid=$_POST['address1'];
+        $stmt = $conn->prepare("SELECT * FROM address WHERE addressid = $addressid");
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            echo($row['address1']);
+        }
     }
 }
 // header('Location: ordersummarypage.php');
