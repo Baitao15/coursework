@@ -24,10 +24,17 @@ $customerid=($_SESSION['id']);
         <a href=basketpage.php>Back to Basket</a>
     </div>
     <br><br>
+    <?php
+    // if (isset($_SESSION['message'])){
+    //     echo('AAAAAAA');
+    //     echo('<br><br><br>'.$_SESSION['message']);
+        // unset($_SESSION['message']);
+    // }
+    ?>
     <form action='placeorder.php'>
-        <h3>1. Delivery Address</h3>        
+        <h3>1. Delivery Address</h3>
             <?php
-            if (isset($_SESSION['email'])){  
+            if (isset($_SESSION['email'])){
                 echo("<h4>Saved Adresses</h4>");
                 $stmt = $conn->prepare("SELECT addressid FROM customeraddress WHERE customerid = $customerid");
                 $stmt->execute();
@@ -44,8 +51,8 @@ $customerid=($_SESSION['id']);
                         echo($row["county"]."<br>");
                         echo($row["postcode"]."<br>");
                         echo('</label><br>');
-                    } 
-                }    
+                    }
+                }
             }
             ?>
         <div class="panel panel-default">
@@ -54,12 +61,12 @@ $customerid=($_SESSION['id']);
             </div>
             <div id="collapse1" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <input type="text" name="recipent" placeholder="Recipient Name" required><br><br>
-                    <input type="text" name="address1" placeholder="Address Line 1" required><br><br>
+                    <input type="text" name="recipent" placeholder="Recipient Name" ><br><br>
+                    <input type="text" name="address1" placeholder="Address Line 1" ><br><br>
                     <input type="text" name="address2" placeholder="Address Line 2 (optional)"><br><br>
-                    <input type="text" name="city" placeholder="City/Town/Village" required><br><br>
-                    <input type="text" name="county" placeholder="County" required><br><br>
-                    <input type="text" name="postcode" placeholder="Postcode" required><br><br>
+                    <input type="text" name="city" placeholder="City/Town/Village" ><br><br>
+                    <input type="text" name="county" placeholder="County"><br><br>
+                    <input type="text" name="postcode" placeholder="Postcode"><br><br>
                 </div>
             </div>
         </div>
@@ -79,8 +86,8 @@ $customerid=($_SESSION['id']);
                         echo("****".$row["lastfour"]."<br>");
                         echo($row["cardholdername"]);
                         echo('</label><br>');
-                    } 
-                }    
+                    }
+                }
             }
             ?>
         <div class="panel panel-default">
@@ -89,12 +96,12 @@ $customerid=($_SESSION['id']);
             </div>
             <div id="collapse2" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <input type="text" name="cardnumber" placeholder="Card Number" required><br><br>
-                    <input type="month" name="expirydate" required><br><br>
-                    <input type="text" name="cardholdername" placeholder="Cardholder Name" required><br><br>
-                    <input type="number" name="seccode" placeholder="Security Code" required><br><br>
-                    <input type="text" name="billingaddress" placeholder="Billing Address" required><br><br>
-                    <input type="text" name="billingpostcode" placeholder="Billing Postcode" required><br><br>
+                    <input type="text" name="cardnumber" placeholder="Card Number"><br><br>
+                    <input type="month" name="expirydate"><br><br>
+                    <input type="text" name="cardholdername" placeholder="Cardholder Name"><br><br>
+                    <input type="number" name="seccode" placeholder="Security Code"><br><br>
+                    <input type="text" name="billingaddress" placeholder="Billing Address"><br><br>
+                    <input type="text" name="billingpostcode" placeholder="Billing Postcode"><br><br>
                 </div>
             </div>
         </div>
