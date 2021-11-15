@@ -259,11 +259,11 @@ num1 INT(3) NOT NULL,
 num2 INT(3))");
 $stmt->execute();
 
-// $stmt = $conn->prepare("DROP TABLE IF EXISTS order;
-// CREATE TABLE order
-// (orderid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-// address(8))");
-// $stmt->execute();
+$stmt = $conn->prepare("DROP TABLE IF EXISTS order;
+CREATE TABLE order
+(orderid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+addressid INT(8))");
+$stmt->execute();
 
 $conn=null;
 

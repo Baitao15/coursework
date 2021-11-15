@@ -31,7 +31,7 @@ $customerid=($_SESSION['id']);
         // unset($_SESSION['message']);
     // }
     ?>
-    <form action='placeorder.php'>
+    <form action='placeorder.php' method="POST" class="form-inline">
         <h3>1. Delivery Address</h3>
             <?php
             if (isset($_SESSION['email'])){
@@ -44,7 +44,7 @@ $customerid=($_SESSION['id']);
                     $stmt = $conn->prepare("SELECT * FROM address WHERE addressid = $addressid");
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                        echo('<input type="radio" name="address" value="'.$row["addressid"].'"><label>');
+                        echo('<input type="radio" id="'.$row["addressid"].'" name="address" value="'.$row["addressid"].'"><label for='.$row["addressid"].'>');
                         echo($row["address1"]."<br>");
                         echo($row["address2"]."<br>");
                         echo($row["city"]."<br>");
@@ -82,7 +82,7 @@ $customerid=($_SESSION['id']);
                     $stmt = $conn->prepare("SELECT * FROM card WHERE cardid = $cardid");
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                        echo('<input type="radio" name="card" value="'.$row["cardid"].'"><label>');
+                        echo('<input type="radio" id="'.$row["cardid"].'" name="card" value="'.$row["cardid"].'"><label for='.$row["cardid"].'>');
                         echo("****".$row["lastfour"]."<br>");
                         echo($row["cardholdername"]);
                         echo('</label><br>');
