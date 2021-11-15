@@ -263,7 +263,7 @@ $stmt = $conn->prepare("DROP TABLE IF EXISTS orderr;
 CREATE TABLE orderr
 (orderid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 addressid INT(8),
-ordercontents VARCHAR(256)");
+ordercontents VARCHAR(256))");
 $stmt->execute();
 
 $conn=null;
