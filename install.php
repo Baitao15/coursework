@@ -259,8 +259,8 @@ num1 INT(3) NOT NULL,
 num2 INT(3))");
 $stmt->execute();
 
-$stmt = $conn->prepare("DROP TABLE IF EXISTS order;
-CREATE TABLE order
+$stmt = $conn->prepare("DROP TABLE IF EXISTS orderr;
+CREATE TABLE orderr
 (orderid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 addressid INT(8))");
 $stmt->execute();
