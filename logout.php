@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(isset($_SESSION['userid']))
+if(isset($_SESSION['id']))
 {
-    unset($_SESSION['userid']);
+    unset($_SESSION['id']);
 }
 
 if(isset($_SESSION['email']))

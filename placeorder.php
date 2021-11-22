@@ -18,11 +18,11 @@ if ($_POST['address1']==""){
         $stmt = $conn->prepare("INSERT INTO orderr(customerid, addressid, ordercontents)
         VALUES(:customerid,:addressid,:ordercontents)");
 
-        $stmt->bindParam(':customerid', $_SESSION['userid']);
+        $stmt->bindParam(':customerid', $_SESSION['id']);
         $stmt->bindParam(':addressid', $_POST['address']);
         $stmt->bindParam(':ordercontents', $ordercontents);
         $stmt->execute();
     }
 }
-// header('Location: ordersummarypage.php');
+header('Location: ordersummarypage.php');
 ?>
