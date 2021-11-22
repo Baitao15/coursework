@@ -20,7 +20,7 @@ if ($_POST['address1']==""){
         VALUES(:addressid,:ordercontents)");
 
         $stmt->bindParam(':addressid', $_POST['address']);
-        $stmt->bindParam(':ordercontents', );
+        $stmt->bindParam(':ordercontents', $ordercontents);
         $stmt->execute();
     }
 }
