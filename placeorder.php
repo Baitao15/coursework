@@ -9,19 +9,18 @@ if ($_POST['address1']==""){
         header('Location: checkoutpage.php');
     }
     else{
-        echo($_SESSION['basket'][0][0]);
-        echo($_SESSION['basket'][1][1]);
         $ordercontents="";
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
             $itemid=($_SESSION['basket'][$i][0]);
             $qty=($_SESSION['basket'][$i][1]);
             $ordercontents.= ($itemid.','.$qty.':');
+            echo($ordercontents);
         }
         $stmt = $conn->prepare("INSERT INTO orderr(addressid, ordercontents)
         VALUES(:addressid,:ordercontents)");
 
         $stmt->bindParam(':addressid', $_POST['address']);
-        $stmt->bindParam(':ordercontents', $_SESSION['basket']);
+        $stmt->bindParam(':ordercontents', );
         $stmt->execute();
     }
 }
