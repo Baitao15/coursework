@@ -2,7 +2,8 @@
 
 <?php
     session_start();
-    $_SESSION['backURL']='ordersummarypage.php';
+    include_once('connection.php');
+    $id = $_SESSION['id'];
 ?>
 
 <html>
@@ -51,8 +52,7 @@
 
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                    echo($row);
-
+                    echo($row['ordercontents']);
                     ?>
                 </table>
             </div>

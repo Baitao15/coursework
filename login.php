@@ -10,7 +10,6 @@ $stmt = $conn->prepare("SELECT * FROM customer WHERE email = :email;");
 $stmt->bindparam(':email', $_POST['email']);
 $stmt->execute();
 
-
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
     $hashed= $row['password'];
