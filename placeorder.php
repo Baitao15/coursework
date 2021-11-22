@@ -14,11 +14,11 @@ if ($_POST['address1']==""){
             $itemid=($_SESSION['basket'][$i][0]);
             $qty=($_SESSION['basket'][$i][1]);
             $ordercontents.= ($itemid.','.$qty.':');
-            echo($ordercontents);
         }
-        $stmt = $conn->prepare("INSERT INTO orderr(addressid, ordercontents)
-        VALUES(:addressid,:ordercontents)");
+        $stmt = $conn->prepare("INSERT INTO orderr(customerid, addressid, ordercontents)
+        VALUES(:customerid,:addressid,:ordercontents)");
 
+        $stmt->bindParam(':customerid', $_SESSION['userid']);
         $stmt->bindParam(':addressid', $_POST['address']);
         $stmt->bindParam(':ordercontents', $ordercontents);
         $stmt->execute();
