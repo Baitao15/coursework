@@ -31,10 +31,26 @@
     <br>
     <br>
     <br>
-        <?php
-
-        ?>
-    </div>
-
+    <!-- main body -->
+        <div class="container text-center">
+            <h3>Thank You!</h3>
+            Order placed successfully
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <table class='table'>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                    <?php
+                    $stmt = $conn->prepare("SELECT * FROM orderr WHERE customerid = $id");
+                    $stmt->execute();
+                    ?>
+                </table>
+            </div>
+        </div>
 </body>
 </html>

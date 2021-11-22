@@ -40,12 +40,15 @@
         echo('<a href="grocerypage.php">Add items</a>');
     }
     if (isset($_SESSION['basket'])){
-        echo("<table class='table'>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>");
+        echo("<div class='row'>
+                <div class='col-sm-2'></div>
+                <div class='col-sm-8'>
+                    <table class='table'>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>");
         $total=0;
         // print_r($_SESSION);
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
@@ -67,7 +70,9 @@
         echo("<form action='checkoutpage.php' method='POST' class='form-inline'>
                 <input type='hidden' name='total' value='$total'>
                 <input type='submit' value='Checkout' class='btn btn-sm'>
-            </form>");
+            </form>
+            </div>
+            </div>");
         $_SESSION['total']=$total;
     }
     ?>
