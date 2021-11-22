@@ -34,7 +34,7 @@
       <div class=form>
         <b>Welcome back</b><br>
         <?php
-        // display failed login message if applicable
+        // display and then unset failed login message if applicable
             if (isset($_SESSION['message'])){
               echo($_SESSION['message']);
               unset($_SESSION['message']);
