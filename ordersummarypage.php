@@ -46,8 +46,13 @@
                         <th>Price</th>
                     </tr>
                     <?php
-                    $stmt = $conn->prepare("SELECT * FROM orderr WHERE customerid = $id");
+                    $stmt = $conn->prepare("SELECT * FROM orderr WHERE customerid = $id ORDER BY orderid DESC LIMIT 1");
                     $stmt->execute();
+
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    echo($row);
+
                     ?>
                 </table>
             </div>

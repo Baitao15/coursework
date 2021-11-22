@@ -27,9 +27,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         }
         unset($_SESSION['backURL']);
         header('Location: ' . $backURL);
-
-    
-    }else{
+    }
+    else{
         $_SESSION['message']='Incorrect email or password, please try again';
         header('Location: loginpage.php');
     }
