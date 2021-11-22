@@ -9,6 +9,8 @@ if ($_POST['address1']==""){
         header('Location: checkoutpage.php');
     }
     else{
+        echo($_SESSION['basket'][0][0]);
+        echo($_SESSION['basket'][1][1]);
         $ordercontents="";
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
             $itemid=($_SESSION['basket'][$i][0]);

@@ -47,6 +47,7 @@
                     <th>Price</th>
                 </tr>");
         $total=0;
+        // print_r($_SESSION);
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
             $itemid=($_SESSION['basket'][$i][0]);
             $stmt = $conn->prepare("SELECT itemname, itemprice FROM item WHERE itemid = $itemid");

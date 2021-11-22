@@ -249,7 +249,6 @@ $stmt->execute();
 $stmt->execute();
 $stmt->execute();
 $stmt->execute();
-
 $stmt = $conn->prepare("DROP TABLE IF EXISTS offer;
 CREATE TABLE offer
 (offerid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

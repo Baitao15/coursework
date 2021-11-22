@@ -24,5 +24,8 @@ if (!isset($_SESSION['backURL'])){
 }
 unset($_SESSION['backURL']);
 header('Location: ' . $backURL);
+// print_r($_SESSION["basket"]);
+// print_r($temp);
+
 ?>
 

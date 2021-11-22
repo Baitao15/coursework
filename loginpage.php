@@ -27,12 +27,18 @@
     </p>
     <br><br><br><br><br>
     <div class="col-sm-4"></div>
-    <!-- basic text for the page, including a form for users to create an account -->
+    <!-- basic text for the page, including a form for users to login -->
     <div class="text-center">
     <div class="col-sm-4">
       <h3>Login</h3>
       <div class=form>
         <b>Welcome back</b><br>
+        <?php
+        // display failed login message if applicable
+            if (isset($_SESSION['message'])){
+              echo($_SESSION['message']);
+            }
+        ?>
         <form action="login.php" method="POST">
             <br>
             <input type="text" name="email" placeholder="Email" required><br><br>
