@@ -36,7 +36,7 @@
         <?php
         // display and then unset failed login message if applicable
             if (isset($_SESSION['message'])){
-              echo($_SESSION['message']);
+              echo("<div class='message'>".$_SESSION['message']."</div>");
               unset($_SESSION['message']);
             }
         ?>
