@@ -52,7 +52,8 @@
 
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                    echo($row['ordercontents']);
+                    $oc=$row['ordercontents'];
+                    echo(substr($oc, 0,0));
                     ?>
                 </table>
             </div>
