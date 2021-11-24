@@ -53,7 +53,18 @@
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                     $oc=$row['ordercontents'];
-                    echo(substr($oc, 0,0));
+                    
+                    
+
+                    $itemid=(substr($oc, (strpos($oc,',')-1), 1));
+
+                    $qty=(substr($oc, 2,1));
+
+                    $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
+                    $stmt->execute();
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    echo($row['itemname']);
+                    echo($qty);
                     ?>
                 </table>
             </div>
