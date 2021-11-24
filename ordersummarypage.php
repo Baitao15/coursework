@@ -56,14 +56,17 @@
                     
                     
 
-                    $itemid=(substr($oc, (strpos($oc,',')-1), 1));
+                    $itemid=(substr($oc, (strpos($oc,':')+1), (((strpos($oc,','))-1)-(strpos($oc,':')))));
 
-                    $qty=(substr($oc, 2,1));
+                    $oc=substr($oc,(strpos($oc,':')+1));
 
-                    $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
-                    $stmt->execute();
-                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    echo($row['itemname']);
+                    $qty=(substr($oc, (strpos($oc,',')+1), (((strpos($oc,':'))-1)-(strpos($oc,',')))));
+
+                    // $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
+                    // $stmt->execute();
+                    // $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    // echo($row['itemname']);
+                    echo($itemid);
                     echo($qty);
                     ?>
                 </table>

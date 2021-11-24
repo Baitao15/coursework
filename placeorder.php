@@ -9,7 +9,7 @@ if ($_POST['address1']==""){
         header('Location: checkoutpage.php');
     }
     else{
-        $ordercontents="";
+        $ordercontents=":";
         for ($i=0; $i<(count($_SESSION['basket'])); $i++){
             $itemid=($_SESSION['basket'][$i][0]);
             $qty=($_SESSION['basket'][$i][1]);
