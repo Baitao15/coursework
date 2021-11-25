@@ -69,22 +69,20 @@
 
                         $x=substr($x,($comma+1));
 
-                        echo($x);
                         echo('<br>'.$itemid.$qty.'<br>');
 
-                        if(strlen($x)>2){
+                        if(strlen($x)>1){
                             details($x);
                         }
+
+                        $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
+                        $stmt->execute();
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                        echo($row['itemname'].$qty);
 
                     }
 
                     details($oc);
-
-
-                    // $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
-                    // $stmt->execute();
-                    // $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    // echo($row['itemname']);
                     ?>
                 </table>
             </div>
