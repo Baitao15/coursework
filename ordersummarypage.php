@@ -54,20 +54,37 @@
 
                     $oc=$row['ordercontents'];
                     
-                    
+                    function details($x){
+                        $colon=strpos($x,':');
+                        $comma=strpos($x,',');
 
-                    $itemid=(substr($oc, (strpos($oc,':')+1), (((strpos($oc,','))-1)-(strpos($oc,':')))));
+                        $itemid=(substr($x, ($colon+1), (($comma-1)-($colon))));
+                        
+                        $x=substr($x,($colon+1));
 
-                    $oc=substr($oc,(strpos($oc,':')+1));
+                        $colon=strpos($x,':');
+                        $comma=strpos($x,',');
 
-                    $qty=(substr($oc, (strpos($oc,',')+1), (((strpos($oc,':'))-1)-(strpos($oc,',')))));
+                        $qty=(substr($x, ($comma+1), (($colon-1)-($comma))));
+
+                        $x=substr($x,($comma+1));
+
+                        echo($x);
+                        echo('<br>'.$itemid.$qty.'<br>');
+
+                        if(strlen($x)>2){
+                            details($x);
+                        }
+
+                    }
+
+                    details($oc);
+
 
                     // $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
                     // $stmt->execute();
                     // $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     // echo($row['itemname']);
-                    echo($itemid);
-                    echo($qty);
                     ?>
                 </table>
             </div>
