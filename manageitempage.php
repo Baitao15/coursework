@@ -28,6 +28,7 @@ $stmt->execute();
     <!-- navigation bar -->
     <p id=navbar>
         <a href=adminhomepage.php>Home</a>
+        <a href=orderpage.php>Orders</a>
         <a href=insightpage.php>Insights</a>
         <a href=manageitempage.php>Items</a>
         <a href=manageofferpage.php>Offers</a>

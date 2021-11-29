@@ -40,7 +40,7 @@
     <div class="groceries">
         <?php
             // getting relevant data from the database
-            $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item");
+            $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0");
             $stmt->execute();
             // counter
             $i=0;

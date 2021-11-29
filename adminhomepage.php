@@ -26,14 +26,15 @@ $stmt->execute();
 
 <body>
     <!-- navigation bar -->
-    <p id=navbar>
+    <div id=navbar>
         <a href=adminhomepage.php>Home</a>
+        <a href=orderpage.php>Orders</a>
         <a href=insightpage.php>Insights</a>
         <a href=manageitempage.php>Items</a>
         <a href=manageofferpage.php>Offers</a>
         <a href=manageaccountpage.php>Account</a>
         <a href=adminlogout.php>Logout</a>
-    </p>
+    </div>
     <!-- displaying welcome message -->
     <div class="jumbotron">
         <h3>

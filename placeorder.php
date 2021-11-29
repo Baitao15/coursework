@@ -24,5 +24,6 @@ if ($_POST['address1']==""){
         $stmt->execute();
     }
 }
+unset($_SESSION['basket']);
 header('Location: ordersummarypage.php');
 ?>

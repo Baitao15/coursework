@@ -80,7 +80,7 @@
                                 echo($qty);
                             echo('</td>');
                             echo('<td>');
-                                echo($row['itemprice']);
+                                echo($row['itemprice']*$qty);
                             echo('</td>');
                         echo('</tr>');
                     }
