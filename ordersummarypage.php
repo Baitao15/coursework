@@ -54,35 +54,36 @@
 
                     $oc=$row['ordercontents'];
                     
-                    function details($x){
-                        $colon=strpos($x,':');
-                        $comma=strpos($x,',');
+                    while(strlen($oc)>1){
+                        $colon=strpos($oc,':');
+                        $comma=strpos($oc,',');
 
-                        $itemid=(substr($x, ($colon+1), (($comma-1)-($colon))));
+                        $itemid=(substr($oc, ($colon+1), (($comma-1)-($colon))));
                         
-                        $x=substr($x,($colon+1));
+                        $oc=substr($oc,($colon+1));
 
-                        $colon=strpos($x,':');
-                        $comma=strpos($x,',');
+                        $colon=strpos($oc,':');
+                        $comma=strpos($oc,',');
 
-                        $qty=(substr($x, ($comma+1), (($colon-1)-($comma))));
+                        $qty=(substr($oc, ($comma+1), (($colon-1)-($comma))));
 
-                        $x=substr($x,($comma+1));
-
-                        echo('<br>'.$itemid.$qty.'<br>');
-
-                        if(strlen($x)>1){
-                            details($x);
-                        }
+                        $oc=substr($oc,($comma+1));
 
                         $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
                         $stmt->execute();
                         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                        echo($row['itemname'].$qty);
-
+                        echo('<tr>');
+                            echo('<td>');
+                                echo($row['itemname']);
+                            echo('</td>');
+                            echo('<td>');
+                                echo($qty);
+                            echo('</td>');
+                            echo('<td>');
+                                echo($row['itemprice']);
+                            echo('</td>');
+                        echo('</tr>');
                     }
-
-                    details($oc);
                     ?>
                 </table>
             </div>
