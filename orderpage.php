@@ -50,6 +50,7 @@ if (!isset($_SESSION['userid'])){
                 $orderid=$row['orderid'];
                 $customerid=$row['customerid'];
                 $addressid=$row['addressid'];
+                $oc=$row['ordercontents'];
 
                 $stmt = $conn->prepare("SELECT * FROM customer WHERE customerid=$customerid");
                 $stmt->execute();
@@ -62,7 +63,27 @@ if (!isset($_SESSION['userid'])){
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 $address=$row['address1'];
 
-                
+                $total=0;
+                while(strlen($oc)>1){
+                    $colon=strpos($oc,':');
+                    $comma=strpos($oc,',');
+
+                    $itemid=(substr($oc, ($colon+1), (($comma-1)-($colon))));
+                    
+                    $oc=substr($oc,($colon+1));
+
+                    $colon=strpos($oc,':');
+                    $comma=strpos($oc,',');
+
+                    $qty=(substr($oc, ($comma+1), (($colon-1)-($comma))));
+
+                    $oc=substr($oc,($comma+1));
+
+                    $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
+                    $stmt->execute();
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $total=$total+($row['itemprice']*$qty);
+                }
 
                 echo("<tr>");
                     echo("<td>".$orderid."</td>");
