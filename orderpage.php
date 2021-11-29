@@ -64,7 +64,7 @@ if (!isset($_SESSION['userid'])){
                 $address=$row['address1'];
 
                 $total=0;
-                while(strlen($oc)>1){
+                while(strlen($oc)>2){
                     $colon=strpos($oc,':');
                     $comma=strpos($oc,',');
 
@@ -90,6 +90,7 @@ if (!isset($_SESSION['userid'])){
                     echo("<td>".$forename.' '.$surname."</td>");
                     echo("<td>".$address."</td>");
                     echo("<td>".$total."</td>");
+                echo("</tr>");
                 ?>
             </table>
         </div>

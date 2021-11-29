@@ -53,8 +53,10 @@
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                     $oc=$row['ordercontents'];
+
+                    $total=0;
                     
-                    while(strlen($oc)>1){
+                    while(strlen($oc)>2){
                         $colon=strpos($oc,':');
                         $comma=strpos($oc,',');
 
@@ -83,9 +85,13 @@
                                 echo($row['itemprice']*$qty);
                             echo('</td>');
                         echo('</tr>');
+                        $total=$total+($row['itemprice']*$qty);
                     }
                     ?>
                 </table>
+            <?php
+            echo('<b>Order Total</b>: £'.$total);
+            ?>
             </div>
         </div>
 </body>
