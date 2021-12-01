@@ -46,51 +46,55 @@ if (!isset($_SESSION['userid'])){
                 <?php
                 $stmt = $conn->prepare("SELECT * FROM orderr ORDER BY orderid");
                 $stmt->execute();
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                $orderid=$row['orderid'];
-                $customerid=$row['customerid'];
-                $addressid=$row['addressid'];
-                $oc=$row['ordercontents'];
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    $orderid=$row['orderid'];
+                    $customerid=$row['customerid'];
+                    $addressid=$row['addressid'];
+                    $oc=$row['ordercontents'];
+                    // echo($orderid);
 
-                $stmt = $conn->prepare("SELECT * FROM customer WHERE customerid=$customerid");
-                $stmt->execute();
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                $forename=$row['forename'];
-                $surname=$row['surname'];
+                    $stmt1 = $conn->prepare("SELECT * FROM customer WHERE customerid=$customerid");
+                    $stmt1->execute();
+                    $row = $stmt1->fetch(PDO::FETCH_ASSOC);
+                    $forename=$row['forename'];
+                    $surname=$row['surname'];
 
-                $stmt = $conn->prepare("SELECT * FROM address WHERE addressid=$addressid");
-                $stmt->execute();
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                $address=$row['address1'];
+                    $stmt2 = $conn->prepare("SELECT * FROM address WHERE addressid=$addressid");
+                    $stmt2->execute();
+                    $row = $stmt2->fetch(PDO::FETCH_ASSOC);
+                    $address=$row['address1'];
 
-                $total=0;
-                while(strlen($oc)>2){
-                    $colon=strpos($oc,':');
-                    $comma=strpos($oc,',');
+                    $total=0;
+                    while(strlen($oc)>2){
+                        $colon=strpos($oc,':');
+                        $comma=strpos($oc,',');
 
-                    $itemid=(substr($oc, ($colon+1), (($comma-1)-($colon))));
-                    
-                    $oc=substr($oc,($colon+1));
+                        $itemid=(substr($oc, ($colon+1), (($comma-1)-($colon))));
+                        
+                        $oc=substr($oc,($colon+1));
 
-                    $colon=strpos($oc,':');
-                    $comma=strpos($oc,',');
+                        $colon=strpos($oc,':');
+                        $comma=strpos($oc,',');
 
-                    $qty=(substr($oc, ($comma+1), (($colon-1)-($comma))));
+                        $qty=(substr($oc, ($comma+1), (($colon-1)-($comma))));
 
-                    $oc=substr($oc,($comma+1));
+                        $oc=substr($oc,($comma+1));
 
-                    $stmt = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
-                    $stmt->execute();
-                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    $total=$total+($row['itemprice']*$qty);
+                        echo('<br>.'.$itemid);
+
+                        $stmt3 = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
+                        $stmt3->execute();
+                        $row = $stmt3->fetch(PDO::FETCH_ASSOC);
+                        $total=$total+($row['itemprice']*$qty);
+                    }
+
+                    echo("<tr>");
+                        echo("<td>".$orderid."</td>");
+                        echo("<td>".$forename.' '.$surname."</td>");
+                        echo("<td>".$address."</td>");
+                        echo("<td>£".$total."</td>");
+                    echo("</tr>");
                 }
-
-                echo("<tr>");
-                    echo("<td>".$orderid."</td>");
-                    echo("<td>".$forename.' '.$surname."</td>");
-                    echo("<td>".$address."</td>");
-                    echo("<td>".$total."</td>");
-                echo("</tr>");
                 ?>
             </table>
         </div>
