@@ -65,7 +65,7 @@ if (!isset($_SESSION['userid'])){
                     $address=$row['address1'];
 
                     $total=0;
-                    while(strlen($oc)>2){
+                    while(strlen($oc)>3){
                         $colon=strpos($oc,':');
                         $comma=strpos($oc,',');
 
@@ -79,8 +79,6 @@ if (!isset($_SESSION['userid'])){
                         $qty=(substr($oc, ($comma+1), (($colon-1)-($comma))));
 
                         $oc=substr($oc,($comma+1));
-
-                        echo('<br>.'.$itemid);
 
                         $stmt3 = $conn->prepare("SELECT * FROM item WHERE itemid = $itemid");
                         $stmt3->execute();

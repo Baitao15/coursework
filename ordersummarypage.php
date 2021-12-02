@@ -82,7 +82,7 @@
                                 echo($qty);
                             echo('</td>');
                             echo('<td>');
-                                echo($row['itemprice']*$qty);
+                                echo('£'.number_format(($row['itemprice']*$qty), 2));
                             echo('</td>');
                         echo('</tr>');
                         $total=$total+($row['itemprice']*$qty);
@@ -90,7 +90,7 @@
                     ?>
                 </table>
             <?php
-            echo('<b>Order Total</b>: £'.$total);
+            echo('<b>Order Total</b>: £'.number_format(($total), 2));
             ?>
             </div>
         </div>

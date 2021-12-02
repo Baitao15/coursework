@@ -59,14 +59,14 @@
                 echo('<tr><td>'.$row['itemname'].'</td>');
                 echo('<td>'.$_SESSION['basket'][$i][1].'</td>');
                 $price = ($row['itemprice'])*($_SESSION['basket'][$i][1]);
-                echo('<td>'.'£'.$price.'</td>');
+                echo('<td>'.'£'.number_format(($price), 2).'</td>');
                 echo('</tr>');
                 $total=$total+$price;
             }  
         }
         echo("</table>
             <b>Total<br>
-            £".$total."</b><br>");
+            £".number_format(($total), 2)."</b><br>");
         echo("<form action='checkoutpage.php' method='POST' class='form-inline'>
                 <input type='hidden' name='total' value='$total'>
                 <input type='submit' value='Checkout' class='btn btn-sm'>
