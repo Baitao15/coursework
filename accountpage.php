@@ -33,7 +33,19 @@
             }
         ?>
     </div>
-<br><br><br>
+    <br><br><br>
     <div class='row'>
-        <div class='col-sm-2'></div>
-        <div class='col-sm-8'></div>
+        <div class='col-sm-3'></div>
+        <div class='col-sm-6'>
+            <h3>Your Account</h3>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-sm-3'></div>
+        <div class='col-sm-2'>
+            Past Orders
+        </div>
+        <div class='col-sm-2'>
+            Personal Details
+        </div>
+    </div>
