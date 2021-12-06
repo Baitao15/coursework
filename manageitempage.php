@@ -1,5 +1,5 @@
 <html>
-
+    
 <?php
 // linking to connection.php to gain access to the database
 include_once("connection.php");
@@ -9,11 +9,6 @@ session_start();
 if (!isset($_SESSION['userid'])){   
     header("Location:adminloginpage.php");
 }
-
-// getting admin forename
-$findid = ($_SESSION['userid']);
-$stmt = $conn->prepare("SELECT forename FROM admin WHERE userid = $findid");
-$stmt->execute();
 ?>
 
 <head>
@@ -26,7 +21,7 @@ $stmt->execute();
 
 <body>
     <!-- navigation bar -->
-    <p id=navbar>
+    <div id=navbar>
         <a href=adminhomepage.php>Home</a>
         <a href=orderpage.php>Orders</a>
         <a href=insightpage.php>Insights</a>
@@ -34,17 +29,8 @@ $stmt->execute();
         <a href=manageofferpage.php>Offers</a>
         <a href=manageaccountpage.php>Account</a>
         <a href=adminlogout.php>Logout</a>
-    </p>
-<br><br><br>
-    <div>
-        <?php
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                echo("Hi ".$row["forename"].", what would you like to do?");
-            }
-        ?>
     </div>
 <br><br><br>
-
     <h4>Add New Item</h4>
     <form action="manageitem.php" method="POST">
         <input type="text" name="itemname" placeholder="Item Name" required><br><br>
