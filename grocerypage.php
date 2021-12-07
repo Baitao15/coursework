@@ -52,16 +52,18 @@
                     echo('<div class="col-sm-2"></div>');
                 }
                 echo('<div class="col-sm-2">');
-                    echo('<div class="panel panel-default text-center">');
-                        echo('<div class="panel-heading"><b>'.$row["itemname"]."</b></div>");
-                        echo('<div><img src="/coursework/images/'.$row["itemimage"].'" width="128" height="128"></div>');
-                        echo("<br>"."£".$row["itemprice"]."<br>");
-                        echo('<form action="addtobasket.php" method="POST" class="form-inline">');
-                            echo('<input type="hidden" name="id" value='.$row["itemid"].">");
-                            echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>');
-                            echo('<br><input type="submit" value="Add" class="btn btn-sm"><br>');
-                        echo("</form><br>");
-                    echo('</div>');
+                    echo("<a href=itempage.php>");
+                        echo('<div class="panel panel-default text-center">');
+                            echo('<div class="panel-heading"><b>'.$row["itemname"]."</b></div>");
+                            echo('<div><img src="/coursework/images/'.$row["itemimage"].'" width="128" height="128"></div>');
+                            echo("<br>"."£".$row["itemprice"]."<br>");
+                            echo('<form action="addtobasket.php" method="POST" class="form-inline">');
+                                echo('<input type="hidden" name="id" value='.$row["itemid"].">");
+                                echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>');
+                                echo('<br><input type="submit" value="Add" class="btn btn-sm"><br>');
+                            echo("</form><br>");
+                        echo('</div>');
+                    echo('</a>');
                 echo('</div>');
                 $i=$i+1;
                 if ($i==4){
