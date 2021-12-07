@@ -13,6 +13,7 @@ $stmt->bindparam(':email', $email);
 $stmt->execute();
 
 if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    // if the email is found in the database, redirect user to register page with error message
     $_SESSION['message']='Email is already registered with an account. <a href=loginpage.php>Login</a>';
     header('Location: registerpage.php');
 }
