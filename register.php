@@ -3,9 +3,6 @@
 include_once("connection.php");
 session_start();
 
-// hashing the password
-$hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
 // checking the email is not already associated with an account
 $email=$_POST["email"];
 $stmt = $conn->prepare("SELECT email FROM customer WHERE email = :email;");
@@ -19,6 +16,9 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 }
 
 else{
+    // hashing the password
+    $hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    
     // sending the data to the database
     $stmt = $conn->prepare("INSERT INTO customer(email,password)
     VALUES(:email,:password)");
