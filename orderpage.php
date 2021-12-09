@@ -43,11 +43,6 @@ if (!isset($_SESSION['userid'])){
                     <th>Delivery Address</th>
                     <th>Order Total</th>
                 </tr>
-            </table>
-        </div>
-    </div>
-
-
                 <?php
                 $stmt = $conn->prepare("SELECT * FROM orderr ORDER BY orderid");
                 $stmt->execute();
