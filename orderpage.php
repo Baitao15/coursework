@@ -30,6 +30,7 @@ if (!isset($_SESSION['userid'])){
         <a href=manageaccountpage.php>Account</a>
         <a href=adminlogout.php>Logout</a>
     </div>
+</body>
 
     <br><br><br><br>
 
