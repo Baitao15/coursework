@@ -30,7 +30,6 @@ if (!isset($_SESSION['userid'])){
         <a href=manageaccountpage.php>Account</a>
         <a href=adminlogout.php>Logout</a>
     </div>
-</body>
 
     <br><br><br><br>
 
@@ -52,7 +51,6 @@ if (!isset($_SESSION['userid'])){
                     $customerid=$row['customerid'];
                     $addressid=$row['addressid'];
                     $oc=$row['ordercontents'];
-                    // echo($orderid);
 
                     $stmt1 = $conn->prepare("SELECT * FROM customer WHERE customerid=$customerid");
                     $stmt1->execute();

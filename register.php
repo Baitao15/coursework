@@ -45,6 +45,4 @@ else{
         unset($_SESSION['backURL']);
         header('Location: ' . $backURL);
     }
-
-    header('Location: loginpage.php');
 }
