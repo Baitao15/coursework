@@ -3,19 +3,8 @@
 include_once("connection.php");
 
 session_start();
+
 // checking the email is not already associated with an account
-
-// sending the data to the database
-$stmt = $conn->prepare("INSERT INTO customer(email,password,forename,surname,phoneno)
-VALUES(:email,:password,:forename,:surname,:phoneno)");
-
-$stmt->bindParam(':email', $_POST["email"]);
-$stmt->bindParam(':password', $hashed_password);
-$stmt->bindParam(':forename', $_POST["forename"]);
-$stmt->bindParam(':surname', $_POST["surname"]);
-$stmt->bindParam(':phoneno', $_POST["phoneno"]);
-$stmt->execute();
-
 $email=$_POST["email"];
 $stmt = $conn->prepare("SELECT email FROM customer WHERE email = :email;");
 $stmt->bindparam(':email', $email);

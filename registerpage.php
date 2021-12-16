@@ -22,6 +22,15 @@
     <h3>Register</h3>
     <div class=form>
         <b>Registering is quick and easy</b><br>
+        <?php
+        // display and then unset invalid email message if applicable
+            session_start();
+            if (isset($_SESSION['message'])){
+              echo("<div class='message'>".$_SESSION['message']."</div>");
+              unset($_SESSION['message']);
+            }
+        ?>
+        <br>
         <form action="register.php" method="POST" class="form-inline">
             <input type="text" name="forename" placeholder="First Name" required><br><br>
             <input type="text" name="surname" placeholder="Surname" required><br><br>
