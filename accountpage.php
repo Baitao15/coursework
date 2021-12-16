@@ -43,9 +43,9 @@
     <div class='row'>
         <div class='col-sm-3'></div>
         <div class='col-sm-2'>
-            Past Orders
+            Personal Details
         </div>
         <div class='col-sm-2'>
-            Personal Details
+            Previous Orders
         </div>
     </div>
