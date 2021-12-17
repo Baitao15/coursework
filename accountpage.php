@@ -34,6 +34,13 @@
         ?>
     </div>
     <br><br><br>
+    <?php
+    $email = $_SESSION['email'];
+    $stmt = $conn->prepare("SELECT * FROM customer WHERE email = :email");
+    $stmt->bindparam(':email', $_SESSION['email']);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC)
+    ?>
     <div class='row'>
         <div class='col-sm-3'></div>
         <div class='col-sm-6'>
@@ -44,9 +51,26 @@
         <div class='col-sm-3'></div>
         <div class='col-sm-2'>
             <b>Personal Details</b>
+            <br><br>
+            First Name:<br>
+            <?php echo($row['forename']); ?>
+            <br><br>
+            Surname:<br>
+            <?php echo($row['surname']); ?>
+            <br><br>
+            Telephone Number:<br>
+            <?php echo($row['phoneno']); ?>
+            <br><br>
         </div>
         <div class='col-sm-2'>
             <b>Account Details</b>
+            <br><br>
+            Email:<br>
+            <?php echo($row['email']); ?>
+            <br><br>
+            Password:<br>
+            *****
+            <br><br>
         </div>
         <div class='col-sm-2'>
             <b>Previous Orders</b>
