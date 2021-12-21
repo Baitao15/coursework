@@ -24,15 +24,14 @@ $customerid=($_SESSION['id']);
         <a href=basketpage.php>Back to Basket</a>
     </div>
     <br><br>
-    <?php
-    // if (isset($_SESSION['message'])){
-    //     echo('AAAAAAA');
-    //     echo('<br><br><br>'.$_SESSION['message']);
-        // unset($_SESSION['message']);
-    // }
-    ?>
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
+        <?php
+        if (isset($_SESSION['message'])){
+            echo("<div class='message'><h3>".$_SESSION['message']."</h3></div>");
+            unset($_SESSION['message']);
+        }
+        ?>
         <form action='placeorder.php' method="POST" class="form-inline">
             <h3>1. Delivery Address</h3>
                 <?php
