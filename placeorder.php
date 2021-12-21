@@ -7,11 +7,13 @@ $payment=false;
 
 if($_POST['cardnumber']==""){
     if(!isset($_POST['card'])){
+        // if no payment method is selected, redirect to checkout page with message
         $_SESSION['message'] = 'Please choose a valid payment method';
         header('Location: checkoutpage.php');
     }
     else{
         $payment=true;
+        // for purposes discussed in the 'Design' section of my write-up, no acutal payments will be taken
     }
 }
 
