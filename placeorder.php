@@ -19,11 +19,12 @@ else{
     $payment=true;
 
     $lastfour=substr($_POST['cardnumber'], 0, -4);
+    $cardnumber=password_hash($_POST['cardnumber'], PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO card(cardno, lastfour, expdate, cardholdername, postcode, address)
     VALUES(:cardno,:lastfour,:expdate,:cardholdername,:postcode,:address)");
 
-    $stmt->bindParam(':cardno', $_POST['cardnumber']);
+    $stmt->bindParam(':cardno', $cardnumber);
     $stmt->bindParam(':lastfour', $lastfour);
     $stmt->bindParam(':expdate', $_POST['expirydate']);
     $stmt->bindParam(':cardholdername', $_POST['cardholdername']);
