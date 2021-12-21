@@ -20,6 +20,7 @@ if($_POST['cardnumber']==""){
 else{
     $payment=true;
     if($_POST['savecard']=="T"){
+        // if user selected checkbox on previous page, save the card details to the database
         $lastfour=substr($_POST['cardnumber'], -4, 4);
         $cardnumber=password_hash($_POST['cardnumber'], PASSWORD_DEFAULT);
 
@@ -41,6 +42,7 @@ else{
 
         $cardid=$row['cardid'];
 
+        // link newly saved card to current user's account
         $stmt = $conn->prepare("INSERT INTO customercard(customerid, cardid)
         VALUES(:customerid,:cardid)");
 

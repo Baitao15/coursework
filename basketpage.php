@@ -36,8 +36,12 @@
     <br><br><br>
     <?php
     if (!isset($_SESSION['basket'])){
-        echo("Your basket is empty!<br>");
-        echo('<a href="grocerypage.php">Add items</a>');
+        echo('<div class="container text-center">');
+            echo('<h4>');
+                echo("Your basket is empty!<br><br>");
+                echo('<a href="grocerypage.php">Add items</a>');
+            echo('</h4>');
+        echo('</div>');
     }
     if (isset($_SESSION['basket'])){
         echo("<div class='row'>
