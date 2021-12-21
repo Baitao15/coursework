@@ -105,6 +105,8 @@ $customerid=($_SESSION['id']);
                         Billing Address<br>
                         <input type="text" name="billingaddress" placeholder="Address"><br><br>
                         <input type="text" name="billingpostcode" placeholder="Postcode"><br><br>
+                        Save this card?
+                        <input type="checkbox" name="savecard" value="T">
                     </div>
                 </div>
             </div>

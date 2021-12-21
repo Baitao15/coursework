@@ -19,34 +19,35 @@ if($_POST['cardnumber']==""){
 
 else{
     $payment=true;
+    if($_POST['savecard']=="T"){
+        $lastfour=substr($_POST['cardnumber'], -4, 4);
+        $cardnumber=password_hash($_POST['cardnumber'], PASSWORD_DEFAULT);
 
-    $lastfour=substr($_POST['cardnumber'], 0, -4);
-    $cardnumber=password_hash($_POST['cardnumber'], PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("INSERT INTO card(cardno, lastfour, expdate, cardholdername, postcode, address)
+        VALUES(:cardno,:lastfour,:expdate,:cardholdername,:postcode,:address)");
 
-    $stmt = $conn->prepare("INSERT INTO card(cardno, lastfour, expdate, cardholdername, postcode, address)
-    VALUES(:cardno,:lastfour,:expdate,:cardholdername,:postcode,:address)");
+        $stmt->bindParam(':cardno', $cardnumber);
+        $stmt->bindParam(':lastfour', $lastfour);
+        $stmt->bindParam(':expdate', $_POST['expirydate']);
+        $stmt->bindParam(':cardholdername', $_POST['cardholdername']);
+        $stmt->bindParam(':postcode', $_POST['billingpostcode']);
+        $stmt->bindParam(':address', $_POST['billingaddress']);
+        $stmt->execute();
 
-    $stmt->bindParam(':cardno', $cardnumber);
-    $stmt->bindParam(':lastfour', $lastfour);
-    $stmt->bindParam(':expdate', $_POST['expirydate']);
-    $stmt->bindParam(':cardholdername', $_POST['cardholdername']);
-    $stmt->bindParam(':postcode', $_POST['billingpostcode']);
-    $stmt->bindParam(':address', $_POST['billingaddress']);
-    $stmt->execute();
+        $stmt = $conn->prepare("SELECT cardid FROM card ORDER BY cardid DESC LIMIT 1");
+        $stmt->execute();
 
-    $stmt = $conn->prepare("SELECT cardid FROM card ORDER BY cardid DESC LIMIT 1");
-    $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $cardid=$row['cardid'];
 
-    $cardid=$row['cardid'];
+        $stmt = $conn->prepare("INSERT INTO customercard(customerid, cardid)
+        VALUES(:customerid,:cardid)");
 
-    $stmt = $conn->prepare("INSERT INTO customercard(customerid, cardid)
-    VALUES(:customerid,:cardid)");
-
-    $stmt->bindParam(':customerid', $_SESSION['id']);
-    $stmt->bindParam(':cardid', $cardid);
-    $stmt->execute();
+        $stmt->bindParam(':customerid', $_SESSION['id']);
+        $stmt->bindParam(':cardid', $cardid);
+        $stmt->execute();
+    }
 }
 
 if ($_POST['address1']==""){
