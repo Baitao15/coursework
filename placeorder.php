@@ -3,7 +3,7 @@ include_once('connection.php');
 
 session_start();
 
-$payment=false
+$payment=false;
 
 if($_POST['cardnumber']==""){
     if(!isset($_POST['card'])){
@@ -16,7 +16,22 @@ if($_POST['cardnumber']==""){
 }
 
 else{
-    $payment=true
+    $payment=true;
+
+    $lastfour=substr($_POST['cardnumber'], 0, -4);
+
+
+    $stmt = $conn->prepare("INSERT INTO card(cardno, lastfour, expdate, cardholdername, postcode, address)
+    VALUES(:cardno,:lastfour,:expdate,:cardholdername,:postcode,:address)");
+
+    $stmt->bindParam(':cardno', $_POST['cardnumber']);
+    $stmt->bindParam(':lastfour', $_POST['cardnumber']);
+    $stmt->bindParam(':cardno', $_POST['cardnumber']);
+    $stmt->bindParam(':cardno', $_POST['cardnumber']);
+    $stmt->bindParam(':cardno', $_POST['cardnumber']);
+    $stmt->bindParam(':cardno', $_POST['cardnumber']);
+
+
 }
 
 if ($_POST['address1']==""){

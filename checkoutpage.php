@@ -97,12 +97,14 @@ $customerid=($_SESSION['id']);
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
+                        Card Details<br>
                         <input type="text" name="cardnumber" placeholder="Card Number"><br><br>
                         <input type="month" name="expirydate"><br><br>
                         <input type="text" name="cardholdername" placeholder="Cardholder Name"><br><br>
                         <input type="number" name="seccode" placeholder="Security Code"><br><br>
-                        <input type="text" name="billingaddress" placeholder="Billing Address"><br><br>
-                        <input type="text" name="billingpostcode" placeholder="Billing Postcode"><br><br>
+                        Billing Address<br>
+                        <input type="text" name="billingaddress" placeholder="Address"><br><br>
+                        <input type="text" name="billingpostcode" placeholder="Postcode"><br><br>
                     </div>
                 </div>
             </div>
