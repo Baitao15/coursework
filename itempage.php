@@ -50,7 +50,6 @@
         <div class="col-sm-3">
             <?php echo('<img src="/coursework/images/'.$row["itemimage"].'" width=100% height=100%>');?>
         </div>
-        
         <div class="col-sm-6">
             <h1>
                 <?php echo($row["itemname"]);?>
