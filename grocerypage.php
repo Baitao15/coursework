@@ -54,8 +54,8 @@
                 echo('<div class="col-sm-2">');
                     echo('<div class="panel panel-default text-center">');
                         echo('<div class="panel-heading"><b>');
-                            echo('<a href=itempage.php?id='.$row["itemid"].'>');
-                                echo($row["itemname"]);
+                            echo('<a href=itempage.php?id='.$row["itemid"].' class="itemtitle">');
+                                    echo($row["itemname"]);
                             echo('</a>');
                         echo('</b></div>');
                         echo('<a href=itempage.php?id='.$row["itemid"].'>');
