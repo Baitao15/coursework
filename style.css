@@ -46,9 +46,10 @@
     background-color: rgb(255, 183, 0);
 }
 
-/* a:link{
-    color:rgb(255, 183, 0);
-} */
+a:link{
+    /* color:rgb(255, 183, 0); */
+    color:#333333;
+}
 
 body{
     margin: 0px;
@@ -74,4 +75,5 @@ h3{
 
 .itemtitle{
     color:#333333;
+    background-color: #c90000;
 }
