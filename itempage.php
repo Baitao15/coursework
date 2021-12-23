@@ -3,8 +3,8 @@
 <?php
     session_start();
     include_once("connection.php");
-    $_SESSION['backURL']='itempage.php';
-    $itemid=$_GET['itemid'];
+    if(isset($_GET['id'])){
+    }
 ?>
 
 <html>
@@ -72,3 +72,5 @@
         echo('</div>');
 
     ?>
+
+    
