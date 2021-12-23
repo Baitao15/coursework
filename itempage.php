@@ -40,13 +40,13 @@
     </div>
 
     <br><br><br>
-    <div class=row>
-    <div class="col-sm-1"></div>
     <?php
         $stmt = $conn->prepare("SELECT * FROM item WHERE itemid=$itemid");
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
+    <div class=row>
+    <div class="col-sm-1"></div>
         <div class="col-sm-3">
             <?php echo('<img src="/coursework/images/'.$row["itemimage"].'" width=100% height=100%>');?>
         </div>
@@ -71,6 +71,7 @@
             <div class="col-sm-6">
                 <h3 class='text-center'>Reviews</h3>
             </div>
+
         </div>
 
         <div class="col-sm-2">
