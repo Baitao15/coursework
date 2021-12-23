@@ -69,6 +69,7 @@
 
         echo('<div class="col-sm-2">');
         echo('</div>');
-
     ?>
 
+<!-- $itemid=$_GET['id'];
+        $_SESSION['backURL']='itempage.php?'.$itemid; -->
