@@ -3,8 +3,7 @@
 <?php
     session_start();
     include_once("connection.php");
-    if(isset($_GET['id'])){
-    }
+    $itemid=$_GET['id'];
 ?>
 
 <html>
@@ -56,7 +55,7 @@
             echo('<h1>');
                 echo($row["itemname"]);
             echo('</h1>');
-            echo('<hr class="solid">');
+            echo('<hr class="solid1">');
             echo('<h2>');
                 echo("£".$row["itemprice"]."<br>");
             echo('</h2>');
@@ -65,11 +64,20 @@
                 echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>');
                 echo('<br><input type="submit" value="Add" class="btn btn-lg"><br>');
             echo("</form><br>");
-        echo('</div>');
+                ?>
+            <hr class="solid2">
 
-        echo('<div class="col-sm-2">');
-        echo('</div>');
-    ?>
+            <div class="col-sm-6">
+                <h3 class='text-center'>Description</h3>
+            </div>
+            <div class="col-sm-6">
+                <h3 class='text-center'>Reviews</h3>
+            </div>
+        </div>
 
-<!-- $itemid=$_GET['id'];
-        $_SESSION['backURL']='itempage.php?'.$itemid; -->
+        <div class="col-sm-2">
+        </div>
+<!-- if(isset($_GET['id'])){
+    $itemid=$_GET['id'];
+    $_SESSION['backURL']='itempage.php?'.$itemid;
+} -->
