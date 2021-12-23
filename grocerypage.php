@@ -60,7 +60,7 @@
                                 echo('</itemtitle>');
                             echo('</a>');
                         echo('</b></div>');
-                        echo('<a href=itempage.php?id='.$row["itemid"].'>');
+                        echo('<a href=itempage.php?itemid='.$row["itemid"].'>');
                             echo('<div><img src="/coursework/images/'.$row["itemimage"].'" width="128" height="128"></div>');
                         echo('</a>');
                         echo("<br>"."£".$row["itemprice"]."<br>");

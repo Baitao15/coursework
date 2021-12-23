@@ -4,7 +4,7 @@
     session_start();
     include_once("connection.php");
     $_SESSION['backURL']='itempage.php';
-    $itemid=$_GET['id'];
+    $itemid=$_GET['itemid'];
 ?>
 
 <html>
@@ -57,11 +57,13 @@
                 echo($row["itemname"]);
             echo('</h1>');
             echo('<hr class="solid">');
-            echo("<br>"."£".$row["itemprice"]."<br>");
+            echo('<h2>');
+                echo("£".$row["itemprice"]."<br>");
+            echo('</h2>');
             echo('<form action="addtobasket.php" method="POST" class="form-inline">');
                 echo('<input type="hidden" name="id" value='.$row["itemid"].">");
                 echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>');
-                echo('<br><input type="submit" value="Add" class="btn btn-sm"><br>');
+                echo('<br><input type="submit" value="Add" class="btn btn-lg"><br>');
             echo("</form><br>");
         echo('</div>');
 
