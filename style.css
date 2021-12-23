@@ -87,6 +87,10 @@ h3{
 }
 
 /* divider */
-hr.solid {
+hr.solid1 {
+    border-top: 1px solid #bbb;
+}
+
+hr.solid2 {
     border-top: 2px solid #bbb;
-  }
+}

@@ -46,27 +46,25 @@
         $stmt = $conn->prepare("SELECT * FROM item WHERE itemid=$itemid");
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        echo('<div class="col-sm-3">');
-            echo('<img src="/coursework/images/'.$row["itemimage"].'" width=100% height=100%>');
-        echo('</div>');
+    ?>
+        <div class="col-sm-3">
+            <?php echo('<img src="/coursework/images/'.$row["itemimage"].'" width=100% height=100%>');?>
+        </div>
         
-        echo('<div class="col-sm-6">');
-            echo('<h1>');
-                echo($row["itemname"]);
-            echo('</h1>');
-            echo('<hr class="solid1">');
-            echo('<h2>');
-                echo("£".$row["itemprice"]."<br>");
-            echo('</h2>');
-            echo('<form action="addtobasket.php" method="POST" class="form-inline">');
-                echo('<input type="hidden" name="id" value='.$row["itemid"].">");
-                echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>');
-                echo('<br><input type="submit" value="Add" class="btn btn-lg"><br>');
-            echo("</form><br>");
-            ?>
+        <div class="col-sm-6">
+            <h1>
+                <?php echo($row["itemname"]);?>
+            </h1>
+            <hr class="solid1">
+            <h2>
+                <?php echo("£".$row["itemprice"]."<br>");?>
+            </h2>
+            <form action="addtobasket.php" method="POST" class="form-inline">
+                <?php echo('<input type="hidden" name="id" value='.$row["itemid"].">");?>
+                <input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>
+                <br><input type="submit" value="Add" class="btn btn-lg"><br>
+            </form><br>
             <hr class="solid2">
-
             <div class="col-sm-6">
                 <h3 class='text-center'>Description</h3>
             </div>
