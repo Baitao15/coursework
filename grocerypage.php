@@ -53,8 +53,12 @@
                 }
                 echo('<div class="col-sm-2">');
                     echo('<div class="panel panel-default text-center">');
-                        echo('<div class="panel-heading"><b>'.$row["itemname"]."</b></div>");
-                        echo("<a href=itempage.php?id=".$row["itemid"].">");
+                        echo('<div class="panel-heading"><b>');
+                            echo('<a href=itempage.php?id='.$row["itemid"].'>');
+                                echo($row["itemname"]);
+                            echo('</a>');
+                        echo('</b></div>');
+                        echo('<a href=itempage.php?id='.$row["itemid"].'>');
                             echo('<div><img src="/coursework/images/'.$row["itemimage"].'" width="128" height="128"></div>');
                         echo('</a>');
                         echo("<br>"."£".$row["itemprice"]."<br>");
