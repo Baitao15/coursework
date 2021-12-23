@@ -64,7 +64,7 @@
                 echo('<input type="number" placeholder="Qty" name="qty" min="1" max="99" value="1" required>');
                 echo('<br><input type="submit" value="Add" class="btn btn-lg"><br>');
             echo("</form><br>");
-                ?>
+            ?>
             <hr class="solid2">
 
             <div class="col-sm-6">
