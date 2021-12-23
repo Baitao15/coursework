@@ -47,8 +47,16 @@
 }
 
 a:link{
-    /* color:rgb(255, 183, 0); */
+    color:rgb(255, 183, 0);
+}
+
+a itemtitle{
     color:#333333;
+}
+
+a itemtitle:hover{
+    color:rgb(255, 183, 0);
+    text-decoration-line: underline;
 }
 
 body{
@@ -73,7 +81,3 @@ h3{
     color: #d93025;
 }
 
-.itemtitle{
-    color:#333333;
-    background-color: #c90000;
-}
