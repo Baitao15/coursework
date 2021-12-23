@@ -67,10 +67,8 @@
             echo("</form><br>");
         echo('</div>');
 
-        
         echo('<div class="col-sm-2">');
         echo('</div>');
 
     ?>
 
-    
