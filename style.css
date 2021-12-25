@@ -47,9 +47,30 @@
     border-radius: 8px;
 }
 
+/* buttons */
 .btn{
     color: white;
     background-color: rgb(255, 183, 0);
+}
+
+.desc-rev{
+    color: #333333;
+    padding: 4% 30%;
+}
+
+.desc-rev:hover{
+    background-color: #f6f6f6;
+    text-decoration-line: underline;
+}
+
+/* .active{
+    color: #333333;
+} */
+
+.button{
+    color: white;
+    font-weight:bold;
+    background-color: #c90000;
 }
 
 /* links */
@@ -76,11 +97,8 @@ h3{
 
 
 
-.button{
-    color: white;
-    font-weight:bold;
-    background-color: #c90000;
-}
+
+
 
 .message{
     color: #d93025;
@@ -93,4 +111,9 @@ hr.solid1 {
 
 hr.solid2 {
     border-top: 2px solid #bbb;
+}
+
+hr.solidgold {
+    border-top: 5px solid #bbb;
+    border-color: rgb(255, 183, 0);
 }

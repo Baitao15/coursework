@@ -3,7 +3,15 @@
 <?php
     session_start();
     include_once("connection.php");
+
     $itemid=$_GET['id'];
+
+    if(isset($_GET['cont'])){
+        $cont=$_GET['cont'];
+    }
+    else{
+        $cont='desc';
+    }
 ?>
 
 <html>
@@ -66,14 +74,40 @@
             <hr class="solid2">
             <div class=row>
                 <div class="col-sm-6">
-                    <h3 class='text-center'>Description</h3>
+                    <h3 class="text-center">
+                        <?php echo('<a href="itempage.php?id='.$itemid.'&cont=desc" class="desc-rev">')?>Description</a>
+                    </h3>
+                    <?php
+                        if($cont=='desc'){
+                            echo('<hr class="solidgold">');
+                        }
+                        if($cont=='rev'){
+                            echo('<hr class="solid2">');
+                        }
+                    ?>
                 </div>
                 <div class="col-sm-6">
-                    <h3 class='text-center'>Reviews</h3>
+                    <h3 class="text-center">
+                        <?php echo('<a href="itempage.php?id='.$itemid.'&cont=rev" class="desc-rev">')?>Reviews</a>
+                    </h3>
+                    <?php
+                        if($cont=='rev'){
+                            echo('<hr class="solidgold">');
+                        }
+                        if($cont=='desc'){
+                            echo('<hr class="solid2">');
+                        }
+                    ?>
                 </div>
             </div>
-            <hr class="solid1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <?php
+                if($cont=='desc'){ 
+                    echo($row['description']);
+                }
+                if($cont=='rev'){
+                    echo('review');
+                }
+            ?>
         </div>
         <div class="col-sm-2"></div>
 <!-- if(isset($_GET['id'])){

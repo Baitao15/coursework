@@ -249,6 +249,27 @@ $stmt->execute();
 $stmt->execute();
 $stmt->execute();
 $stmt->execute();
+
+$stmt = $conn->prepare("DROP TABLE IF EXISTS review;
+CREATE TABLE review
+(reviewid INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+customerid INT(6) NOT NULL,
+itemid INT(4) NOT NULL,
+reviewtext VARCHAR(255) NOT NULL,
+stars INT(1) NOT NULL)");
+$stmt->execute();
+
+$stmt = $conn->prepare("INSERT INTO review(customerid, itemid, reviewtext, stars)
+VALUES(:customerid, :itemid ,:reviewtext, :stars)");
+
+$stmt->bindParam(':customerid', '1');
+$stmt->bindParam(':itemid', '1');
+$stmt->bindParam(':reviewtext', 'Sweet and Delicious');
+$stmt->bindParam(':customerid', '5');
+$stmt->execute();
+
+
+
 $stmt = $conn->prepare("DROP TABLE IF EXISTS offer;
 CREATE TABLE offer
 (offerid INT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
