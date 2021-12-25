@@ -105,7 +105,22 @@
                     echo($row['description']);
                 }
                 if($cont=='rev'){
-                    echo('review');
+                    $stmt = $conn->prepare("SELECT * FROM review WHERE itemid=$itemid");
+                    $stmt->execute();
+
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        $customerid=$row['customerid'];
+
+                        $stmt2 = $conn->prepare("SELECT forename FROM customer WHERE customerid=$customerid");
+                        $stmt2->execute();
+
+                        while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+                            echo($row2['forename'].'<br>');
+                            echo($row['reviewtext'].'<br>');
+                            echo('<hr class="solid1">');
+                        }
+                        
+                    }
                 }
             ?>
         </div>
