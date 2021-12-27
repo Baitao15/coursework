@@ -263,11 +263,17 @@ $stmt->execute();
 $stmt = $conn->prepare("INSERT INTO review(customerid, itemid, reviewtitle, reviewtext, stars)
 VALUES(:customerid, :itemid ,:reviewtitle, :reviewtext, :stars)");
 
-$stmt->bindParam(':customerid', 1);
-$stmt->bindParam(':itemid', 1);
-$stmt->bindParam(':reviewtitle', 'Sweet and Delicious');
-$stmt->bindParam(':reviewtext', 'Very sweet, perfect for a healthy snack');
-$stmt->bindParam(':stars', 5);
+$customerid=1;
+$itemid=1;
+$title='Sweet and Delicious';
+$text='Very sweet, perfect for a healthy snack';
+$stars=5;
+
+$stmt->bindParam(':customerid', $customerid);
+$stmt->bindParam(':itemid', $itemid);
+$stmt->bindParam(':reviewtitle', $title);
+$stmt->bindParam(':reviewtext', $text);
+$stmt->bindParam(':stars', $stars);
 $stmt->execute();
 
 
