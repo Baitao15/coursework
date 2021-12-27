@@ -27,6 +27,7 @@
         </title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="script.js"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -105,9 +106,20 @@
                     echo($row['description']);
                 }
                 if($cont=='rev'){
-                    echo('<button id="writeRev">Write a Review</button>');
+                    echo('<button id="writeRevBtn">Write a Review</button>');
                 }
             ?>
+            <!-- Modal -->
+            <div id="writeRevModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Write a Review</h3>
+                    <form action="addtobasket.php" method="POST" id="writeRevForm">
+                        
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="col-sm-2"></div>
 <!-- if(isset($_GET['id'])){
