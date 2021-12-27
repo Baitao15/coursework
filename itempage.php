@@ -146,6 +146,7 @@
                         <label class="label-text" for="text">Add a Written Review</label><br>
                         <textarea name="text" id="text" style="width: 100%;" rows="5" cols ="1" maxlength="255"
                         placeholder="What did you like or dislike? (maximum 255 characters)" required></textarea>
+                        <input type="hidden" name="itemid" value=<?php echo($itemid)?>>
                         <input type="submit" value="Submit" class="btn btn-lg"><br>
                     </form>
                 </div>
