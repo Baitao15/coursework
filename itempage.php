@@ -54,7 +54,7 @@
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
     <div class=row>
-    <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
         <div class="col-sm-3">
             <?php echo('<img src="/coursework/images/'.$row["itemimage"].'" width=100% height=100%>');?>
         </div>
@@ -111,20 +111,20 @@
                 }
             ?>
         <div class="col-sm-2"></div>
-        <!-- Modal -->
-        <div id="writeRevModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h3> Write a Review</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center">
-                        <form action="addreview.php" method="POST" id="writeRevForm">         
-                            <input type="submit" value="Submit" class="btn btn-lg"><br>
-                        </form>
-                    </div>
+    </div>
+    <!-- Modal -->
+    <div id="writeRevModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h3> Write a Review</h3>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <form action="addreview.php" method="POST" id="writeRevForm">         
+                        <input type="submit" value="Submit" class="btn btn-lg"><br>
+                    </form>
                 </div>
             </div>
         </div>
