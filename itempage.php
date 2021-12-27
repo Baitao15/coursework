@@ -105,10 +105,17 @@
                     echo($row['description']);
                 }
                 if($cont=='rev'){
-
                     echo('<button id="writeRev">Write a Review</button>');
+                }
+            ?>
+        </div>
+        <div class="col-sm-2"></div>
+<!-- if(isset($_GET['id'])){
+    $itemid=$_GET['id'];
+    $_SESSION['backURL']='itempage.php?'.$itemid;
+} -->
 
-                    $stmt = $conn->prepare("SELECT * FROM review WHERE itemid=$itemid");
+<!-- $stmt = $conn->prepare("SELECT * FROM review WHERE itemid=$itemid");
                     $stmt->execute();
 
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -123,12 +130,4 @@
                             echo('<hr class="solid1">');
                         }
                         
-                    }
-                }
-            ?>
-        </div>
-        <div class="col-sm-2"></div>
-<!-- if(isset($_GET['id'])){
-    $itemid=$_GET['id'];
-    $_SESSION['backURL']='itempage.php?'.$itemid;
-} -->
+                    } -->
