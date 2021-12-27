@@ -143,7 +143,8 @@
                         <input type="text" name="title" id="title" style="width: 100%;" placeholder="What's most important to know?" required>
                         <hr class="solid1">
                         <label class="label-text" for="text">Add a Written Review</label><br>
-                        <textarea name="text" id="text" style="width: 100%;" rows="5" cols ="1" maxlength="255" placeholder="What did you like or dislike?&#13&#13&#13" required></textarea>
+                        <textarea name="text" id="text" style="width: 100%;" rows="5" cols ="1" maxlength="255"
+                        placeholder="What did you like or dislike? (maximum 255 characters)" required></textarea>
                         <input type="submit" value="Submit" class="btn btn-lg"><br>
                     </form>
                 </div>
