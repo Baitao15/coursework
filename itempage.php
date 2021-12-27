@@ -27,7 +27,6 @@
         </title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -106,22 +105,52 @@
                     echo($row['description']);
                 }
                 if($cont=='rev'){
-                    echo('<button id="writeRevBtn">Write a Review</button>');
+                    echo('<div class="text-right">
+                            <button id="writeRevBtn" class=btn btn-lg>Write a Review</button>
+                        </div>');
                 }
             ?>
-            <!-- Modal -->
-            <div id="writeRevModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
+        <div class="col-sm-2"></div>
+        <!-- Modal -->
+        <div id="writeRevModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
                     <span class="close">&times;</span>
-                    <h3>Write a Review</h3>
-                    <form action="addtobasket.php" method="POST" id="writeRevForm">
-                        
-                    </form>
+                    <h3> Write a Review</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <form action="addreview.php" method="POST" id="writeRevForm">
+                            <label class="label-text" id="rating">Overall Rating</label>
+                            <br>
+                            <div class="stars">
+                                <div class="text-center">
+                                    <input class="star star-5" id="star-5" type="radio" name="star"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="star"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="star"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="star"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="star"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </div>
+                            </div>
+                            <hr class="solid1">
+                            <label class="label-text" for="title">Add a Headline</label><br>
+                            <input type="text" name="title" id="title" style="width: 100%;" placeholder="What's most important to know?" required>
+                            <hr class="solid1">
+                            <label class="label-text" for="text">Add a Written Review</label><br>
+                            <textarea name="text" id="text" style="width: 100%;" rows="5" cols ="1" maxlength="255" placeholder="What did you like or dislike?&#13&#13&#13" required></textarea>
+                            <br><br><input type="submit" value="Submit" class="btn btn-lg"><br>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+    </div>
 <script>
     // Get the modal
     var modal = document.getElementById("writeRevModal");

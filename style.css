@@ -47,6 +47,21 @@
     border-radius: 8px;
 }
 
+#writeRevForm{
+    padding-left: 20%;
+    width: 80%;
+}
+
+label{
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* .label-text{
+    float: left;
+    padding-left: 5%;
+} */
+
 /* buttons */
 .btn{
     color: white;
@@ -71,6 +86,11 @@
     color: white;
     font-weight:bold;
     background-color: #c90000;
+}
+
+#writeRevBtn{
+    padding: 1% 2%;
+    font-size: 110%;
 }
 
 /* links */
@@ -110,6 +130,7 @@ a itemtitle:hover{
 }
 
 .modal-header {
+    text-align: center ;
     padding: 2px 16px;
     background-color: #c90000;
     color: white;
@@ -134,9 +155,15 @@ a itemtitle:hover{
 }
 
 /* stars */
+#rating{
+    font-size: medium;
+    font-weight: bold;
+}
+
 div.stars {
-    width: 270px;
+    width: 50%;
     display: inline-block;
+    padding: 0px;
 }
    
 input.star {
@@ -145,7 +172,9 @@ input.star {
 
 label.star {
     float: right;  /* stars go from left to right with ascending value */
-    padding: 10px;
+    padding-right: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
     font-size: 36px;
 }
 
