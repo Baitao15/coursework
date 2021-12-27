@@ -9,7 +9,7 @@ $customerid=$_SESSION['id'];
 $itemid=$_POST['itemid'];
 $title=$_POST['title'];
 $text=$_POST['text'];
-$star=$_POST['star'];
+$stars=$_POST['star'];
 
 $stmt->bindParam(':customerid', $customerid);
 $stmt->bindParam(':itemid', $itemid);
