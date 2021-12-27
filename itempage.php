@@ -108,6 +108,10 @@
                     echo('<div class="text-right">
                             <button id="writeRevBtn" class=btn btn-lg>Write a Review</button>
                         </div>');
+                    if(isset($_SESSION['message'])){
+                        echo('<h3 class="text-success">'.$_SESSION['message'].'</h3>');
+                        unset($_SESSION['message']);
+                    }
                 }
             ?>
         <div class="col-sm-2"></div>

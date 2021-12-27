@@ -18,6 +18,8 @@ $stmt->bindParam(':reviewtext', $text);
 $stmt->bindParam(':stars', $stars);
 $stmt->execute();
 
-header('Location: itempage.php?id='.$itemid.'$cont=rev');
+$_SESSION['message']='Review Added Successfully';
+
+header('Location: itempage.php?id='.$itemid.'&cont=rev');
 ?>
 
