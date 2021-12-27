@@ -114,7 +114,6 @@
     </div>
     <!-- Modal -->
     <div id="writeRevModal" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
