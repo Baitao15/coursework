@@ -140,7 +140,8 @@
                         </div>
                         <hr class="solid1">
                         <label class="label-text" for="title">Add a Headline</label><br>
-                        <input type="text" name="title" id="title" style="width: 100%;" placeholder="What's most important to know?" required>
+                        <input type="text" name="title" id="title" style="width: 100%;" maxlength="32"
+                        placeholder="What's most important to know?" required>
                         <hr class="solid1">
                         <label class="label-text" for="text">Add a Written Review</label><br>
                         <textarea name="text" id="text" style="width: 100%;" rows="5" cols ="1" maxlength="255"
