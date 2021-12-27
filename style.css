@@ -89,7 +89,7 @@ a itemtitle:hover{
 
 /* modals */
 .modal {
-    display: block; /* Hidden by default */
+    display: hidden; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -105,23 +105,61 @@ a itemtitle:hover{
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #c90000;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.modal-body {
+    padding: 2px 16px;
 }
 
 .close {
-    color: #aaaaaa;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
   
 .close:hover, .close:focus {
-    color: #000;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
+
+/* stars */
+div.stars {
+    width: 270px;
+    display: inline-block;
+}
+   
+input.star {
+    display: none; /* hide default radio buttons */
+}
+
+label.star {
+    float: right;  /* stars go from left to right with ascending value */
+    padding: 10px;
+    font-size: 36px;
+}
+
+label.star:before {
+    content: '\2606';  /* utf-8 code for star outline */
+    color:rgb(255, 183, 0);
+    font-weight: 100;
+}
+
+input.star:checked ~ label.star:before {
+    content: '\2605'; /* utf-8 code for solid star */
+    color:rgb(255, 183, 0);
+}
+
 
 body{
     margin: 0px;
