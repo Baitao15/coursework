@@ -18,3 +18,4 @@ $stmt->bindParam(':reviewtext', $text);
 $stmt->bindParam(':stars', $stars);
 $stmt->execute();
 ?>
+
