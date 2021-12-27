@@ -255,17 +255,19 @@ CREATE TABLE review
 (reviewid INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 customerid INT(6) NOT NULL,
 itemid INT(4) NOT NULL,
+reviewtitle VARCHAR(32) NOT NULL,
 reviewtext VARCHAR(255) NOT NULL,
 stars INT(1) NOT NULL)");
 $stmt->execute();
 
-$stmt = $conn->prepare("INSERT INTO review(customerid, itemid, reviewtext, stars)
-VALUES(:customerid, :itemid ,:reviewtext, :stars)");
+$stmt = $conn->prepare("INSERT INTO review(customerid, itemid, reviewtitle, reviewtext, stars)
+VALUES(:customerid, :itemid ,:reviewtitle, :reviewtext, :stars)");
 
-$stmt->bindParam(':customerid', '1');
-$stmt->bindParam(':itemid', '1');
-$stmt->bindParam(':reviewtext', 'Sweet and Delicious');
-$stmt->bindParam(':customerid', '5');
+$stmt->bindParam(':customerid', 1);
+$stmt->bindParam(':itemid', 1);
+$stmt->bindParam(':reviewtitle', 'Sweet and Delicious');
+$stmt->bindParam(':reviewtext', 'Very sweet, perfect for a healthy snack');
+$stmt->bindParam(':stars', 5);
 $stmt->execute();
 
 
