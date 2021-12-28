@@ -109,7 +109,7 @@
                             <button id="writeRevBtn" class=btn btn-lg>Write a Review</button>
                         </div>');
                     if(isset($_SESSION['message'])){
-                        echo('<h3 class="text-success">'.$_SESSION['message'].'</h3>');
+                        echo('<h3 class="text-success"><b>'.$_SESSION['message'].'</b></h3>');
                         unset($_SESSION['message']);
                     }
                 }
