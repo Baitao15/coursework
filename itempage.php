@@ -128,15 +128,15 @@
                             echo($row2['forename'].'<br>');
                             // displaying stars
                             echo('<div style="color:rgb(255, 183, 0); font-size:150%;">');
-                            $clearstars=(5-$row['stars']);
+                            $clearstars=(5-$row['stars']); // should be 5 stars in total displayed
                             for ($count = 1; $count <= $row['stars']; $count++){
-                                echo('&#9733;');
+                                echo('&#9733;'); // utf-8 code for solid star in html
                             }
                             while($clearstars!=0){
-                                echo('&#9734;');
+                                echo('&#9734;'); // utf-8 code for clear star in html
                                 $clearstars=($clearstars-1);
                             }
-                            echo('</div>');
+                            echo('</div>'); // displaying review title and text
                             echo('<b>'.$row['reviewtitle'].'</b>');
                             echo('<br>'.$row['reviewtext'].'<br>');
                             echo('<hr class="solid1">');
