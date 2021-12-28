@@ -101,16 +101,48 @@
                 </div>
             </div>
             <?php
-                if($cont=='desc'){ 
+                if($cont=='desc'){
+                    echo('<div class="text-left">');
                     echo($row['description']);
+                    echo('</div>');
                 }
                 if($cont=='rev'){
                     echo('<div class="text-right">
                             <button id="writeRevBtn" class=btn btn-lg>Write a Review</button>
                         </div>');
+                    
                     if(isset($_SESSION['message'])){
                         echo('<h3 class="text-success"><b>'.$_SESSION['message'].'</b></h3>');
                         unset($_SESSION['message']);
+                    }
+
+                    $stmt = $conn->prepare("SELECT * FROM review WHERE itemid=$itemid");
+                    $stmt->execute();
+
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        $customerid=$row['customerid'];
+
+                        $stmt2 = $conn->prepare("SELECT forename FROM customer WHERE customerid=$customerid");
+                        $stmt2->execute();
+
+                        while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+                            // displaying name of reviewer
+                            echo($row2['forename'].'<br>');
+                            // displaying stars
+                            echo('<div style="color:rgb(255, 183, 0); font-size:150%;">');
+                            $clearstars=(5-$row['stars']);
+                            for ($count = 1; $count <= $row['stars']; $count++){
+                                echo('&#9733;');
+                            }
+                            while($clearstars!=0){
+                                echo('&#9734;');
+                                $clearstars=($clearstars-1);
+                            }
+                            echo('</div>');
+                            echo('<b>'.$row['reviewtitle'].'</b>');
+                            echo('<br>'.$row['reviewtext'].'<br>');
+                            echo('<hr class="solid1">');
+                        }
                     }
                 }
             ?>
@@ -191,19 +223,4 @@
     $_SESSION['backURL']='itempage.php?'.$itemid;
 } -->
 
-<!-- $stmt = $conn->prepare("SELECT * FROM review WHERE itemid=$itemid");
-                    $stmt->execute();
 
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                        $customerid=$row['customerid'];
-
-                        $stmt2 = $conn->prepare("SELECT forename FROM customer WHERE customerid=$customerid");
-                        $stmt2->execute();
-
-                        while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
-                            echo($row2['forename'].'<br>');
-                            echo($row['reviewtext'].'<br>');
-                            echo('<hr class="solid1">');
-                        }
-                        
-                    } -->

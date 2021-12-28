@@ -68,16 +68,6 @@ label{
     background-color: rgb(255, 183, 0);
 }
 
-.desc-rev{
-    color: #333333;
-    padding: 4% 30%;
-}
-
-.desc-rev:hover{
-    background-color: #f6f6f6;
-    text-decoration-line: underline;
-}
-
 /* .active{
     color: #333333;
 } */
@@ -104,6 +94,16 @@ a itemtitle{
 
 a itemtitle:hover{
     color:rgb(255, 183, 0);
+    text-decoration-line: underline;
+}
+
+a.desc-rev{
+    color: #333333;
+    padding: 4% 30%;
+}
+
+a.desc-rev:hover{
+    background-color: #f6f6f6;
     text-decoration-line: underline;
 }
 
