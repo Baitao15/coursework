@@ -102,9 +102,7 @@
             </div>
             <?php
                 if($cont=='desc'){
-                    echo('<div class="text-left">');
-                    echo($row['description']);
-                    echo('</div>');
+                    echo('<div class="text-left">'.$row['description'].'</div>');
                 }
                 if($cont=='rev'){
                     echo('<div class="text-right">
