@@ -110,6 +110,20 @@ a.desc-rev:hover{
     text-decoration-line: underline;
 }
 
+/* .pill-left{
+    border-color: black;
+    border-width: 2px;
+    border-radius: 25px 0px 0px 25px; 
+    padding:10%;
+} */
+
+input#order-asc:checked ~ label#order-asc{
+    color:rgb(255, 183, 0);
+}
+input#order-des:checked ~ label#order-des{
+    color:rgb(255, 183, 0);
+}
+
 /* modals */
 .modal {
     display: hidden; /* hidden by default */
