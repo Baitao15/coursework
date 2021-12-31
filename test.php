@@ -1,29 +1,87 @@
-<?php
-include_once("connection.php");
+<html>
 
-$stmt = $conn->prepare("DROP TABLE IF EXISTS review;
-CREATE TABLE review
-(reviewid INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-customerid INT(6) NOT NULL,
-itemid INT(4) NOT NULL,
-reviewtitle VARCHAR(32) NOT NULL,
-reviewtext VARCHAR(255) NOT NULL,
-stars INT(1) NOT NULL)");
-$stmt->execute();
+<head>
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-$stmt = $conn->prepare("INSERT INTO review(customerid, itemid, reviewtitle, reviewtext, stars)
-VALUES(:customerid, :itemid ,:reviewtitle, :reviewtext, :stars)");
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
 
-$customerid=1;
-$itemid=1;
-$title='Sweet and Delicious';
-$text='Very sweet, perfect for a healthy snack';
-$stars=5;
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-$stmt->bindParam(':customerid', $customerid);
-$stmt->bindParam(':itemid', $itemid);
-$stmt->bindParam(':reviewtitle', $title);
-$stmt->bindParam(':reviewtext', $text);
-$stmt->bindParam(':stars', $stars);
-$stmt->execute();
-?>
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id='navbar'>
+        <a href=grocerypage.php class="dropbtn">Groceries</a>
+        <div class="dropdown-content">
+            <a href="grocerypage.php?cat=produce" class="droplink">Fruit & Veg</a><br>
+            <a href="grocerypage.php?cat=bakery" class="droplink">Bakery</a><br>
+            <a href="grocerypage.php?cat=fresh" class="droplink">Fresh</a><br>
+            <a href="grocerypage.php?cat=frozen" class="droplink">Frozen</a><br>
+            <a href="grocerypage.php?cat=cupboard" class="droplink">Pantry</a><br>
+            <a href="grocerypage.php?cat=other" class="droplink">Other</a>
+        </div>
+    </div>
+</body>

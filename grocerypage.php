@@ -22,7 +22,7 @@
     <!-- navigation bar -->
     <div id=navbar>
         <a href=homepage.php>Home</a>
-        <a href=grocerypage.php>Groceries</a>
+        <a href=grocerypage.php class="dropbtn">Groceries</a>
         <a href=basketpage.php>Basket</a>
         <?php 
             if (!isset($_SESSION['email'])){
@@ -34,14 +34,30 @@
         ?>
     </div>
 
+    <!-- <div class="dropdown-content">
+        <a href="grocerypage.php?cat=produce">Fruit & Veg</a><br>
+        <a href="grocerypage.php?cat=bakery">Bakery</a><br>
+        <a href="grocerypage.php?cat=fresh">Fresh</a><br>
+        <a href="grocerypage.php?cat=frozen">Frozen</a><br>
+        <a href="grocerypage.php?cat=cupboard">Pantry</a><br>
+        <a href="grocerypage.php?cat=other">Other</a>
+    </div> -->
+
     <br><br><br>
 
     <!-- groceries -->
     <div class="groceries">
         <?php
             // getting relevant data from the database
-            $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0");
-            $stmt->execute();
+            if(!isset($_GET['cat'])){
+                $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0");
+                $stmt->execute();
+            }
+            else{
+                $category=$_GET['cat'];
+                $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0 AND category='$category'");
+                $stmt->execute();
+            }
             // counter
             $i=0;
             // displaying each item and its details
