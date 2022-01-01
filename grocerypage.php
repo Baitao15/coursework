@@ -69,15 +69,13 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="dropdown">
-            <button id="sortBtn" class="btn dropbtn" onlclick="sortDrop()">
-                Sort
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
-                    <path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                </svg>
-            </button>
-            <div id="sortDropdown" class="dropdown-content">
-                <div class="row">
-                    <div class="col-sm-2"></div>
+                <button id="sortBtn" class="btn dropbtn" onlclick="sortDrop()">
+                    Sort
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
+                        <path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </button>
+                <div id="sortDropdown" class="dropdown-content">
                     <form action="sort.php" method="POST" id="sortForm" style="padding: 10%;">
                         <div class="text-center">
                             <input id="order-asc" type="radio" value="asc" name="order" style="display: none;" required>
@@ -150,23 +148,28 @@
         ?>
     </div>
 <script>
-    // get modal
-    var modal = document.getElementById("sortModal");
-
-    // get the button that opens the modal
-    var btn = document.getElementById("sortBtn");
-
-    // if user clicks button, open modal 
-    btn.onclick = function() {
-        modal.style.display = "block";
+    // when user clicks on drop button, toggle between showing and hiding contents
+    function sortDrop(){
+        document.getElementById("sortDropdown").classList.toggle("show");
     }
 
-    // if user clicks anywhere outside of the modal, close modal
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+    // function filterDrop() {
+    //     document.getElementById("filterDropdown").classList.toggle("show");
+    // }
+
+    // close the dropdown menu if the user clicks outside of it
+    // window.onclick = function(event){
+    //     if(!event.target.matches('.dropbtn')){
+    //         var dropdowns = document.getElementsByClassName("dropdown-content");
+    //         var i;
+    //         for(i = 0; i < dropdowns.length; i++){
+    //             var openDropdown = dropdowns[i];
+    //             if(openDropdown.classList.contains('show')){
+    //                 openDropdown.classList.remove('show');
+    //             }
+    //         }
+    //     }
+    // }
 </script>
 </body>
 </html>

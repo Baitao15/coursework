@@ -38,6 +38,22 @@
 }
 
 /* dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; /* hidden by default */
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* sit on top of rest of page */
+}
+
+.show {display:block;}
+
 
 
 /* forms */
@@ -70,6 +86,8 @@ label{
     color: white;
     background-color: rgb(255, 183, 0);
 }
+
+
 
 /* .active{
     color: #333333;
