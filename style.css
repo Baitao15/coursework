@@ -37,12 +37,7 @@
     padding: 80px 120px
 }
 
-input#order-asc:checked ~ label#order-asc{
-    color:rgb(255, 183, 0);
-}
-input#order-des:checked ~ label#order-des{
-    color:rgb(255, 183, 0);
-}
+
 
 /* dropdown */
 .dropdown {
@@ -71,6 +66,13 @@ input#order-des:checked ~ label#order-des{
     padding-bottom: 16px;
     border: 1px solid grey;
     border-radius: 8px;
+}
+
+input#order-asc:checked ~ label#order-asc{
+    color:rgb(255, 183, 0);
+}
+input#order-des:checked ~ label#order-des{
+    color:rgb(255, 183, 0);
 }
 
 #writeRevForm{
