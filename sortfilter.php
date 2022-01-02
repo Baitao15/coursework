@@ -10,5 +10,9 @@ if($_POST['type']=='sort'){
         header('Location: grocerypage.php?sort='.$sort.'&order='.$order.'&cat='.$filter);
     }
 }
-?>
 
+// if($_POST['type']=='filter'){
+//     $filter=$_POST['']
+    
+// }
+?>
