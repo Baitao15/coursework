@@ -126,6 +126,10 @@
                             <label for="fresh">Fresh</label>
                             <input id="frozen" type="checkbox" value="frozen" name="category">
                             <label for="frozen">Frozen</label>
+                            <input id="cupboard" type="checkbox" value="cupboard" name="category">
+                            <label for="cupboard">Food Cupboard</label>
+                            <input id="other" type="checkbox" value="other" name="category">
+                            <label for="other">Other</label>
                         </div>
                         <input type="hidden" name="type" value='filter'>
                         <input type="hidden" name="sort" value=<?php if(isset($sort)){echo($sort);}?>>
