@@ -34,15 +34,6 @@
         ?>
     </div>
 
-    <!-- <div class="dropdown-content">
-        <a href="grocerypage.php?cat=produce">Fruit & Veg</a><br>
-        <a href="grocerypage.php?cat=bakery">Bakery</a><br>
-        <a href="grocerypage.php?cat=fresh">Fresh</a><br>
-        <a href="grocerypage.php?cat=frozen">Frozen</a><br>
-        <a href="grocerypage.php?cat=cupboard">Pantry</a><br>
-        <a href="grocerypage.php?cat=other">Other</a>
-    </div> -->
-
     <br><br><br>
 
     <!-- groceries -->
@@ -51,24 +42,7 @@
             // getting relevant data from the database
             if((!isset($_GET['sort']))&&(!isset($_GET['cat']))){
                 $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0");
-            }
-            else{
-                if(isset($_GET['sort'])){
-                    $sort=$_GET['sort'];
-                    $order=$_GET['order'];
 
-                    if(isset($_GET['cat'])){
-                        $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0 AND category='$category' ORDER BY $sort $order");
-                    }
-                    else{
-                        $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0 ORDER BY $sort $order");
-                    }
-                }
-                else{
-                    $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0 AND category='$category'");
-                }
-            }
-            $stmt->execute();
         ?>
         <!-- sort and filter buttons-->
         <div class="row">
@@ -176,11 +150,6 @@
     function sortDrop(){
         document.getElementById("sortDropdown").classList.toggle("show");
     }
-
-    function filterDrop() {
-        document.getElementById("filterDropdown").classList.toggle("show");
-    }
-
 </script>
 </body>
 </html>
