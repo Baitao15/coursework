@@ -124,6 +124,8 @@
                             <label for="bakery">Bakery</label><br>
                             <input id="fresh" type="checkbox" value="fresh" name="category">
                             <label for="fresh">Fresh</label>
+                            <input id="frozen" type="checkbox" value="frozen" name="category">
+                            <label for="frozen">Frozen</label>
                         </div>
                         <input type="hidden" name="type" value='filter'>
                         <input type="hidden" name="sort" value=<?php if(isset($sort)){echo($sort);}?>>
