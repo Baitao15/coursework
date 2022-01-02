@@ -37,6 +37,13 @@
     padding: 80px 120px
 }
 
+input#order-asc:checked ~ label#order-asc{
+    color:rgb(255, 183, 0);
+}
+input#order-des:checked ~ label#order-des{
+    color:rgb(255, 183, 0);
+}
+
 /* dropdown */
 .dropdown {
     position: relative;
@@ -135,12 +142,7 @@ a.desc-rev:hover{
     padding:10%;
 } */
 
-input#order-asc:checked ~ label#order-asc{
-    color:rgb(255, 183, 0);
-}
-input#order-des:checked ~ label#order-des{
-    color:rgb(255, 183, 0);
-}
+
 
 /* modals */
 .modal {
