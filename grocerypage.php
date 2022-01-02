@@ -62,11 +62,13 @@
                         WHERE stock>0 AND category='$category' ORDER BY $sort $order");
                     }
                     else{
-                        $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0 ORDER BY $sort $order");
+                        $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
+                        WHERE stock>0 ORDER BY $sort $order");
                     }
                 }
                 else{
-                    $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0 AND category='$category'");
+                    $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
+                    WHERE stock>0 AND category='$category'");
                 }
             }
             $stmt->execute();
