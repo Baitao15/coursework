@@ -107,6 +107,7 @@
                 </form>
             </div>
         </div>
+    </div>
         <div class="dropdown">
             <button id="filterBtn" class="btn dropbtn" onclick="filterDrop()">
                 Filter
