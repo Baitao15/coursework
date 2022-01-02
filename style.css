@@ -39,12 +39,12 @@
 
 
 /* dropdown */
-.dropdown {
+.dropdown{
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content{
     display: none; /* hidden by default */
     position: absolute;
     background-color: white;
@@ -53,7 +53,7 @@
     z-index: 1; /* sit on top of rest of page */
 }
 
-.show {display:block;}
+.show{display:block;}
 
 
 /* forms */
