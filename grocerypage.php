@@ -123,11 +123,11 @@
                             <input id="bakery" type="checkbox" value="bakery" name="category">
                             <label for="bakery">Bakery</label><br>
                             <input id="fresh" type="checkbox" value="fresh" name="category">
-                            <label for="fresh">Fresh</label>
+                            <label for="fresh">Fresh</label><br>
                             <input id="frozen" type="checkbox" value="frozen" name="category">
-                            <label for="frozen">Frozen</label>
+                            <label for="frozen">Frozen</label><br>
                             <input id="cupboard" type="checkbox" value="cupboard" name="category">
-                            <label for="cupboard">Food Cupboard</label>
+                            <label for="cupboard">Food Cupboard</label><br>
                             <input id="other" type="checkbox" value="other" name="category">
                             <label for="other">Other</label>
                         </div>
