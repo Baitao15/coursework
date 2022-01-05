@@ -41,6 +41,7 @@ if($_POST['type']=='filter'){
         }
         $count=$count+1;
     }
-    header('Location: grocerypage.php?cat='.$categories);
+    if($_POST['sort']=='none'){
+        header('Location: grocerypage.php?cat='.$categories);
 }
 ?>
