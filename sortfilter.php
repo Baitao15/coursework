@@ -41,7 +41,14 @@ if($_POST['type']=='filter'){
         }
         $count=$count+1;
     }
+    // redirect user back to grocery page with correct variables
     if($_POST['sort']=='none'){
         header('Location: grocerypage.php?cat='.$categories);
+    }
+    else{
+        $order=$_POST['order'];
+        $sort=$_POST['sort'];
+        header('Location: grocerypage.php?cat='.$categories.'&sort='.$sort.'&order='.$order);
+    }
 }
 ?>
