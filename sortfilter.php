@@ -19,7 +19,6 @@ if($_POST['type']=='filter'){
     // after an item has been added, the SQL being appended needs to include OR
     $atleastone=false;
 
-
     /* This section loops through all of the checkboxes to see wether or not they
     have been checked. SQL code is appended to the variable $categories accordingly. */
     while($count<=6){
@@ -42,7 +41,6 @@ if($_POST['type']=='filter'){
         }
         $count=$count+1;
     }
-
     header('Location: grocerypage.php?cat='.$categories);
 }
 ?>
