@@ -58,8 +58,9 @@
                     $order=$_GET['order'];
 
                     if(isset($_GET['cat'])){
+                        $cat=$_GET['cat'];
                         $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
-                        WHERE stock>0 AND category='$category' ORDER BY $sort $order");
+                        WHERE stock>0 AND $cat ORDER BY $sort $order");
                     }
                     else{
                         $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
@@ -67,13 +68,14 @@
                     }
                 }
                 else{
+                    $cat=$_GET['cat'];
                     $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
-                    WHERE stock>0 AND category='$category'");
+                    WHERE stock>0 AND $cat");
                 }
             }
             $stmt->execute();
         ?>
-        <!-- sort and filter buttons-->
+        <!-- sort and filter -->
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="dropdown">
@@ -121,17 +123,17 @@
                     <form action="sortfilter.php" method="POST" id="filterForm" style="padding: 10%;">
                         <label for="category">Category</label>
                         <div id="category">
-                            <input id="produce" type="checkbox" value="produce" name="category" required>
+                            <input id="produce" type="checkbox" value="produce" name="1">
                             <label for="produce">Fruit & Veg</label><br>
-                            <input id="bakery" type="checkbox" value="bakery" name="category">
+                            <input id="bakery" type="checkbox" value="bakery" name="2">
                             <label for="bakery">Bakery</label><br>
-                            <input id="fresh" type="checkbox" value="fresh" name="category">
+                            <input id="fresh" type="checkbox" value="fresh" name="3">
                             <label for="fresh">Fresh</label><br>
-                            <input id="frozen" type="checkbox" value="frozen" name="category">
+                            <input id="frozen" type="checkbox" value="frozen" name="4">
                             <label for="frozen">Frozen</label><br>
-                            <input id="cupboard" type="checkbox" value="cupboard" name="category">
+                            <input id="cupboard" type="checkbox" value="cupboard" name="5">
                             <label for="cupboard">Food Cupboard</label><br>
-                            <input id="other" type="checkbox" value="other" name="category">
+                            <input id="other" type="checkbox" value="other" name="6">
                             <label for="other">Other</label>
                         </div>
                         <input type="hidden" name="type" value='filter'>
