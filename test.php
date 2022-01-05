@@ -1,8 +1,8 @@
-<html>
+<!-- <html>
 
 <head>
-    <style>
-body {
+    <style> -->
+<!-- body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -64,9 +64,9 @@ body {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-    </style>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+} -->
+    <!-- </style>
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -84,4 +84,28 @@ body {
             <a href="grocerypage.php?cat=other" class="droplink">Other</a>
         </div>
     </div>
+</body> -->
+
+<html>
+<head>
+    <title>TEST</title>
+</head>
+<body>
+<?php
+include_once("connection.php");
+
+$sort='itemname';
+$order='ASC';
+
+$category="'produce' OR 'bakery'";
+
+$stmt = $conn->prepare("SELECT * FROM item WHERE stock>0 AND category=$category ORDER BY $sort $order;");
+$stmt->execute();
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    echo($row['itemname'].'<br>');
+}
+
+?>
 </body>
+</html>

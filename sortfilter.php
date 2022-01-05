@@ -11,8 +11,24 @@ if($_POST['type']=='sort'){
     }
 }
 
-// if($_POST['type']=='filter'){
-//     $filter=$_POST['']
-    
-// }
+if($_POST['type']=='filter'){
+    $categories="";
+    $count='1';
+    $atleastone=false;
+
+    while($count<=6){
+        if(isset($_POST[$count])){
+            if($atleastone==false){
+                $categories.="category='".$_POST[$count]."'";
+                $atleastone=true;
+            }
+            else{
+                $categories.=" OR category='".$_POST[$count]."'";
+            }
+        }
+        $count=$count+1;
+    }
+
+    header('Location: grocerypage.php?cat='.$categories);
+}
 ?>
