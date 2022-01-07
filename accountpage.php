@@ -35,7 +35,6 @@
     </div>
     <br><br><br>
     <?php
-    $email = $_SESSION['email'];
     $stmt = $conn->prepare("SELECT * FROM customer WHERE email = :email");
     $stmt->bindparam(':email', $_SESSION['email']);
     $stmt->execute();
