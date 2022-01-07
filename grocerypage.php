@@ -107,7 +107,7 @@
                         <input id="name" type="radio" value="itemname" name="sort">
                         <label for="name">Name</label>
                         <input type="hidden" name="type" value='sort'>
-                        <input type="hidden" name="filter" value=<?php if(isset($category)){echo($category);} else{echo('none');}?>>
+                        <input type="hidden" name="filter" value=<?php if(isset($cat)){echo($cat);} else{echo('none');}?>>
                         <br><div class="text-center"><input type="submit" value="Apply" class="btn btn-lg"></div>
                     </form>
                 </div>
