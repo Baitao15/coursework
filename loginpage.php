@@ -42,7 +42,7 @@
         ?>
         <form action="login.php" method="POST">
             <br>
-            <input type="text" name="email" placeholder="Email" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
             <input type="submit" value="Login" class="btn btn-lg">
         </form>
