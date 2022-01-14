@@ -34,7 +34,7 @@
         <form action="register.php" method="POST" class="form-inline">
             <input type="text" name="forename" placeholder="First Name" required><br><br>
             <input type="text" name="surname" placeholder="Surname" required><br><br>
-            <input type="tel" name="phoneno" placeholder="Phone Number" required><br><br>
+            <input type="tel" name="phoneno" placeholder="Phone e.g. 08888 888888" pattern="[0]{1}[0-9]{4} [0-9]{6}" required><br><br>
             <input type="email" name="email" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Choose a Password" required><br><br>
             <input type="submit" value="Register" class="btn btn-lg">
