@@ -10,7 +10,10 @@ email VARCHAR(50) NOT NULL,
 password VARCHAR(255) NOT NULL,
 forename VARCHAR(20) NOT NULL,
 surname VARCHAR(20) NOT NULL,
-phoneno VARCHAR(12) NOT NULL)");
+phoneno VARCHAR(12) NOT NULL,
+postcode VARCHAR(7),
+address VARCHAR(30),
+cardno VARCHAR(255))");
 $stmt->execute();
 
 // inserting defualt data into the customer table
