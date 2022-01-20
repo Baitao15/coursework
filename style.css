@@ -135,6 +135,10 @@ a.desc-rev:hover{
     text-decoration-line: underline;
 }
 
+td a:link{
+    color: #333333;
+}
+
 /* .pill-left{
     border-color: black;
     border-width: 2px;

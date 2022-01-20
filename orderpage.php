@@ -84,12 +84,11 @@ if (!isset($_SESSION['userid'])){
                         $row = $stmt3->fetch(PDO::FETCH_ASSOC);
                         $total=$total+($row['itemprice']*$qty);
                     }
-
                     echo("<tr>");
-                        echo("<td>".$orderid."</td>");
+                        echo("<td><a href='specificorder.php'>".$orderid."</a></td>");
                         echo("<td>".$forename.' '.$surname."</td>");
                         echo("<td>".$address."</td>");
-                        echo("<td>£".$total."</td>");
+                        echo("<td>£".number_format(($total), 2)."</td>");
                     echo("</tr>");
                 }
                 ?>

@@ -18,7 +18,22 @@ if ($_POST["type"]=="add"){
 }
 
 if ($_POST["type"]=="edit"){
+    $stmt = $conn->prepare("SELECT * FROM item");
+    $stmt->execute();
+
+    // set variables to match current contents of table
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $name=$row['itemname'];
+        $image=$row['itemimage'];
+        $cat=$row['category'];
+        $desc=$row['description'];
+        $price=$row['itemprice'];
+        $stock=$row['stock'];
+    }
+
     
+
+    $stmt = $conn->prepare("UPDATE item SET ");
 }
 
 header('Location: manageitempage.php');
