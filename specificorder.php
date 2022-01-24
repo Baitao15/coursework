@@ -1,12 +1,12 @@
 <?php
     session_start();
     include_once("connection.php");
-    $itemid=$_GET['id'];
+    $id=$_GET['id'];
 ?>
 
 <html>
 <head>
-    <title>Order Details - Order ID <?php echo($itemid); ?></title>
+    <title>Order Details - Order ID <?php echo($id); ?></title>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,14 +28,8 @@
     <!-- order details -->
     <div class=row>
         <div class="col-sm-2"></div>
-        <div class="col-sm-4">
-            
-        </div>
-        <div class="col-sm-6">
-
-        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-6"></div>
     </div> 
-
 </body>
-
 </html>
