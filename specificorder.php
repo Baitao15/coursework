@@ -28,10 +28,19 @@
     <!-- order details -->
     <div class=row>
         <div class="col-sm-2"></div>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-6"></div>
+        <div class="col-sm-4">
+
+        </div>
+
+        <div class="col-sm-6">
+        <table>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        </div>
     </div> 
+
 </body>
+
 </html>
-
-
