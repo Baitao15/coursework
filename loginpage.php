@@ -1,17 +1,5 @@
 <html>
 
-<?php
-    session_start();
-
-    $loggedin=false;
-
-    if (isset($_SESSION['email']))
-    {   
-        $loggedin=true;
-    }
-
-?>
-
 <head>
   <title>Login - Longda</title>
   <link rel="stylesheet" href="style.css">
