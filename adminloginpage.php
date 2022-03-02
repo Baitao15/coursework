@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <!-- navigation bar -->
+  <!-- reduced navigation bar -->
   <div id=navbar class="text-center">
     <a href=adminhomepage.php>Longda</a>
   </div>
   <br><br><br><br><br>
   <div class="col-sm-4"></div>
-  <!--  login form  -->
+  <!-- login form -->
   <div class="text-center">
   <div class="col-sm-4">
     <h3>Staff Login</h3>
