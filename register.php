@@ -15,7 +15,6 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     $_SESSION['message']='Email is already registered with an account. <a href=loginpage.php>Login</a>';
     header('Location: registerpage.php');
 }
-
 else{
     // hashing the password
     $hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -23,7 +22,6 @@ else{
     // sending the data to the database
     $stmt = $conn->prepare("INSERT INTO customer(email,password,forename,surname,phoneno)
     VALUES(:email,:password,:forename,:surname,:phoneno)");
-
     $stmt->bindParam(':email', $_POST["email"]);
     $stmt->bindParam(':password', $hashed_password);
     $stmt->bindParam(':forename', $_POST["forename"]);
