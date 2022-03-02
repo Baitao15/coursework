@@ -31,6 +31,8 @@ if (!isset($_SESSION['userid'])){
         <a href=adminlogout.php>Logout</a>
     </div>
 <br><br><br>
+    <!-- main page contents -->
+    <!-- adding item form -->
     <h4>Add New Item</h4>
     <form action="manageitem.php" method="POST">
         <input type="text" name="itemname" placeholder="Item Name" required><br><br>
@@ -53,7 +55,7 @@ if (!isset($_SESSION['userid'])){
     </form>
     <br><br><br>
 
-
+    <!-- editing item form -->
     <h4>Edit Item</h4>
     <form action="manageitem.php" method="POST">
         <select required>
@@ -85,6 +87,5 @@ if (!isset($_SESSION['userid'])){
         <input type="submit" value="Save" class="btn btn-sm">
         <br>
     </form>
-
 </body>
 </html>
