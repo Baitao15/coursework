@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-
 <?php
+    // start session to access session variable for logged in status
     session_start();
-
+    // link to database to access items data
     include_once("connection.php");
-
+    // setting backURL session variable for redirects
     $_SESSION['backURL']='grocerypage.php';
 ?>
-
 <html>
     <head>
         <title>Longda - Groceries</title>
@@ -16,9 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
-
 <body>
-
     <!-- navigation bar -->
     <div id=navbar>
         <a href=homepage.php>Home</a>
@@ -33,7 +30,7 @@
             }
         ?>
     </div>
-
+    <!-- **ATTEMPTED DROPDOWN NAVBAR COMMENTED OUT BELOW** -->
     <!-- <div class="dropdown-content">
         <a href="grocerypage.php?cat=produce">Fruit & Veg</a><br>
         <a href="grocerypage.php?cat=bakery">Bakery</a><br>
@@ -42,9 +39,7 @@
         <a href="grocerypage.php?cat=cupboard">Pantry</a><br>
         <a href="grocerypage.php?cat=other">Other</a>
     </div> -->
-
     <br><br><br>
-
     <!-- groceries -->
     <div class="groceries">
         <?php
