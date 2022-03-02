@@ -1,7 +1,7 @@
 <?php
-
+// start session to access email session variable
 session_start();
-
+// link to database to check account details
 include_once("connection.php");
 
 array_map("htmlspecialchars", $_POST);
@@ -12,11 +12,9 @@ $stmt->execute();
 $records = $stmt->fetchAll();
 
 if($records){
-    
     $stmt->execute();
-
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        
+    
         $hashed= $row['password'];
         $attempt= $_POST['password'];
         
