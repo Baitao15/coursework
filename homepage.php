@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 
 <?php
-    session_start();
-
-    $_SESSION['backURL']='homepage.php';
+// start session to access email session variable for checking if user is logged in
+// and for backURL session variable for returning users to the current page
+session_start();
+// setting backURL session variable
+$_SESSION['backURL']='homepage.php';
 ?>
 
 <html>
@@ -14,9 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
-
 <body>
-
     <!-- navigation bar -->
     <div id=navbar>
         <a href=homepage.php>Home</a>
@@ -31,9 +31,7 @@
             }
         ?>
     </div>
-    <br>
-    <br>
-    <br>
+    <br><br><br>
     <!-- welcome message -->
     <div class="container text-center">
         <h3>Welcome to the Longda Online Shop</h3>
@@ -46,6 +44,5 @@
             }
         ?>
     </div>
-
 </body>
 </html>
