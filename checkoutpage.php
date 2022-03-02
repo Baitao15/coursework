@@ -111,7 +111,7 @@ $customerid=($_SESSION['id']);
                 </div>
             </div>
             <h3>3. Confirm and Place</h3>
-                Order Total: <?php echo('£'.$_SESSION['total']);?><br>
+                Order Total: <?php echo('£'.number_format(($_SESSION['total']), 2));?><br>
                 <input type="submit" value="Order & Pay" class="btn btn-lg">
         </form>
     </div>

@@ -30,8 +30,6 @@
         ?>
     </div>
     <br>
-    <br>
-    <br>
     <!-- main body -->
         <div class="container text-center">
             <h3>Thank You!</h3>

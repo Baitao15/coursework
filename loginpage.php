@@ -40,6 +40,7 @@
               unset($_SESSION['message']);
             }
         ?>
+        <!-- login form -->
         <form action="login.php" method="POST">
             <br>
             <input type="email" name="email" placeholder="Email" required><br><br>
@@ -47,6 +48,7 @@
             <input type="submit" value="Login" class="btn btn-lg">
         </form>
       </div>
+    <!-- option for users to register an account if they don't have one already -->
     Don't have an account?
     <a href=registerpage.php>Sign Up</a>
     </div>
