@@ -38,5 +38,3 @@ else{
     header('Location: adminloginpage.php');
 }
 ?>
-
-a
