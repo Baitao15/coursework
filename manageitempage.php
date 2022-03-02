@@ -61,9 +61,10 @@ if (!isset($_SESSION['userid'])){
         <select required>
             <option disabled selected>--Select Item to Change--</option>
             <?php
+            // fetch item details from database
             $stmt = $conn->prepare("SELECT * FROM item");
                     $stmt->execute();
-            
+            // display each item in dropdown select
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 echo("<option value='".$row["itemid"]."'>".$row["itemname"]."</option>");
             }
