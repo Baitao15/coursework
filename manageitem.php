@@ -1,5 +1,4 @@
 <?php
-
 // linking to connection.php to gain access to the database
 include_once("connection.php");
 
@@ -18,9 +17,9 @@ if ($_POST["type"]=="add"){
 }
 
 if ($_POST["type"]=="edit"){
+    // unfinished
     $stmt = $conn->prepare("SELECT * FROM item");
     $stmt->execute();
-
     // set variables to match current contents of table
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         $name=$row['itemname'];
@@ -30,13 +29,10 @@ if ($_POST["type"]=="edit"){
         $price=$row['itemprice'];
         $stock=$row['stock'];
     }
-
-    
-
     $stmt = $conn->prepare("UPDATE item SET ");
+    // unfinished
 }
-
+// redirect user back to manage items page
 header('Location: manageitempage.php');
-
 ?>
 
