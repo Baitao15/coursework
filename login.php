@@ -9,9 +9,10 @@ array_map("htmlspecialchars", $_POST);
 $stmt = $conn->prepare("SELECT * FROM customer WHERE email = :email;");
 $stmt->bindparam(':email', $_POST['email']);
 $stmt->execute();
+// if entered email exists in the customer table
 $records = $stmt->fetchAll();
-
 if($records){
+    // 
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
