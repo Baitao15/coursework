@@ -43,25 +43,35 @@
     <!-- groceries -->
     <div class="groceries">
         <?php
-            // getting relevant data from the database
+            // getting relevant data from the database, taking into account filters and sorts
+            // any applied filters and sorts are passed through from sortfilter.php as GET variables in the URL
+            // if no filters or sorts are set, just select item data from database for all items
             if((!isset($_GET['sort']))&&(!isset($_GET['cat']))){
                 $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item WHERE stock>0");
             }
             else{
+                // if sort is set
                 if(isset($_GET['sort'])){
+                    // property to sort by (name, price, etc.)
                     $sort=$_GET['sort'];
+                    // order by (ascending/descending)
                     $order=$_GET['order'];
 
+                    // if category to filter by is set, select item data from database that match the chosen filter
+                    // and sort results by chosen property and order
                     if(isset($_GET['cat'])){
                         $cat=$_GET['cat'];
                         $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
                         WHERE stock>0 AND $cat ORDER BY $sort $order");
                     }
+                    // no filter category is set, so select item data from database in sorted order
                     else{
                         $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
                         WHERE stock>0 ORDER BY $sort $order");
                     }
                 }
+                // no sort is set, so there must be a filter set
+                // select item data from database that has category set to chose categor(y/ies)
                 else{
                     $cat=$_GET['cat'];
                     $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
