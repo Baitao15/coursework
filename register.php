@@ -47,3 +47,5 @@ else{
         header('Location: ' . $backURL);
     }
 }
+?>
+
