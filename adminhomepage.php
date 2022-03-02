@@ -1,17 +1,21 @@
 <?php
 // linking to connection.php to gain access to the database
 include_once("connection.php");
+
 // checking authorised user
 session_start(); 
 if (!isset($_SESSION['userid'])){   
     header("Location:adminloginpage.php");
 }
-// getting admin forename
+
+// getting user forename
 $findid = ($_SESSION['userid']);
 $stmt = $conn->prepare("SELECT forename FROM admin WHERE userid = $findid");
 $stmt->execute();
 ?>
+
 <html>
+
 <head>
     <title>Longda Admin - Home</title>
     <link rel="stylesheet" href="style.css">
