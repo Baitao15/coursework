@@ -49,3 +49,4 @@ else{
     $_SESSION['message']='Incorrect email or password, please try again';
     header('Location: loginpage.php');
 }
+?>
