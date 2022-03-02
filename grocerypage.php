@@ -71,7 +71,7 @@
                     }
                 }
                 // no sort is set, so there must be a filter set
-                // select item data from database that has category set to chose categor(y/ies)
+                // select item data from database that has category set to chosen categor(y/ies)
                 else{
                     $cat=$_GET['cat'];
                     $stmt = $conn->prepare("SELECT itemid, itemname, itemimage, itemprice FROM item
