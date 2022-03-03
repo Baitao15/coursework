@@ -27,6 +27,7 @@ $customerid=($_SESSION['id']);
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
         <?php
+        // display error message if applicable
         if (isset($_SESSION['message'])){
             echo("<div class='message'><h3>".$_SESSION['message']."</h3></div>");
             unset($_SESSION['message']);
@@ -35,15 +36,18 @@ $customerid=($_SESSION['id']);
         <form action='placeorder.php' method="POST" class="form-inline">
             <h3>1. Delivery Address</h3>
                 <?php
+                // if user is logged in, display saved delivery addresses
                 if (isset($_SESSION['email'])){
                     echo("<h4>Saved Adresses</h4>");
+                    // select address ids from customer-address linking table which are associated with current user
                     $stmt = $conn->prepare("SELECT addressid FROM customeraddress WHERE customerid = $customerid");
                     $stmt->execute();
-                    $addresses=array();
+                    // fetch each corresponding address from the address table by its id
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                         $addressid=($row['addressid']);
                         $stmt = $conn->prepare("SELECT * FROM address WHERE addressid = $addressid");
                         $stmt->execute();
+                        // display each address as a radio for customer users to select
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                             echo('<input type="radio" id="'.$row["addressid"].'" name="address" value="'.$row["addressid"].'"><label for='.$row["addressid"].'>');
                             echo($row["address1"]."<br>");
@@ -56,6 +60,7 @@ $customerid=($_SESSION['id']);
                     }
                 }
                 ?>
+            <!-- collapsible panel for using different address form -->
             <div class="panel panel-default">
                 <div class="panel-heading" class="collapse">
                     <a data-toggle="collapse" href="#collapse1"><h5>Use Different Address</h5></a>
@@ -73,24 +78,30 @@ $customerid=($_SESSION['id']);
             </div>
             <h3>2. Payment Details</h3>
                 <?php
+                // if user is logged in, display saved payment options
                 if (isset($_SESSION['email'])){  
                     echo("<h4>Saved Cards</h4>");
+                    // select card ids from customer-card linking table which are associated with current user
                     $stmt = $conn->prepare("SELECT cardid FROM customercard WHERE customerid = $customerid");
                     $stmt->execute();
                     $cards=array();
+                    // fetch each corresponding payment method from the card table by its id
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                         $cardid=($row['cardid']);
                         $stmt = $conn->prepare("SELECT * FROM card WHERE cardid = $cardid");
                         $stmt->execute();
+                        // display each payment method as a radio for customer users to select
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                            echo('<input type="radio" id="'.$row["cardid"].'" name="card" value="'.$row["cardid"].'"><label for='.$row["cardid"].'>');
-                            echo("****".$row["lastfour"]."<br>");
-                            echo($row["cardholdername"]);
+                            echo('<input type="radio" id="'.$row["cardid"].'" name="card" value="'.$row["cardid"].'">
+                            <label for='.$row["cardid"].'>');
+                                echo("****".$row["lastfour"]."<br>");
+                                echo($row["cardholdername"]);
                             echo('</label><br>');
                         }
                     }
                 }
                 ?>
+            <!-- collapsible panel for using different payment method form -->
             <div class="panel panel-default">
                 <div class="panel-heading" class="collapse">
                     <a data-toggle="collapse" href="#collapse2"><h5>Use Different Payment Mehtod</h5></a>
@@ -111,7 +122,9 @@ $customerid=($_SESSION['id']);
                 </div>
             </div>
             <h3>3. Confirm and Place</h3>
+                <!-- display order total -->
                 Order Total: <?php echo('£'.number_format(($_SESSION['total']), 2));?><br>
+                <!-- place order button to submit the forms -->
                 <input type="submit" value="Order & Pay" class="btn btn-lg">
         </form>
     </div>
