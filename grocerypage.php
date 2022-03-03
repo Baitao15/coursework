@@ -160,6 +160,7 @@
                             <label for="other">Other</label>
                         </div>
                         <input type="hidden" name="type" value='filter'>
+                        <!-- hidden inputs to allow for sorts and filters to be applied at the same time -->
                         <input type="hidden" name="sort" value=<?php if(isset($sort)){echo($sort);} else{echo('none');}?>>
                         <input type="hidden" name="order" value=<?php if(isset($order)){echo($order);} else{echo('none');}?>>
                         <br><div class="text-center"><input type="submit" value="Apply" class="btn btn-lg"></div>
