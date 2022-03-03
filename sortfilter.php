@@ -1,16 +1,23 @@
 <?php
+// when sort form submitted
 if($_POST['type']=='sort'){
+    // set the inputs as variables
     $order=$_POST['order'];
     $sort=$_POST['sort'];
+    // if there was no filter applied
     if($_POST['filter']=='none'){
+        // redirect to grocerypage.php with corresponding sort variables
         header('Location: grocerypage.php?sort='.$sort.'&order='.$order);
     }
+    // if there was at least one filter applied
     else{
         $filter=$_POST['filter'];
+        // redirect to grocerypage.php with corresponding sort and filter variables
         header('Location: grocerypage.php?sort='.$sort.'&order='.$order.'&cat='.$filter);
     }
 }
 
+// when filter form submitted
 if($_POST['type']=='filter'){
     // begin with null categories variable
     $categories="";
