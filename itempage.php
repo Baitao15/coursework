@@ -216,23 +216,19 @@
 <script>
     // get modal
     var modal = document.getElementById("writeRevModal");
-
     // get the button that opens the modal
     var btn = document.getElementById("writeRevBtn");
-
     // get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-
+    
     // if user clicks button, open modal 
     btn.onclick = function() {
         modal.style.display = "block";
     }
-
     // if user clicks on <span> (i.e. "x"), close  modal
     span.onclick = function() {
         modal.style.display = "none";
     }
-
     // if user clicks anywhere outside of the modal, close modal
     window.onclick = function(event) {
         if (event.target == modal) {
