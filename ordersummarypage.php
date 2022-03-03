@@ -28,8 +28,6 @@
             }
         ?>
     </div>
-</body>
-</html>
     <br>
     <!-- main body -->
         <div class="container text-center">
