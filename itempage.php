@@ -169,14 +169,17 @@
     <div id="writeRevModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
+                <!-- 'X' button to close modal -->
                 <span class="close">&times;</span>
                 <h3> Write a Review</h3>
             </div>
             <div class="modal-body">
                 <div class="text-center">
+                    <!-- form for adding review -->
                     <form action="addreview.php" method="POST" id="writeRevForm">
                         <label class="label-text" id="rating">Overall Rating</label>
                         <br>
+                        <!-- stars out of five -->
                         <div class="stars">
                             <div class="text-center">
                                 <input class="star star-5" id="star-5" type="radio" value="5" name="star" required>
@@ -191,11 +194,15 @@
                                 <label class="star star-1" for="star-1"></label>
                             </div>
                         </div>
+                        <!-- divider -->
                         <hr class="solid1">
+                        <!-- review title -->
                         <label class="label-text" for="title">Add a Headline</label><br>
                         <input type="text" name="title" id="title" style="width: 100%;" maxlength="32"
                         placeholder="What's most important to know?" required>
+                        <!-- divider -->
                         <hr class="solid1">
+                        <!-- review text -->
                         <label class="label-text" for="text">Add a Written Review</label><br>
                         <textarea name="text" id="text" style="width: 100%;" rows="5" cols ="1" maxlength="255"
                         placeholder="What did you like or dislike? (maximum 255 characters)" required></textarea>
@@ -234,10 +241,3 @@
     }
 </script>
 </body>
-
-<!-- if(isset($_GET['id'])){
-    $itemid=$_GET['id'];
-    $_SESSION['backURL']='itempage.php?'.$itemid;
-} -->
-
-
