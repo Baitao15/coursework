@@ -49,12 +49,13 @@ $customerid=($_SESSION['id']);
                         $stmt->execute();
                         // display each address as a radio for customer users to select
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                            echo('<input type="radio" id="'.$row["addressid"].'" name="address" value="'.$row["addressid"].'"><label for='.$row["addressid"].'>');
-                            echo($row["address1"]."<br>");
-                            echo($row["address2"]."<br>");
-                            echo($row["city"]."<br>");
-                            echo($row["county"]."<br>");
-                            echo($row["postcode"]."<br>");
+                            echo('<input type="radio" id="'.$row["addressid"].'" name="address" value="'.$row["addressid"].'">
+                            <label for='.$row["addressid"].'>');
+                                echo($row["address1"]."<br>");
+                                echo($row["address2"]."<br>");
+                                echo($row["city"]."<br>");
+                                echo($row["county"]."<br>");
+                                echo($row["postcode"]."<br>");
                             echo('</label><br>');
                         }
                     }
