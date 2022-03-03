@@ -86,12 +86,15 @@
             <div class=row>
                 <div class="col-sm-6">
                     <h3 class="text-center">
+                        <!-- link to item page with content variable set to description -->
                         <?php echo('<a href="itempage.php?id='.$itemid.'&cont=desc" class="desc-rev">')?>Description</a>
                     </h3>
                     <?php
+                        // if description selected, underline with thick gold line
                         if($cont=='desc'){
                             echo('<hr class="solidgold">');
                         }
+                        // otherwise, display normal divider
                         if($cont=='rev'){
                             echo('<hr class="solid2">');
                         }
@@ -99,12 +102,15 @@
                 </div>
                 <div class="col-sm-6">
                     <h3 class="text-center">
+                        <!-- link to item page with content variable set to description -->
                         <?php echo('<a href="itempage.php?id='.$itemid.'&cont=rev" class="desc-rev">')?>Reviews</a>
                     </h3>
                     <?php
+                        // if reviews selected, underline with thick gold line
                         if($cont=='rev'){
                             echo('<hr class="solidgold">');
                         }
+                        // otherwise, display normal divider
                         if($cont=='desc'){
                             echo('<hr class="solid2">');
                         }
