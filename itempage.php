@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 
 <?php
+    // start session to access session variables for logged in status and basket
     session_start();
+    // link to database to access items data
     include_once("connection.php");
-
+    // fetch item id from URL
     $itemid=$_GET['id'];
-
+    // fetch contents of the page (description or reviews)
     if(isset($_GET['cont'])){
         $cont=$_GET['cont'];
     }
@@ -18,9 +20,11 @@
     <head>
         <title>
             <?php
+                // fetch the name of the item
                 $stmt = $conn->prepare("SELECT itemname FROM item WHERE itemid=$itemid");
                 $stmt->execute();
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                // display the item name in the title of the page (in the tab of the web browser)
                 echo($row['itemname']);
                 echo(' - Longda Shop');
             ?>
