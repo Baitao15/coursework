@@ -1,10 +1,13 @@
 <?php
+// link to connection.php to gain access to the database
 include_once('connection.php');
-
+// start session to access basket and customer id session variables
 session_start();
-
+// keeping track of wether a valid payment method has been selected
 $payment=false;
 
+// cardnumber is the input from the new payment method form
+// if it is null, check the radio input (card)
 if($_POST['cardnumber']==""){
     if(!isset($_POST['card'])){
         // if no payment method is selected, redirect to checkout page with message
@@ -12,12 +15,14 @@ if($_POST['cardnumber']==""){
         header('Location: checkoutpage.php');
     }
     else{
+        // if there was a saved card selected, set payment to true
         $payment=true;
         // for purposes discussed in the 'Design' section of my write-up, no acutal payments will be taken
     }
 }
 
 else{
+    // the new payment method form was used, so set payment to true
     $payment=true;
     if($_POST['savecard']=="T"){
         // if user selected checkbox on previous page, save the card details to the database
@@ -52,8 +57,11 @@ else{
     }
 }
 
+// address1 is the input from the new payment method form
+// if it is null, check the radio input (address)
 if ($_POST['address1']==""){
     if(!isset($_POST['address'])){
+        // if no delivery address is selected, redirect to checkout page with message
         $_SESSION['message'] = 'Please choose a valid address';
         header('Location: checkoutpage.php');
     }
