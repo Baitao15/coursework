@@ -1,9 +1,9 @@
 <?php
 // linking to connection.php to gain access to the database
 include_once("connection.php");
-
+// start session to access userid and total session variable
 session_start();
-
+// setting customerid variable to be used to place the order
 $customerid=($_SESSION['id']);
 ?>
 
@@ -19,7 +19,7 @@ $customerid=($_SESSION['id']);
     </head>
 
 <body>
-    <!-- navigation bar -->
+    <!-- reduced navigation bar -->
     <div id=navbar>
         <a href=basketpage.php>Back to Basket</a>
     </div>
