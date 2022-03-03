@@ -169,6 +169,7 @@
             </div>
         </div>
         <?php
+            // DISPLAYING ITEMS
             // counter
             $i=0;
             // displaying each item and its details
