@@ -66,8 +66,14 @@ if ($_POST['address1']==""){
         header('Location: checkoutpage.php');
     }
     else{
+        // if payment is true
         if($payment==true){
+            // declare ordercontents variable
             $ordercontents=":";
+            // for each item and its quantity in the basket,
+            // append it to the ordercontents variable
+            // use of encoding to reduce storage required
+            // and to make it easier to retrieve items as itemid and qty are given
             for ($i=0; $i<(count($_SESSION['basket'])); $i++){
                 $itemid=($_SESSION['basket'][$i][0]);
                 $qty=($_SESSION['basket'][$i][1]);
