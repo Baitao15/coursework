@@ -74,6 +74,7 @@ if ($_POST['address1']==""){
             // append it to the ordercontents variable
             // use of encoding to reduce storage required
             // and to make it easier to retrieve items as itemid and qty are given
+            // the format is :itemid1,qty1:itemid2,qty2:itemid3,qty3:
             for ($i=0; $i<(count($_SESSION['basket'])); $i++){
                 $itemid=($_SESSION['basket'][$i][0]);
                 $qty=($_SESSION['basket'][$i][1]);
