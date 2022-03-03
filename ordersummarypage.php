@@ -43,9 +43,6 @@
                         <th>Quantity</th>
                         <th>Price</th>
                     </tr>
-                </table>
-            </div>
-        </div>
                     <?php
                     $stmt = $conn->prepare("SELECT * FROM orderr WHERE customerid = $id ORDER BY orderid DESC LIMIT 1");
                     $stmt->execute();
