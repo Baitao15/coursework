@@ -118,28 +118,30 @@
                 </div>
             </div>
             <?php
+                // if content is set as description, display item description
                 if($cont=='desc'){
                     echo('<div class="text-left">'.$row['description'].'</div>');
                 }
+                // if content is set as reviews, display reviews
                 if($cont=='rev'){
+                    // button for opening modal to write a review
                     echo('<div class="text-right">
                             <button id="writeRevBtn" class=btn btn-lg>Write a Review</button>
                         </div>');
-                    
+                    // display review added successfully message if applicable
                     if(isset($_SESSION['message'])){
                         echo('<h3 class="text-success"><b>'.$_SESSION['message'].'</b></h3>');
                         unset($_SESSION['message']);
                     }
-
+                    // fetch data for reviews about the item from the database
                     $stmt = $conn->prepare("SELECT * FROM review WHERE itemid=$itemid");
                     $stmt->execute();
-
+                    // for each review, fetch the customer name of the customer who made the review
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                         $customerid=$row['customerid'];
-
                         $stmt2 = $conn->prepare("SELECT forename FROM customer WHERE customerid=$customerid");
                         $stmt2->execute();
-
+                        // iterate through to display every review about the item
                         while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
                             // displaying name of reviewer
                             echo($row2['forename'].'<br>');
