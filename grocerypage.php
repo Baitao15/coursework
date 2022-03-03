@@ -221,6 +221,8 @@
 </script>
 </body>
 </html>
+<!-- **UNSUCCESSFUL JAVASCRIPT FOR CLOSING THE DROPDOWN FORMS WHEN CLICKING OUTSIDE OF THEM** -->
+<!-- **CURRENTLY, THEY CAN BE CLOSED BY CLICKING THE BUTTONS AGAIN** -->
 <!-- // close the dropdown if the user clicks outside of it
     window.onclick = function(event){
         if(!((event.target.matches('#sortBtn'))||(event.target.matches('#sortDropdown')))){
