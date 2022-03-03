@@ -16,7 +16,6 @@
     </head>
 
 <body>
-
     <!-- navigation bar -->
     <div id=navbar>
         <a href=homepage.php>Home</a>
@@ -29,6 +28,8 @@
             }
         ?>
     </div>
+</body>
+</html>
     <br>
     <!-- main body -->
         <div class="container text-center">
